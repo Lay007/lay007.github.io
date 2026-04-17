@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexander | DSP/FPGA Engineer</title>
+  <meta
+    name="description"
+    content="Alexander — DSP/FPGA Engineer, Candidate of Technical Sciences. C++, Verilog, MATLAB/Simulink, communications and information security."
+  />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #121a2b;
+      --card: rgba(18, 26, 43, 0.9);
+      --text: #e8eefc;
+      --muted: #9fb0d3;
+      --accent: #4da3ff;
+      --accent-2: #7cf0d2;
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 20px;
+      --maxw: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(77, 163, 255, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(124, 240, 210, 0.14), transparent 20%),
+        linear-gradient(180deg, #09101c 0%, #0b1220 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(92%, var(--maxw));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(11, 18, 32, 0.7);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    .hero-main {
+      padding: 40px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(77, 163, 255, 0.12);
+      border: 1px solid rgba(77, 163, 255, 0.18);
+      color: #b7d7ff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin: 0 0 18px;
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 780px;
+    }
+
+    .summary {
+      margin: 0 0 28px;
+      color: #d5def5;
+      max-width: 820px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 14px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      transition: 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #2b73ff);
+      color: white;
+      border: none;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+    }
+
+    .hero-side {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .stat {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+    }
+
+    .stat-title {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 24px 0 8px;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      font-size: 1.7rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      margin: 0 0 26px;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .info-card {
+      padding: 24px;
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.08rem;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    ul.clean {
+      margin: 0;
+      padding-left: 18px;
+      color: #d8e1f5;
+    }
+
+    ul.clean li + li {
+      margin-top: 8px;
+    }
+
+    .project-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: 1.15rem;
+    }
+
+    .project-desc {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      color: #cae1ff;
+      background: rgba(77, 163, 255, 0.12);
+      border: 1px solid rgba(77, 163, 255, 0.18);
+    }
+
+    .footer {
+      padding: 48px 0 60px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 44px;
+      }
+
+      .hero-main,
+      .hero-side {
+        padding: 28px;
+      }
+
+      .nav-inner {
+        gap: 12px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Alexander | lay007</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#projects">Projects</a>
+        <a href="#background">Background</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero container">
+    <div class="hero-grid">
+      <div class="card hero-main">
+        <div class="eyebrow">DSP • FPGA • Communications • InfoSec</div>
+        <h1>DSP/FPGA Engineer with strong academic and applied background</h1>
+        <p class="subtitle">
+          Candidate of Technical Sciences • C++ • Verilog • MATLAB/Simulink
+        </p>
+        <p class="summary">
+          I work at the intersection of digital signal processing, FPGA design,
+          engineering software and communication systems. My interests include
+          signal processing pipelines, telemetry, modulation/demodulation,
+          protocol processing, secure systems and applied R&amp;D.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/lay007" target="_blank" rel="noopener noreferrer">
+            View GitHub
+          </a>
+          <a class="btn btn-secondary" href="#projects">
+            Featured Projects
+          </a>
+        </div>
+      </div>
+
+      <aside class="card hero-side">
+        <div class="stat">
+          <div class="stat-title">Core Stack</div>
+          <div class="stat-value">C++ • Verilog • MATLAB • Simulink</div>
+        </div>
+        <div class="stat">
+          <div class="stat-title">Platforms</div>
+          <div class="stat-value">Xilinx • Intel FPGA • Microchip</div>
+        </div>
+        <div class="stat">
+          <div class="stat-title">Domains</div>
+          <div class="stat-value">DSP • Telemetry • Communications • Secure Systems</div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <p class="section-subtitle">
+        Engineering profile focused on practical development of digital signal processing
+        and FPGA-based systems.
+      </p>
+      <div class="grid-2">
+        <div class="card info-card">
+          <h3>What I do</h3>
+          <p>
+            I develop engineering solutions related to signal acquisition,
+            processing, communications, FPGA implementation and specialized software.
+          </p>
+        </div>
+        <div class="card info-card">
+          <h3>How I work</h3>
+          <p>
+            I combine algorithmic thinking, hardware understanding and software
+            engineering to build robust and efficient systems for real-world tasks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus">
+      <h2 class="section-title">Focus Areas</h2>
+      <p class="section-subtitle">
+        Main technical directions that define my engineering work.
+      </p>
+      <div class="grid-3">
+        <div class="card info-card">
+          <h3>Digital Signal Processing</h3>
+          <ul class="clean">
+            <li>Signal analysis and processing pipelines</li>
+            <li>Modulation and demodulation</li>
+            <li>Filtering, transforms and data handling</li>
+          </ul>
+        </div>
+        <div class="card info-card">
+          <h3>FPGA Systems</h3>
+          <ul class="clean">
+            <li>FPGA-oriented design and prototyping</li>
+            <li>Hardware/software co-design</li>
+            <li>Vendor-specific implementation flows</li>
+          </ul>
+        </div>
+        <div class="card info-card">
+          <h3>Communications & Security</h3>
+          <ul class="clean">
+            <li>Telemetry and communication systems</li>
+            <li>Protocol processing</li>
+            <li>Information security-related engineering</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">
+        Selected repositories from my GitHub profile.
+      </p>
+      <div class="grid-2">
+        <article class="card project-card">
+          <h3 class="project-title">pcm</h3>
+          <p class="project-desc">
+            Qt/C++ application for PCM data visualization and signal processing experiments.
+          </p>
+          <div class="tags">
+            <span class="tag">C++</span>
+            <span class="tag">Qt</span>
+            <span class="tag">DSP</span>
+            <span class="tag">Visualization</span>
+          </div>
+          <div>
+            <a href="https://github.com/lay007/pcm" target="_blank" rel="noopener noreferrer">Open repository</a>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <h3 class="project-title">cpp_test</h3>
+          <p class="project-desc">
+            C++/CMake project template with tests, external dependencies and structured build setup.
+          </p>
+          <div class="tags">
+            <span class="tag">C++</span>
+            <span class="tag">CMake</span>
+            <span class="tag">CTest</span>
+            <span class="tag">Template</span>
+          </div>
+          <div>
+            <a href="https://github.com/lay007/cpp_test" target="_blank" rel="noopener noreferrer">Open repository</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="background">
+      <h2 class="section-title">Background</h2>
+      <p class="section-subtitle">
+        Academic and professional experience that complements applied engineering work.
+      </p>
+      <div class="grid-3">
+        <div class="card info-card">
+          <h3>Academic Degree</h3>
+          <p>Candidate of Technical Sciences</p>
+        </div>
+        <div class="card info-card">
+          <h3>Teaching</h3>
+          <p>10 years of higher education teaching experience</p>
+        </div>
+        <div class="card info-card">
+          <h3>Publications</h3>
+          <p>Textbooks, publications, inventions and patents in technical fields</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">
+        Feel free to connect regarding DSP, FPGA, communications and engineering development.
+      </p>
+      <div class="grid-2">
+        <div class="card info-card">
+          <h3>GitHub</h3>
+          <p>
+            <a href="https://github.com/lay007" target="_blank" rel="noopener noreferrer">
+              github.com/lay007
+            </a>
+          </p>
+        </div>
+        <div class="card info-card">
+          <h3>Telegram</h3>
+          <p>
+            <a href="https://t.me/laymob" target="_blank" rel="noopener noreferrer">
+              @laymob
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>© 2026 Alexander | lay007</p>
+  </footer>
+</body>
+</html>
