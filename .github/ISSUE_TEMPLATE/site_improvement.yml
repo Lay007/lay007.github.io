@@ -1,0 +1,33 @@
+name: Site improvement
+description: Propose a portfolio-site content, UX, SEO or accessibility improvement
+title: "[Site]: "
+labels: ["enhancement", "website"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should be improved on the portfolio site?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the content, layout, metadata, accessibility or asset change.
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation
+      description: How should the result be checked?
+      placeholder: |
+        - local browser preview
+        - mobile layout check
+        - link check
+        - metadata preview
+    validations:
+      required: true
