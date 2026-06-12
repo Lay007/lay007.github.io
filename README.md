@@ -87,12 +87,25 @@ This keeps the website:
 
 ---
 
+## Browser icon
+
+The site includes a small branded SVG favicon:
+
+```text
+favicon.svg
+```
+
+The icon uses a compact `L7` / signal-wave / FPGA-grid motif so it remains readable at small browser-tab sizes while matching the dark technical visual style of the landing page.
+
+---
+
 ## Repository structure
 
 Typical structure is intentionally minimal:
 
 ```text
 lay007.github.io/
+├─ favicon.svg
 ├─ index.html
 └─ README.md
 ```
@@ -102,6 +115,7 @@ If the site grows later, the repository can be expanded with:
 ```text
 lay007.github.io/
 ├─ index.html
+├─ favicon.svg
 ├─ assets/
 │  ├─ css/
 │  ├─ js/
@@ -149,7 +163,7 @@ Typical update flow:
 Example:
 
 ```bash
-git add index.html README.md
+git add index.html favicon.svg README.md
 git commit -m "Update portfolio site"
 git push origin main
 ```
@@ -179,7 +193,7 @@ Possible next steps for the repository:
 - add bilingual support;
 - add a downloadable CV/resume;
 - add Open Graph preview image;
-- add favicon and structured metadata;
+- add structured metadata;
 - move repeated styles and assets into dedicated folders.
 
 ---
