@@ -75,6 +75,9 @@ Current approach:
 - **plain HTML**;
 - **embedded CSS**;
 - minimal JavaScript;
+- Open Graph and Twitter card metadata;
+- JSON-LD structured data;
+- static `robots.txt` and `sitemap.xml`;
 - no heavy frontend framework;
 - suitable for direct GitHub Pages hosting.
 
@@ -105,9 +108,13 @@ Typical structure is intentionally minimal:
 
 ```text
 lay007.github.io/
-├─ favicon.svg
-├─ index.html
-└─ README.md
+|- assets/
+|  `- social-preview.png
+|- favicon.svg
+|- index.html
+|- robots.txt
+|- sitemap.xml
+`- README.md
 ```
 
 If the site grows later, the repository can be expanded with:
@@ -163,7 +170,7 @@ Typical update flow:
 Example:
 
 ```bash
-git add index.html favicon.svg README.md
+git add index.html assets/social-preview.png robots.txt sitemap.xml README.md
 git commit -m "Update portfolio site"
 git push origin main
 ```
@@ -192,8 +199,6 @@ Possible next steps for the repository:
 - add project visuals or diagrams;
 - add bilingual support;
 - add a downloadable CV/resume;
-- add Open Graph preview image;
-- add structured metadata;
 - move repeated styles and assets into dedicated folders.
 
 ---
@@ -208,5 +213,4 @@ Possible next steps for the repository:
 
 ## License
 
-Unless noted otherwise, the site content and source in this repository are maintained by the repository owner.
-If you want, a dedicated `LICENSE` file can be added separately.
+MIT. See [LICENSE](LICENSE).
