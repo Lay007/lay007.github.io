@@ -12,15 +12,18 @@ This repository contains the source of the public GitHub Pages site used as a co
 
 Live site: [lay007.github.io](https://lay007.github.io/)
 
+Fast review page: [10-minute engineering portfolio review](https://lay007.github.io/portfolio-review.html)
+
 ---
 
 ## Overview
 
-The website is designed as a clean, professional one-page portfolio that presents:
+The website is designed as a clean, professional portfolio that presents:
 
 - core engineering positioning;
 - technical expertise and domains of work;
 - selected GitHub projects;
+- a fast 10-minute reviewer path;
 - academic and applied background;
 - contact points for collaboration and professional communication.
 
@@ -36,6 +39,7 @@ Its purpose is to:
 
 - present my engineering profile in a clear public format;
 - provide a single landing page for GitHub visitors;
+- provide a fast reviewer page for technical screening;
 - highlight practical areas of expertise;
 - connect visitors to selected repositories and contact channels;
 - keep the site lightweight, fast, and easy to maintain.
@@ -49,6 +53,7 @@ The website currently includes sections such as:
 - **Hero / intro** — primary positioning and short engineering summary;
 - **Core expertise** — DSP, FPGA, communications, secure engineering, circuit design;
 - **Selected projects** — representative repositories;
+- **Portfolio review page** — fast route through proof artifacts;
 - **Background** — degree, teaching, publications, inventions and patents;
 - **Toolchain & platforms** — major languages, tools, and vendor ecosystems;
 - **Contact** — GitHub, website, Telegram.
@@ -112,6 +117,7 @@ lay007.github.io/
 |  `- social-preview.png
 |- favicon.svg
 |- index.html
+|- portfolio-review.html
 |- robots.txt
 |- sitemap.xml
 `- README.md
@@ -122,6 +128,7 @@ If the site grows later, the repository can be expanded with:
 ```text
 lay007.github.io/
 ├─ index.html
+├─ portfolio-review.html
 ├─ favicon.svg
 ├─ assets/
 │  ├─ css/
@@ -139,7 +146,7 @@ Because the site is static, local preview is straightforward.
 
 ### Option 1 — open directly
 
-Open `index.html` in a browser.
+Open `index.html` or `portfolio-review.html` in a browser.
 
 ### Option 2 — run a lightweight local server
 
@@ -153,6 +160,7 @@ Then open:
 
 ```text
 http://localhost:8000
+http://localhost:8000/portfolio-review.html
 ```
 
 ---
@@ -161,7 +169,7 @@ http://localhost:8000
 
 Typical update flow:
 
-1. Edit `index.html`
+1. Edit `index.html` or `portfolio-review.html`
 2. Refresh local preview
 3. Commit changes
 4. Push to `main`
@@ -170,7 +178,7 @@ Typical update flow:
 Example:
 
 ```bash
-git add index.html assets/social-preview.png robots.txt sitemap.xml README.md
+git add index.html portfolio-review.html assets/social-preview.png robots.txt sitemap.xml README.md
 git commit -m "Update portfolio site"
 git push origin main
 ```
@@ -179,38 +187,4 @@ git push origin main
 
 ## Content and tone
 
-This site is not intended to be a generic blog or a multi-page marketing website.
-
-The design goal is a **compact engineering landing page** with:
-
-- strong professional positioning;
-- technical credibility;
-- clean visual hierarchy;
-- minimal maintenance overhead;
-- clear links to real work.
-
----
-
-## Future improvements
-
-Possible next steps for the repository:
-
-- split CSS into separate files if the site grows;
-- add project visuals or diagrams;
-- add bilingual support;
-- add a downloadable CV/resume;
-- move repeated styles and assets into dedicated folders.
-
----
-
-## Contact
-
-- GitHub: [Lay007](https://github.com/Lay007)
-- Website: [lay007.github.io](https://lay007.github.io/)
-- Telegram: [@laymob](https://t.me/laymob)
-
----
-
-## License
-
-MIT. See [LICENSE](LICENSE).
+Keep the site concise, technical and evidence-oriented. The best pages should help a reviewer quickly answer: what was built, how it was verified, what is measured, and what is still only a roadmap.
