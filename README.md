@@ -118,6 +118,7 @@ lay007.github.io/
 |- favicon.svg
 |- index.html
 |- portfolio-review.html
+|- content-update-checklist.md
 |- robots.txt
 |- sitemap.xml
 `- README.md
@@ -169,16 +170,17 @@ http://localhost:8000/portfolio-review.html
 
 Typical update flow:
 
-1. Edit `index.html` or `portfolio-review.html`
-2. Refresh local preview
-3. Commit changes
-4. Push to `main`
-5. Wait for GitHub Pages to publish the update
+1. Review [content-update-checklist.md](content-update-checklist.md)
+2. Edit `index.html` or `portfolio-review.html`
+3. Refresh local preview
+4. Commit changes
+5. Push to `main`
+6. Wait for GitHub Pages to publish the update
 
 Example:
 
 ```bash
-git add index.html portfolio-review.html assets/social-preview.png robots.txt sitemap.xml README.md
+git add index.html portfolio-review.html assets/social-preview.png robots.txt sitemap.xml README.md content-update-checklist.md
 git commit -m "Update portfolio site"
 git push origin main
 ```
