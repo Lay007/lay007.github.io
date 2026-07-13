@@ -29,7 +29,7 @@ jobs:
           python-version: "3.12"
 
       - name: Test site validator
-        run: python -m unittest tests/test_site_validator.py -v
+        run: python -m unittest discover -s tests -p "test_site_validator.py" -v
 
       - name: Validate local links and metadata
         run: python tools/check_site.py
