@@ -1,0 +1,135 @@
+name: Add flagship project covers
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/add-project-covers.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Patch project cards
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("index.html")
+          text = path.read_text(encoding="utf-8")
+
+          css_marker = """    .project-card {
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+              }
+          """
+          css_replacement = """    .project-card {
+                --project-pad: 24px;
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+              }
+
+              .project-cover {
+                display: block;
+                aspect-ratio: 16 / 9;
+                overflow: hidden;
+                margin: calc(var(--project-pad) * -1) calc(var(--project-pad) * -1) 4px;
+                border-bottom: 1px solid var(--line);
+                background: #07101d;
+              }
+
+              .project-cover img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease, filter 0.3s ease;
+              }
+
+              .project-cover:hover img {
+                transform: scale(1.02);
+                filter: brightness(1.05);
+              }
+          """
+
+          if ".project-cover {" not in text:
+              if css_marker not in text:
+                  raise SystemExit("project-card CSS marker not found")
+              text = text.replace(css_marker, css_replacement, 1)
+
+          mobile_marker = """      .hero-side,
+                .info-card,
+                .project-card,
+                .timeline-card,
+                .contact-card {
+                  padding: 22px;
+                }
+          """
+          mobile_replacement = mobile_marker + """
+              .project-card {
+                --project-pad: 22px;
+              }
+          """
+          if "--project-pad: 22px;" not in text:
+              if mobile_marker not in text:
+                  raise SystemExit("mobile project-card marker not found")
+              text = text.replace(mobile_marker, mobile_replacement, 1)
+
+          sdr_marker = """        <article class=\"card project-card featured\">
+                    <div class=\"project-top\">
+                      <div>
+                        <h3>zynq-sdr-course</h3>
+          """
+          sdr_replacement = """        <article class=\"card project-card featured\">
+                    <a class=\"project-cover\" href=\"https://github.com/Lay007/zynq-sdr-course\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Open zynq-sdr-course on GitHub\">
+                      <img src=\"assets/projects/zynq-sdr-course.webp\" alt=\"zynq-sdr-course engineering pipeline from model and RTL to Zynq SDR hardware and RF measurement\" loading=\"lazy\" width=\"480\" height=\"270\" />
+                    </a>
+                    <div class=\"project-top\">
+                      <div>
+                        <h3>zynq-sdr-course</h3>
+          """
+          if "assets/projects/zynq-sdr-course.webp" not in text:
+              if sdr_marker not in text:
+                  raise SystemExit("zynq-sdr-course card marker not found")
+              text = text.replace(sdr_marker, sdr_replacement, 1)
+
+          lora_marker = """        <article class=\"card project-card featured\">
+                    <div class=\"project-top\">
+                      <div>
+                        <h3>zynq-lora-phy-positioning</h3>
+          """
+          lora_replacement = """        <article class=\"card project-card featured\">
+                    <a class=\"project-cover\" href=\"https://github.com/Lay007/zynq-lora-phy-positioning\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Open zynq-lora-phy-positioning on GitHub\">
+                      <img src=\"assets/projects/zynq-lora-phy-positioning.webp\" alt=\"zynq-lora-phy-positioning LoRa PHY pipeline from MATLAB and Simulink to Verilog, ZynqSDR and TDoA positioning\" loading=\"lazy\" width=\"480\" height=\"270\" />
+                    </a>
+                    <div class=\"project-top\">
+                      <div>
+                        <h3>zynq-lora-phy-positioning</h3>
+          """
+          if "assets/projects/zynq-lora-phy-positioning.webp" not in text:
+              if lora_marker not in text:
+                  raise SystemExit("zynq-lora-phy-positioning card marker not found")
+              text = text.replace(lora_marker, lora_replacement, 1)
+
+          if text.count('class="project-cover"') != 2:
+              raise SystemExit("expected exactly two project covers")
+
+          path.write_text(text, encoding="utf-8")
+          PY
+
+      - name: Commit site update and remove one-shot workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git rm .github/workflows/add-project-covers.yml
+          git commit -m "feat(site): add flagship project covers"
+          git push
