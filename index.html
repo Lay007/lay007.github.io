@@ -124,6 +124,24 @@
       padding: 34px 0 12px;
     }
 
+    .pipeline-card {
+      display: block;
+      overflow: hidden;
+      border-color: rgba(79, 161, 255, 0.18);
+      background: #07111e;
+    }
+
+    .pipeline-card img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+
+    .pipeline-card:hover img {
+      transform: scale(1.004);
+      filter: brightness(1.03);
+    }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -681,9 +699,9 @@
         padding: 22px;
       }
 
-    .project-card {
-      --project-pad: 22px;
-    }
+      .project-card {
+        --project-pad: 22px;
+      }
     }
 
     @media (max-width: 720px) {
@@ -740,6 +758,7 @@
       </a>
 
       <div class="nav-links">
+        <a href="#pipeline">Pipeline</a>
         <a href="#expertise">Expertise</a>
         <a href="#projects">Projects</a>
         <a href="#background">Background</a>
@@ -845,6 +864,21 @@
   </header>
 
   <main class="container">
+    <section class="section" id="pipeline">
+      <div class="section-head">
+        <div>
+          <h2>Engineering pipeline</h2>
+          <p>
+            A measurement-driven workflow: metrics close the loop back to MATLAB, C++ DSP,
+            fixed-point decisions and RTL rather than treating hardware validation as the final step.
+          </p>
+        </div>
+      </div>
+      <a class="card pipeline-card" href="assets/engineering_pipeline.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the Engineering Pipeline diagram at full size">
+        <img src="assets/engineering_pipeline.svg" alt="Engineering pipeline from Signal and RF through MATLAB, C++ DSP, fixed-point and FPGA verification to BER, EVM, SNR and latency metrics, with feedback to the implementation stages" width="1600" height="800" />
+      </a>
+    </section>
+
     <section class="section" id="expertise">
       <div class="section-head">
         <div>
