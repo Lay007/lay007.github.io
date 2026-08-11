@@ -65,6 +65,7 @@ The website currently includes sections such as:
 The portfolio currently highlights repositories such as:
 
 - [`zynq-sdr-course`](https://github.com/Lay007/zynq-sdr-course) — bilingual SDR course from theory to implementation;
+- [`zynq-lora-phy-positioning`](https://github.com/Lay007/zynq-lora-phy-positioning) — LoRa PHY, generated HDL, and ToA/TDoA positioning;
 - [`network-quality-assessment`](https://github.com/Lay007/network-quality-assessment) — network performance testing with FPGA-based timing concepts;
 - [`script-toolbox`](https://github.com/Lay007/script-toolbox) — practical Windows/SSH/Git automation scripts;
 - [`cpp-dsp-showcase`](https://github.com/Lay007/cpp-dsp-showcase) — C++-focused DSP showcase and compact implementation examples.
