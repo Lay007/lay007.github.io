@@ -1,27 +1,158 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" role="img" aria-labelledby="title desc">
   <title id="title">Engineering Pipeline</title>
-  <desc id="desc">Engineering workflow from Signal/RF through MATLAB, C++ DSP, fixed-point, Verilog/FPGA and verification to metrics, with metrics feeding back into MATLAB, C++ DSP, fixed-point and FPGA implementation.</desc>
+  <desc id="desc">Engineering workflow from Signal and RF through MATLAB, C++ DSP, fixed-point design, Verilog and FPGA, verification, and metrics. Measurement metrics feed back into MATLAB, C++ DSP, fixed-point, and FPGA implementation.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050b14"/><stop offset="0.55" stop-color="#081524"/><stop offset="1" stop-color="#0b1220"/></linearGradient>
-    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b2036"/><stop offset="1" stop-color="#09182a"/></linearGradient>
-    <linearGradient id="metricCard" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#121b3c"/><stop offset="1" stop-color="#21184a"/></linearGradient>
-    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b6cff"/><stop offset="1" stop-color="#df73ff"/></linearGradient>
-    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#93b7dd" stroke-opacity="0.055" stroke-width="1"/></pattern>
-    <marker id="arrowC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#73dcff"/></marker>
-    <marker id="arrowP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#bd75ff"/></marker>
-    <style>text{font-family:Inter,"Segoe UI",Arial,sans-serif}.h1{fill:#f5f8ff;font-size:52px;font-weight:800;letter-spacing:-1px}.legend{fill:#9fb8d7;font-size:19px;font-weight:500}.stage{fill:#f4f7fd;font-size:28px;font-weight:800}.sub{fill:#b8c9dd;font-size:18px;font-weight:500}.num{fill:#f8fbff;font-size:18px;font-weight:800;text-anchor:middle;dominant-baseline:middle}.core{fill:#f2f6ff;font-size:20px;font-weight:800}.core2{fill:#a9bed8;font-size:18px;font-weight:500}.small{fill:#8fa8c5;font-size:16px;font-weight:600}</style>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06101d"/>
+      <stop offset="0.58" stop-color="#09172a"/>
+      <stop offset="1" stop-color="#101b34"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.10" cy="0.08" r="0.70">
+      <stop offset="0" stop-color="#1b75d0" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#1b75d0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.87" cy="0.70" r="0.58">
+      <stop offset="0" stop-color="#7647c9" stop-opacity="0.13"/>
+      <stop offset="1" stop-color="#7647c9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#102640"/>
+      <stop offset="1" stop-color="#0b1a2d"/>
+    </linearGradient>
+    <linearGradient id="metricCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#18234c"/>
+      <stop offset="1" stop-color="#241b4e"/>
+    </linearGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#92b9db" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-25%" width="140%" height="155%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#020812" flood-opacity="0.42"/>
+    </filter>
+    <marker id="arrowC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#70d8ff"/>
+    </marker>
+    <marker id="arrowP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#c67cff"/>
+    </marker>
+    <style>
+      text{font-family:Inter,"Segoe UI",Arial,sans-serif}
+      .h1{fill:#f5f8ff;font-size:52px;font-weight:800;letter-spacing:-1.2px}
+      .subtitle{fill:#b7c8df;font-size:18px;font-weight:500}
+      .stage{fill:#f4f8ff;font-size:27px;font-weight:800;letter-spacing:-0.4px}
+      .sub{fill:#bdcde2;font-size:17px;font-weight:500}
+      .num{fill:#f8fbff;font-size:18px;font-weight:800;text-anchor:middle;dominant-baseline:middle}
+      .core{fill:#f2f6ff;font-size:19px;font-weight:800}
+      .core2{fill:#b8c8dd;font-size:17px;font-weight:500}
+      .feedbackLabel{fill:#d69cff;font-size:14px;font-weight:700;letter-spacing:1.1px}
+    </style>
   </defs>
-  <rect width="1600" height="800" rx="22" fill="url(#bg)"/><rect width="1600" height="800" rx="22" fill="url(#grid)"/><rect x="16" y="16" width="1568" height="768" rx="26" fill="none" stroke="#43617e" stroke-opacity="0.42" stroke-width="1.5"/>
-  <text x="64" y="88" class="h1">Engineering Pipeline</text>
-  <g transform="translate(66 130)"><g><path d="M0 4l12-6 12 6-12 6zM0 12l12 6 12-6M0 20l12 6 12-6" fill="none" stroke="#8cb2df" stroke-width="2"/><text x="40" y="18" class="legend">Model</text></g><g transform="translate(170)"><path d="M5 6l-7 7 7 7M23 6l7 7-7 7M17 2l-8 22" fill="none" stroke="#8cb2df" stroke-width="2" stroke-linecap="round"/><text x="48" y="18" class="legend">Software</text></g><g transform="translate(380)"><rect width="30" height="30" y="-1" rx="7" fill="none" stroke="#8cb2df" stroke-width="2"/><text x="15" y="20" text-anchor="middle" fill="#8cb2df" font-size="18" font-weight="700">fx</text><text x="48" y="18" class="legend">Fixed-point</text></g><g transform="translate(610)"><rect x="3" y="2" width="26" height="26" rx="3" fill="none" stroke="#53b9ff" stroke-width="2"/><path d="M0 8h6M0 14h6M0 20h6M26 8h8M26 14h8M26 20h8M9-2v7M16-2v7M23-2v7M9 25v7M16 25v7M23 25v7" stroke="#53b9ff" stroke-width="2"/><text x="48" y="18" class="legend">FPGA</text></g><g transform="translate(790)"><path d="M0 18c12-22 18 20 30-3s18 20 30-8" fill="none" stroke="#8cb2df" stroke-width="2"/><text x="78" y="18" class="legend">Measurement</text></g><g transform="translate(1090)"><path d="M0 27V15h7v12M12 27V7h7v20M24 27V0h7v27" fill="none" stroke="#8cb2df" stroke-width="2"/><text x="48" y="18" class="legend">Metrics</text></g></g>
-  <path d="M430 315H490M830 315H890M1230 315H1290" stroke="#73dcff" stroke-width="3" marker-end="url(#arrowC)"/><path d="M1410 405V445H410V458" fill="none" stroke="#73dcff" stroke-opacity="0.72" stroke-width="2.5" marker-end="url(#arrowC)"/><path d="M570 575H655M1015 575H1110" stroke="#73dcff" stroke-width="3" marker-end="url(#arrowC)"/>
-  <g><rect x="70" y="225" width="360" height="180" rx="22" fill="url(#card)" stroke="#55c8ff" stroke-width="2"/><circle cx="115" cy="225" r="27" fill="#0b3150" stroke="#55c8ff" stroke-width="2"/><text x="115" y="225" class="num">01</text><path d="M330 278c18-30 30 30 48 0s30 30 48 0" fill="none" stroke="#cdeaff" stroke-width="3" stroke-linecap="round"/><text x="250" y="325" class="stage" text-anchor="middle">Signal / RF</text><text x="250" y="360" class="sub" text-anchor="middle">problem definition</text></g>
-  <g><rect x="490" y="225" width="340" height="180" rx="22" fill="url(#card)" stroke="#55c8ff" stroke-width="2"/><circle cx="535" cy="225" r="27" fill="#0b3150" stroke="#55c8ff" stroke-width="2"/><text x="535" y="225" class="num">02</text><rect x="735" y="242" width="66" height="54" rx="9" fill="#0d1d35" stroke="#4eaef1" stroke-width="2"/><path d="M748 282l11-15 10 7 14-21" fill="none" stroke="#be7aff" stroke-width="3"/><text x="660" y="325" class="stage" text-anchor="middle">MATLAB</text><text x="660" y="360" class="sub" text-anchor="middle">golden reference</text></g>
-  <g><rect x="890" y="225" width="340" height="180" rx="22" fill="url(#card)" stroke="#55c8ff" stroke-width="2"/><circle cx="935" cy="225" r="27" fill="#0b3150" stroke="#55c8ff" stroke-width="2"/><text x="935" y="225" class="num">03</text><rect x="1134" y="242" width="66" height="54" rx="9" fill="#0d1d35" stroke="#4eaef1" stroke-width="2"/><text x="1167" y="277" fill="#d8f3ff" font-size="23" font-weight="800" text-anchor="middle">&lt;/&gt;</text><text x="1060" y="325" class="stage" text-anchor="middle">C++ DSP</text><text x="1060" y="360" class="sub" text-anchor="middle">tests and benchmarks</text></g>
-  <g><rect x="1290" y="225" width="240" height="180" rx="22" fill="url(#card)" stroke="#55c8ff" stroke-width="2"/><circle cx="1335" cy="225" r="27" fill="#0b3150" stroke="#55c8ff" stroke-width="2"/><text x="1335" y="225" class="num">04</text><rect x="1450" y="242" width="54" height="54" rx="9" fill="#15162f" stroke="#c46cf5" stroke-width="2"/><text x="1477" y="277" fill="#d98cff" font-size="23" font-style="italic" font-weight="800" text-anchor="middle">fx</text><text x="1410" y="325" class="stage" text-anchor="middle">Fixed-point</text><text x="1410" y="360" class="sub" text-anchor="middle">word length &amp; scaling</text></g>
-  <g><rect x="250" y="485" width="320" height="180" rx="22" fill="url(#card)" stroke="#55c8ff" stroke-width="2"/><circle cx="295" cy="485" r="27" fill="#0b3150" stroke="#55c8ff" stroke-width="2"/><text x="295" y="485" class="num">05</text><rect x="487" y="504" width="56" height="50" rx="9" fill="#0c2236" stroke="#4eaef1" stroke-width="2"/><rect x="503" y="517" width="24" height="24" rx="2" fill="none" stroke="#76dfff" stroke-width="2"/><text x="410" y="585" class="stage" text-anchor="middle">Verilog / FPGA</text><text x="410" y="620" class="sub" text-anchor="middle">streaming RTL</text></g>
-  <g><rect x="655" y="485" width="360" height="180" rx="22" fill="url(#card)" stroke="#55c8ff" stroke-width="2"/><circle cx="700" cy="485" r="27" fill="#0b3150" stroke="#55c8ff" stroke-width="2"/><text x="700" y="485" class="num">06</text><rect x="930" y="504" width="58" height="50" rx="9" fill="#0c2236" stroke="#4eaef1" stroke-width="2"/><path d="M938 530c8-18 14 18 22 0s14 18 22 0" fill="none" stroke="#7de8d7" stroke-width="3" stroke-linecap="round"/><text x="835" y="585" class="stage" text-anchor="middle">Verification</text><text x="835" y="620" class="sub" text-anchor="middle">model / C++ / RTL / HIL</text></g>
-  <g><rect x="1110" y="485" width="360" height="180" rx="22" fill="url(#metricCard)" stroke="#b16cff" stroke-width="2"/><circle cx="1155" cy="485" r="27" fill="#2a2058" stroke="#bd75ff" stroke-width="2"/><text x="1155" y="485" class="num">07</text><rect x="1370" y="504" width="70" height="50" rx="9" fill="#1a1534" stroke="#b96cff" stroke-width="2"/><path d="M1386 542v-13h8v13M1400 542v-24h8v24M1414 542v-34h8v34" fill="none" stroke="#d576ff" stroke-width="2.5"/><text x="1290" y="585" class="stage" text-anchor="middle">Metrics</text><text x="1290" y="620" class="sub" text-anchor="middle">BER / EVM / SNR / latency</text></g>
-  <path d="M1290 665V706H405M1290 706H1550" fill="none" stroke="url(#purple)" stroke-width="2.6" stroke-dasharray="9 8" opacity="0.9"/><path d="M405 706V665" fill="none" stroke="#bd75ff" stroke-width="2.6" marker-end="url(#arrowP)"/><path d="M660 706V405" fill="none" stroke="#bd75ff" stroke-width="2.6" marker-end="url(#arrowP)"/><path d="M1060 706V405" fill="none" stroke="#bd75ff" stroke-width="2.6" marker-end="url(#arrowP)"/><path d="M1550 706V315H1530" fill="none" stroke="#bd75ff" stroke-width="2.6" marker-end="url(#arrowP)"/><text x="842" y="733" class="small" text-anchor="middle">measurement feedback → refine model, software, quantization and RTL</text>
-  <rect x="285" y="748" width="1030" height="38" rx="13" fill="#08111e" fill-opacity="0.92" stroke="#405a74" stroke-opacity="0.75"/><text x="320" y="773" class="core">Core idea:</text><text x="424" y="773" class="core2">keep algorithms, software, hardware and measurements aligned by reproducible evidence.</text>
+
+  <rect width="1600" height="800" rx="24" fill="url(#bg)"/>
+  <rect width="1600" height="800" rx="24" fill="url(#glowA)"/>
+  <rect width="1600" height="800" rx="24" fill="url(#glowB)"/>
+  <rect width="1600" height="800" rx="24" fill="url(#grid)"/>
+  <rect x="24" y="24" width="1552" height="752" rx="28" fill="none" stroke="#4c80a8" stroke-opacity="0.62" stroke-width="1.6"/>
+
+  <text x="66" y="82" class="h1">Engineering Pipeline</text>
+  <text x="68" y="118" class="subtitle">model → software → fixed-point → FPGA → measurement → metrics</text>
+
+  <g fill="none" stroke="#70d8ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M420 285H470" marker-end="url(#arrowC)"/>
+    <path d="M800 285H850" marker-end="url(#arrowC)"/>
+    <path d="M1180 285H1230" marker-end="url(#arrowC)"/>
+    <path d="M1370 360V418H200V575H240" marker-end="url(#arrowC)"/>
+    <path d="M590 575H650" marker-end="url(#arrowC)"/>
+    <path d="M1000 575H1060" marker-end="url(#arrowC)"/>
+  </g>
+
+  <g fill="none" stroke="#c67cff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="9 8">
+    <path d="M1375 610H1470V456H300"/>
+    <path d="M610 456V360" marker-end="url(#arrowP)"/>
+    <path d="M990 456V360" marker-end="url(#arrowP)"/>
+    <path d="M1320 456V360" marker-end="url(#arrowP)"/>
+    <path d="M300 456V500" marker-end="url(#arrowP)"/>
+  </g>
+  <text x="1410" y="445" class="feedbackLabel">FEEDBACK</text>
+
+  <g filter="url(#shadow)">
+    <rect x="80" y="210" width="340" height="150" rx="23" fill="url(#card)" stroke="#59cbff" stroke-width="2.2"/>
+    <circle cx="122" cy="210" r="25" fill="#10405f" stroke="#70dcff" stroke-width="2.2"/>
+    <text x="122" y="210" class="num">01</text>
+    <path d="M320 258c14-24 26 24 40 0s26 24 40 0" fill="none" stroke="#b9e9ff" stroke-width="3.2" stroke-linecap="round"/>
+    <text x="250" y="296" class="stage" text-anchor="middle">Signal / RF</text>
+    <text x="250" y="326" class="sub" text-anchor="middle">problem definition</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="470" y="210" width="330" height="150" rx="23" fill="url(#card)" stroke="#59cbff" stroke-width="2.2"/>
+    <circle cx="512" cy="210" r="25" fill="#10405f" stroke="#70dcff" stroke-width="2.2"/>
+    <text x="512" y="210" class="num">02</text>
+    <rect x="700" y="226" width="62" height="50" rx="10" fill="#0d1d34" stroke="#71d9ff" stroke-width="2"/>
+    <path d="M712 264l12-13 10 6 15-20" fill="none" stroke="#c17aff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M710 267h42M710 267v-30" fill="none" stroke="#6abfe8" stroke-width="1.6" opacity="0.9"/>
+    <text x="635" y="296" class="stage" text-anchor="middle">MATLAB</text>
+    <text x="635" y="326" class="sub" text-anchor="middle">golden reference</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="850" y="210" width="330" height="150" rx="23" fill="url(#card)" stroke="#59cbff" stroke-width="2.2"/>
+    <circle cx="892" cy="210" r="25" fill="#10405f" stroke="#70dcff" stroke-width="2.2"/>
+    <text x="892" y="210" class="num">03</text>
+    <rect x="1085" y="227" width="60" height="48" rx="10" fill="#0d1d34" stroke="#71d9ff" stroke-width="2"/>
+    <text x="1115" y="259" fill="#e4f6ff" font-size="22" font-weight="800" text-anchor="middle">&lt;/&gt;</text>
+    <text x="1015" y="296" class="stage" text-anchor="middle">C++ DSP</text>
+    <text x="1015" y="326" class="sub" text-anchor="middle">tests and benchmarks</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1230" y="210" width="280" height="150" rx="23" fill="url(#card)" stroke="#59cbff" stroke-width="2.2"/>
+    <circle cx="1272" cy="210" r="25" fill="#10405f" stroke="#70dcff" stroke-width="2.2"/>
+    <text x="1272" y="210" class="num">04</text>
+    <rect x="1434" y="226" width="50" height="50" rx="10" fill="#171630" stroke="#cf78ff" stroke-width="2"/>
+    <text x="1459" y="260" fill="#df9aff" font-size="25" font-style="italic" font-weight="800" text-anchor="middle">fx</text>
+    <text x="1370" y="296" class="stage" text-anchor="middle">Fixed-point</text>
+    <text x="1370" y="326" class="sub" text-anchor="middle">word length &amp; scaling</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="240" y="500" width="350" height="150" rx="23" fill="url(#card)" stroke="#59cbff" stroke-width="2.2"/>
+    <circle cx="282" cy="500" r="25" fill="#10405f" stroke="#70dcff" stroke-width="2.2"/>
+    <text x="282" y="500" class="num">05</text>
+    <rect x="505" y="516" width="56" height="50" rx="10" fill="#0d2238" stroke="#71d9ff" stroke-width="2"/>
+    <rect x="522" y="529" width="22" height="22" rx="2" fill="none" stroke="#66bfff" stroke-width="2"/>
+    <path d="M533 520v9M533 551v9M513 540h9M544 540h9" stroke="#66bfff" stroke-width="2" stroke-linecap="round"/>
+    <text x="415" y="586" class="stage" text-anchor="middle">Verilog / FPGA</text>
+    <text x="415" y="616" class="sub" text-anchor="middle">streaming RTL</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="650" y="500" width="350" height="150" rx="23" fill="url(#card)" stroke="#59cbff" stroke-width="2.2"/>
+    <circle cx="692" cy="500" r="25" fill="#10405f" stroke="#70dcff" stroke-width="2.2"/>
+    <text x="692" y="500" class="num">06</text>
+    <rect x="910" y="516" width="62" height="50" rx="10" fill="#0c2633" stroke="#74e4d0" stroke-width="2"/>
+    <path d="M920 543c8-16 14 16 22 0s14 16 22 0" fill="none" stroke="#8ef0dc" stroke-width="3" stroke-linecap="round"/>
+    <text x="825" y="586" class="stage" text-anchor="middle">Verification</text>
+    <text x="825" y="616" class="sub" text-anchor="middle">model / C++ / RTL / HIL</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1060" y="500" width="315" height="150" rx="23" fill="url(#metricCard)" stroke="#c17aff" stroke-width="2.2"/>
+    <circle cx="1102" cy="500" r="25" fill="#342561" stroke="#d08cff" stroke-width="2.2"/>
+    <text x="1102" y="500" class="num">07</text>
+    <rect x="1284" y="516" width="62" height="50" rx="10" fill="#1b1738" stroke="#ce7cff" stroke-width="2"/>
+    <path d="M1298 554v-15M1310 554v-28M1322 554v-20M1334 554v-36" fill="none" stroke="#dc86ff" stroke-width="2.8" stroke-linecap="round"/>
+    <path d="M1294 554h44" stroke="#8bcfff" stroke-width="1.6" opacity="0.85"/>
+    <text x="1218" y="586" class="stage" text-anchor="middle">Metrics</text>
+    <text x="1218" y="616" class="sub" text-anchor="middle">BER / EVM / SNR / latency</text>
+  </g>
+
+  <g>
+    <rect x="340" y="700" width="920" height="54" rx="16" fill="#081321" fill-opacity="0.88" stroke="#416785" stroke-opacity="0.78" stroke-width="1.5"/>
+    <circle cx="382" cy="727" r="12" fill="none" stroke="#76b9ff" stroke-width="2"/>
+    <circle cx="382" cy="727" r="3.8" fill="#76b9ff"/>
+    <path d="M382 709v8M382 737v8M364 727h8M392 727h8" stroke="#76b9ff" stroke-width="2" stroke-linecap="round"/>
+    <text x="420" y="733" class="core">Core idea:</text>
+    <text x="524" y="733" class="core2">keep algorithms, software, hardware and measurements aligned by reproducible evidence.</text>
+  </g>
 </svg>
