@@ -488,9 +488,31 @@
     }
 
     .project-card {
+      --project-pad: 24px;
       display: flex;
       flex-direction: column;
       gap: 14px;
+    }
+
+    .project-cover {
+      display: block;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      margin: calc(var(--project-pad) * -1) calc(var(--project-pad) * -1) 4px;
+      border-bottom: 1px solid var(--line);
+      background: #07101d;
+    }
+
+    .project-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .project-cover:hover img {
+      transform: scale(1.02);
+      filter: brightness(1.05);
     }
 
     .project-top {
@@ -658,6 +680,10 @@
       .contact-card {
         padding: 22px;
       }
+
+    .project-card {
+      --project-pad: 22px;
+    }
     }
 
     @media (max-width: 720px) {
@@ -870,6 +896,9 @@
 
       <div class="grid-2">
         <article class="card project-card featured">
+          <a class="project-cover" href="https://github.com/Lay007/zynq-sdr-course" target="_blank" rel="noopener noreferrer" aria-label="Open zynq-sdr-course on GitHub">
+            <img src="assets/projects/zynq-sdr-course.webp" alt="zynq-sdr-course engineering pipeline from model and RTL to Zynq SDR hardware and RF measurement" loading="lazy" width="480" height="270" />
+          </a>
           <div class="project-top">
             <div>
               <h3>zynq-sdr-course</h3>
@@ -887,6 +916,9 @@
         </article>
 
         <article class="card project-card featured">
+          <a class="project-cover" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer" aria-label="Open zynq-lora-phy-positioning on GitHub">
+            <img src="assets/projects/zynq-lora-phy-positioning.webp" alt="zynq-lora-phy-positioning LoRa PHY pipeline from MATLAB and Simulink to Verilog, ZynqSDR and TDoA positioning" loading="lazy" width="480" height="270" />
+          </a>
           <div class="project-top">
             <div>
               <h3>zynq-lora-phy-positioning</h3>
