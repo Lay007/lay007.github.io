@@ -2,8 +2,10 @@ name: Add contact email
 
 on:
   push:
+    branches: [main]
     paths:
-      - .github/workflows/add-contact-email.yml
+      - ".github/workflows/add-contact-email.yml"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -11,14 +13,18 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - name: Add email to contact section and JSON-LD
+      - name: Update contact email
+        shell: bash
         run: |
-          python - <<'PY'
+          python3 <<'PY'
           from pathlib import Path
 
           path = Path("index.html")
@@ -26,7 +32,8 @@ jobs:
 
           if '"email": "mailto:laymob@gmail.com"' not in text:
               marker = '      "url": "https://lay007.github.io/",\n'
-              assert marker in text, "JSON-LD URL marker not found"
+              if marker not in text:
+                  raise SystemExit("JSON-LD marker not found")
               text = text.replace(
                   marker,
                   marker + '      "email": "mailto:laymob@gmail.com",\n',
@@ -35,27 +42,29 @@ jobs:
 
           if 'href="mailto:laymob@gmail.com"' not in text:
               marker = '          <div class="contact-links">\n'
-              assert marker in text, "contact links marker not found"
-              email_link = '''            <a class="contact-link" href="mailto:laymob@gmail.com">
-              <div>
-                <strong>Email</strong>
-                <small>laymob@gmail.com</small>
-              </div>
-              <span>↗</span>
-            </a>
-
-'''
+              if marker not in text:
+                  raise SystemExit("Contact marker not found")
+              email_link = (
+                  '            <a class="contact-link" href="mailto:laymob@gmail.com">\n'
+                  '              <div>\n'
+                  '                <strong>Email</strong>\n'
+                  '                <small>laymob@gmail.com</small>\n'
+                  '              </div>\n'
+                  '              <span>↗</span>\n'
+                  '            </a>\n\n'
+              )
               text = text.replace(marker, marker + email_link, 1)
 
           path.write_text(text, encoding="utf-8")
           PY
 
-      - name: Validate email insertion
+      - name: Validate
         run: |
-          grep -q 'mailto:laymob@gmail.com' index.html
+          grep -q 'href="mailto:laymob@gmail.com"' index.html
           grep -q '"email": "mailto:laymob@gmail.com"' index.html
+          python tools/check_site.py
 
-      - name: Commit update and remove one-off workflow
+      - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
