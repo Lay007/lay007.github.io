@@ -25,6 +25,28 @@ Repository: https://github.com/Lay007/zynq-sdr-course
 
 ---
 
+## zynq-lora-phy-positioning
+
+**Role:** LoRa PHY, FPGA timestamping, and positioning research platform on ZynqSDR.
+
+**Engineering proof:**
+
+- MATLAB/Simulink golden model and fixed-point regressions;
+- generated and hand-written HDL integration with self-checking RTL tests;
+- LoRa PHY Inspector for synthetic, HDL-generated, and recorded IQ evidence;
+- Zynq/AD936x board integration with routed timing and boot evidence;
+- coarse/fractional ToA path and roadmap toward calibrated TDoA positioning.
+
+**Engineering chain:**
+
+```text
+LoRa model -> fixed-point -> HDL -> ZynqSDR -> IQ/metadata -> ToA -> TDoA
+```
+
+Repository: https://github.com/Lay007/zynq-lora-phy-positioning
+
+---
+
 ## cpp-dsp-showcase
 
 **Role:** compact production-style C++ DSP showcase.
