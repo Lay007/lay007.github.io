@@ -1,158 +1,96 @@
 # lay007.github.io
 
+[![Site check](https://github.com/Lay007/lay007.github.io/actions/workflows/site-check.yml/badge.svg)](https://github.com/Lay007/lay007.github.io/actions/workflows/site-check.yml)
+
 Personal engineering website and portfolio for **Alexander / Lay007**.
 
-This repository contains the source of the public GitHub Pages site used as a concise professional landing page for work related to:
+- Live site: [lay007.github.io](https://lay007.github.io/)
+- Fast reviewer path: [10-minute engineering portfolio review](https://lay007.github.io/portfolio-review.html)
+
+---
+
+## What the site covers
 
 - **digital signal processing (DSP)**
 - **FPGA-oriented engineering**
-- **communications and telemetry systems**
+- **SDR, communications and telemetry systems**
 - **circuit design and applied electronics**
 - **engineering software and technical R&D**
 
-Live site: [lay007.github.io](https://lay007.github.io/)
-
-Fast review page: [10-minute engineering portfolio review](https://lay007.github.io/portfolio-review.html)
+The site is evidence-oriented: every project card names the repository documents a reviewer should open first, and the review page states current limits next to the results.
 
 ---
 
-## Overview
+## Pages
 
-The website is designed as a clean, professional portfolio that presents:
-
-- core engineering positioning;
-- technical expertise and domains of work;
-- selected GitHub projects;
-- a fast 10-minute reviewer path;
-- academic and applied background;
-- contact points for collaboration and professional communication.
-
-The current visual direction is intentionally restrained and technical: modern dark UI, strong first-screen positioning, clear project presentation, and a more premium engineering tone rather than a generic personal homepage.
-
----
-
-## What this repository is for
-
-This repository is the source for my **GitHub Pages business card / portfolio website**.
-
-Its purpose is to:
-
-- present my engineering profile in a clear public format;
-- provide a single landing page for GitHub visitors;
-- provide a fast reviewer page for technical screening;
-- highlight practical areas of expertise;
-- connect visitors to selected repositories and contact channels;
-- keep the site lightweight, fast, and easy to maintain.
-
----
-
-## Main sections of the site
-
-The website currently includes sections such as:
-
-- **Hero / intro** — primary positioning and short engineering summary;
-- **Core expertise** — DSP, FPGA, communications, secure engineering, circuit design;
-- **Selected projects** — representative repositories;
-- **Portfolio review page** — fast route through proof artifacts;
-- **Background** — degree, teaching, publications, inventions and patents;
-- **Toolchain & platforms** — major languages, tools, and vendor ecosystems;
-- **Contact** — GitHub, website, Telegram.
+| Page | Purpose |
+|---|---|
+| `index.html` | Main portfolio: positioning, engineering pipeline, expertise, selected projects, background, toolchain and contacts |
+| `portfolio-review.html` | 10-minute reviewer path: what to open first in each repository, evidence links and current limits |
+| `404.html` | GitHub Pages not-found page (not indexed) |
 
 ---
 
 ## Selected projects featured on the site
 
-The portfolio currently highlights repositories such as:
-
-- [`zynq-sdr-course`](https://github.com/Lay007/zynq-sdr-course) — bilingual SDR course from theory to implementation;
+- [`zynq-sdr-course`](https://github.com/Lay007/zynq-sdr-course) — bilingual SDR course from DSP models to Zynq RF measurements;
 - [`zynq-lora-phy-positioning`](https://github.com/Lay007/zynq-lora-phy-positioning) — LoRa PHY, generated HDL, and ToA/TDoA positioning;
-- [`network-quality-assessment`](https://github.com/Lay007/network-quality-assessment) — network performance testing with FPGA-based timing concepts;
-- [`script-toolbox`](https://github.com/Lay007/script-toolbox) — practical Windows/SSH/Git automation scripts;
-- [`cpp-dsp-showcase`](https://github.com/Lay007/cpp-dsp-showcase) — C++-focused DSP showcase and compact implementation examples.
+- [`cpp-dsp-showcase`](https://github.com/Lay007/cpp-dsp-showcase) — C++17 DSP kernels with deterministic tests and benchmarks;
+- [`network-quality-assessment`](https://github.com/Lay007/network-quality-assessment) — network SLA measurement with FPGA timestamping concepts;
+- [`script-toolbox`](https://github.com/Lay007/script-toolbox) — Windows/SSH/Git automation with PowerShell quality gates.
+
+Only public repositories are linked. `optical-demodulator` is still private and is described in [docs/projects.md](docs/projects.md) without a link.
 
 ---
 
 ## Technology
 
-The site is intentionally simple and dependable.
+The site is intentionally simple and dependable:
 
-Current approach:
-
-- **plain HTML**;
-- **embedded CSS**;
-- minimal JavaScript;
-- Open Graph and Twitter card metadata;
-- JSON-LD structured data;
-- static `robots.txt` and `sitemap.xml`;
-- no heavy frontend framework;
-- suitable for direct GitHub Pages hosting.
-
-This keeps the website:
-
-- easy to edit;
-- easy to publish;
-- easy to clone and preview locally;
-- independent from external build tooling.
-
----
-
-## Browser icon
-
-The site includes a small branded SVG favicon:
-
-```text
-favicon.svg
-```
-
-The icon uses a compact `L7` / signal-wave / FPGA-grid motif so it remains readable at small browser-tab sizes while matching the dark technical visual style of the landing page.
+- plain HTML pages with one shared stylesheet, `assets/css/site.css`;
+- minimal JavaScript (footer year only);
+- Open Graph and Twitter card metadata, JSON-LD structured data;
+- `robots.txt`, `sitemap.xml` and a custom `404.html`;
+- no framework and no build step: GitHub Pages serves the repository as is (`.nojekyll`).
 
 ---
 
 ## Repository structure
 
-Typical structure is intentionally minimal:
-
 ```text
 lay007.github.io/
-|- assets/
-|  `- social-preview.png
-|- favicon.svg
-|- index.html
-|- portfolio-review.html
-|- content-update-checklist.md
+|- index.html                          main portfolio page
+|- portfolio-review.html               10-minute reviewer path
+|- 404.html                            not-found page
+|- favicon.svg                         L7 / signal-wave favicon
 |- robots.txt
 |- sitemap.xml
-`- README.md
-```
-
-If the site grows later, the repository can be expanded with:
-
-```text
-lay007.github.io/
-├─ index.html
-├─ portfolio-review.html
-├─ favicon.svg
-├─ assets/
-│  ├─ css/
-│  ├─ js/
-│  └─ img/
-├─ docs/
-└─ README.md
+|- assets/
+|  |- css/site.css                     shared styles
+|  |- engineering_pipeline.svg         pipeline diagram (desktop)
+|  |- engineering_pipeline_mobile.svg  pipeline diagram (phones)
+|  |- projects/                        project cover images
+|  |- social-preview.png               Open Graph image (rendered)
+|  `- apple-touch-icon.png             touch icon (rendered)
+|- docs/
+|  |- content-update-checklist.md
+|  |- engineering-proof.md
+|  |- projects.md
+|  `- research.md
+|- tools/
+|  |- check_site.py                    static site validator
+|  |- render_assets.py                 renders PNG assets with headless Chromium
+|  `- social-preview.html              source of social-preview.png
+|- tests/
+|  `- test_site_validator.py
+`- .github/workflows/
+   |- site-check.yml                   validator and tests on push and pull request
+   `- link-check.yml                   weekly external link check (lychee)
 ```
 
 ---
 
 ## Local preview
-
-Because the site is static, local preview is straightforward.
-
-### Option 1 — open directly
-
-Open `index.html` or `portfolio-review.html` in a browser.
-
-### Option 2 — run a lightweight local server
-
-Using Python:
 
 ```bash
 python -m http.server 8000
@@ -165,26 +103,58 @@ http://localhost:8000
 http://localhost:8000/portfolio-review.html
 ```
 
+`index.html` and `portfolio-review.html` also work when opened directly from disk; `404.html` uses root-relative paths and needs the server.
+
+---
+
+## Validation
+
+```bash
+python -m unittest discover -s tests -p "test_site_validator.py" -v
+python tools/check_site.py
+```
+
+The validator checks every HTML page in the repository root for:
+
+- local links, images, `srcset` sources and `#anchor` targets;
+- own-domain absolute URLs (canonical, `og:image`) mapped to repository files;
+- `lang`, title, description, canonical and social metadata on indexable pages;
+- valid JSON-LD, `alt` attributes on images, `rel="noopener"` on `target="_blank"` links;
+- sitemap coverage (every indexable page listed, no missing or `noindex` pages) and the `robots.txt` sitemap directive.
+
+External links are checked weekly by `link-check.yml`; the workflow can also be started manually from the Actions tab.
+
+---
+
+## Rendered assets
+
+`assets/social-preview.png` and `assets/apple-touch-icon.png` are generated from `tools/social-preview.html` and `favicon.svg`:
+
+```bash
+python -m pip install pillow
+python tools/render_assets.py
+```
+
+The script needs Microsoft Edge, Google Chrome or Chromium. Set `CHROME_PATH` if the browser is not found.
+
 ---
 
 ## Editing workflow
 
-Typical update flow:
+1. Review [docs/content-update-checklist.md](docs/content-update-checklist.md).
+2. Edit the page and, if needed, `assets/css/site.css`.
+3. Run the validation commands.
+4. Update `lastmod` in `sitemap.xml` for changed pages.
+5. Commit, push to `main`, and wait for GitHub Pages to publish the update.
 
-1. Review [content-update-checklist.md](content-update-checklist.md)
-2. Edit `index.html` or `portfolio-review.html`
-3. Refresh local preview
-4. Commit changes
-5. Push to `main`
-6. Wait for GitHub Pages to publish the update
+---
 
-Example:
+## Documentation
 
-```bash
-git add index.html portfolio-review.html assets/social-preview.png robots.txt sitemap.xml README.md content-update-checklist.md
-git commit -m "Update portfolio site"
-git push origin main
-```
+- [Projects and proof assets](docs/projects.md)
+- [Engineering proof matrix and site status](docs/engineering-proof.md)
+- [Research focus](docs/research.md)
+- [Content update checklist](docs/content-update-checklist.md)
 
 ---
 

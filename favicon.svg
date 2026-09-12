@@ -13,7 +13,7 @@
   <rect x="4" y="4" width="56" height="56" rx="16" fill="#08111f"/>
   <rect x="5.5" y="5.5" width="53" height="53" rx="14.5" fill="url(#bg)" opacity="0.22" stroke="#4fa1ff" stroke-width="3"/>
   <path d="M13 42 C18 30, 23 30, 28 42 S38 54, 51 27" fill="none" stroke="url(#wave)" stroke-width="5" stroke-linecap="round"/>
-  <path d="M16 20 H29 V25 H22 V43 H16 Z" fill="#eef4ff"/>
+  <path d="M16 20 H22 V38 H29 V43 H16 Z" fill="#eef4ff"/>
   <path d="M34 20 H50 V25 L41 44 H35 L44 25 H34 Z" fill="#eef4ff"/>
   <g opacity="0.38" stroke="#eef4ff" stroke-width="1">
     <path d="M12 12 H52"/>

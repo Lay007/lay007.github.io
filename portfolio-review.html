@@ -4,61 +4,203 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>10-minute engineering portfolio review | Alexander lay007</title>
-  <meta name="description" content="A fast review path through Alexander lay007 engineering portfolio: DSP, FPGA, SDR, C++, optical DSP, network measurement and automation projects." />
+  <meta name="description" content="A fast review path through Alexander lay007 engineering portfolio: SDR, LoRa PHY, FPGA, C++ DSP, network measurement and automation projects, with evidence links and current limits." />
+  <meta name="author" content="Alexander | lay007" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#08111f" />
   <link rel="canonical" href="https://lay007.github.io/portfolio-review.html" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <style>
-    :root { color-scheme: dark; --bg:#08111f; --surface:#0d1930; --text:#eef4ff; --muted:#9eb0cb; --line:rgba(255,255,255,.12); --primary:#4fa1ff; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: Inter, Segoe UI, Roboto, Arial, sans-serif; line-height:1.6; background: radial-gradient(circle at 15% 10%, rgba(79,161,255,.18), transparent 30%), var(--bg); color:var(--text); }
-    main { width:min(92%, 1060px); margin:0 auto; padding:48px 0 64px; }
-    a { color:#cfe6ff; text-decoration:none; }
-    a:hover { color:white; }
-    .back { color:var(--muted); font-weight:700; }
-    h1 { font-size:clamp(2.2rem, 5vw, 4rem); line-height:1; margin:28px 0 16px; letter-spacing:-.04em; }
-    .lead { max-width:780px; color:#d8e6ff; font-size:1.12rem; }
-    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:28px; }
-    .card { padding:24px; border:1px solid var(--line); border-radius:22px; background:linear-gradient(180deg, rgba(13,25,48,.94), rgba(8,17,31,.92)); }
-    .card h2, .card h3 { margin:0 0 10px; }
-    .card p { margin:0; color:var(--muted); }
-    .tag { display:inline-block; margin:0 8px 8px 0; padding:5px 10px; border:1px solid rgba(79,161,255,.18); border-radius:999px; color:#cbe1ff; background:rgba(79,161,255,.10); font-size:.85rem; font-weight:700; }
-    table { width:100%; border-collapse:collapse; margin-top:18px; overflow:hidden; border-radius:16px; }
-    th, td { padding:14px; border-bottom:1px solid var(--line); vertical-align:top; text-align:left; }
-    th { color:#dff0ff; background:rgba(255,255,255,.04); }
-    td { color:var(--muted); }
-    @media (max-width:760px){ .grid{grid-template-columns:1fr;} th,td{display:block;} }
-  </style>
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <meta property="og:site_name" content="lay007 engineering portfolio" />
+  <meta property="og:title" content="10-minute engineering portfolio review | Alexander lay007" />
+  <meta property="og:description" content="What to open first across five public DSP, FPGA, SDR and measurement repositories — with evidence links and current limits." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://lay007.github.io/portfolio-review.html" />
+  <meta property="og:image" content="https://lay007.github.io/assets/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Alexander lay007 engineering portfolio: DSP, FPGA and communications projects" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="10-minute engineering portfolio review | Alexander lay007" />
+  <meta name="twitter:description" content="What to open first across five public DSP, FPGA, SDR and measurement repositories." />
+  <meta name="twitter:image" content="https://lay007.github.io/assets/social-preview.png" />
+  <meta name="twitter:image:alt" content="Alexander lay007 engineering portfolio: DSP, FPGA and communications projects" />
 </head>
 <body>
-  <main>
-    <a class="back" href="/">← Back to portfolio</a>
-    <h1>10-minute engineering portfolio review</h1>
-    <p class="lead">A compact path for reviewers, recruiters and collaborators who want to evaluate practical DSP, FPGA, SDR, C++ and measurement-system evidence without reading every repository first.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <section class="grid" aria-label="Portfolio highlights">
-      <article class="card"><h2>Core signal</h2><p>Model-to-measurement engineering: MATLAB/Simulink references, C++ implementations, fixed-point notes, Verilog/FPGA architecture, IQ captures, metrics and reports.</p></article>
-      <article class="card"><h2>Review target</h2><p>Look for reproducibility: commands, tests, manifests, plots, generated reports, evidence indexes and honest limitations.</p></article>
+  <header class="nav-wrap">
+    <nav class="container nav" aria-label="Primary">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">AL</span>
+        <span class="brand-text">
+          <span>Alexander | lay007</span>
+          <span class="muted">DSP • FPGA • Communications</span>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html#pipeline">Pipeline</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="#steps">Review steps</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="index.html">Full portfolio</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <section class="page-hero">
+      <a class="text-link" href="index.html">← Back to portfolio</a>
+      <h1>10-minute engineering portfolio review</h1>
+      <p class="lead">A compact path for reviewers, recruiters and collaborators who want to evaluate practical DSP, FPGA, SDR, C++ and measurement-system evidence without reading every repository first.</p>
     </section>
 
-    <section class="card" style="margin-top:18px;">
+    <section class="grid-2" aria-label="Portfolio highlights">
+      <article class="card review-card">
+        <h2>Core signal</h2>
+        <p>Model-to-measurement engineering: MATLAB/Simulink references, C++ implementations, fixed-point notes, Verilog/FPGA architecture, IQ captures, metrics and reports.</p>
+      </article>
+      <article class="card review-card">
+        <h2>Review target</h2>
+        <p>Look for reproducibility: commands, tests, manifests, plots, generated reports, evidence indexes and honest limitations.</p>
+      </article>
+    </section>
+
+    <section class="card review-card" id="steps">
       <h2>Open these first</h2>
-      <table>
-        <thead><tr><th>Step</th><th>Repository</th><th>What to check</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td><a href="https://github.com/Lay007/zynq-sdr-course">zynq-sdr-course</a></td><td>End-to-end SDR course path from DSP model to HDL, Zynq/AD9363, RF/IQ data and measurement reports.</td></tr>
-          <tr><td>2</td><td><a href="https://github.com/Lay007/zynq-lora-phy-positioning">zynq-lora-phy-positioning</a></td><td>LoRa PHY from MATLAB and real SX1262 IQ through fixed-point Simulink, generated HDL, ToA and calibrated TDoA.</td></tr>
-          <tr><td>3</td><td><a href="https://github.com/Lay007/cpp-dsp-showcase">cpp-dsp-showcase</a></td><td>C++17 DSP kernels with deterministic tests, benchmark tooling and CMake packaging.</td></tr>
-          <tr><td>4</td><td><a href="https://github.com/Lay007/network-quality-assessment">network-quality-assessment</a></td><td>Timestamp credibility, SLA trace schema and synthetic report generation for latency/jitter analysis.</td></tr>
-          <tr><td>5</td><td><a href="https://github.com/Lay007/script-toolbox">script-toolbox</a></td><td>Repeatable Windows/SSH/Git setup automation with PowerShell quality gates and safety notes.</td></tr>
-        </tbody>
-      </table>
+      <p>About ten minutes in total. Each row names what to check, the evidence to open and the current limit.</p>
+      <div class="table-wrap">
+        <table class="steps">
+          <thead>
+            <tr>
+              <th scope="col">Step</th>
+              <th scope="col">Repository</th>
+              <th scope="col">What to check</th>
+              <th scope="col">Evidence to open</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="step-num" data-label="Step">1 <span class="step-time">3 min</span></td>
+              <td class="step-repo" data-label="Repository"><a href="https://github.com/Lay007/zynq-sdr-course" target="_blank" rel="noopener noreferrer">zynq-sdr-course</a></td>
+              <td data-label="What to check">
+                End-to-end SDR course path from DSP model to HDL, Zynq/AD9363, RF/IQ data and measurement reports.
+                Strongest hardware result: an in-fabric QPSK modem on a two-board 915&nbsp;MHz link with payload BER ≈4×10<sup>−4</sup>.
+                <span class="limit">Limit: the raw QPSK RF recording stays local; its checksum, manifest, plots and metrics are public.</span>
+              </td>
+              <td data-label="Evidence to open">
+                <span class="evidence-links">
+                  <a class="text-link" href="https://github.com/Lay007/zynq-sdr-course/blob/main/docs/reviewer-path.md" target="_blank" rel="noopener noreferrer">Reviewer path</a>
+                  <a class="text-link" href="https://github.com/Lay007/zynq-sdr-course/blob/main/reports/flagship_reviewer_report.md" target="_blank" rel="noopener noreferrer">Flagship reviewer report</a>
+                  <a class="text-link" href="https://github.com/Lay007/zynq-sdr-course#current-maturity-focus" target="_blank" rel="noopener noreferrer">Current maturity</a>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Step">2 <span class="step-time">3 min</span></td>
+              <td class="step-repo" data-label="Repository"><a href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">zynq-lora-phy-positioning</a></td>
+              <td data-label="What to check">
+                LoRa PHY from MATLAB and recorded SX1262 IQ through fixed-point Simulink and generated HDL to fractional ToA and calibrated 2D TDoA.
+                <span class="limit">Limit: hardware LoRa reception and synchronized multi-receiver positioning have not started; TDoA results are MATLAB Monte Carlo.</span>
+              </td>
+              <td data-label="Evidence to open">
+                <span class="evidence-links">
+                  <a class="text-link" href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/matlab-m1-acceptance.md" target="_blank" rel="noopener noreferrer">MATLAB M1 acceptance</a>
+                  <a class="text-link" href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/simulink-m2-acceptance.md" target="_blank" rel="noopener noreferrer">Simulink M2 acceptance</a>
+                  <a class="text-link" href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer">Roadmap</a>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Step">3 <span class="step-time">2 min</span></td>
+              <td class="step-repo" data-label="Repository"><a href="https://github.com/Lay007/cpp-dsp-showcase" target="_blank" rel="noopener noreferrer">cpp-dsp-showcase</a></td>
+              <td data-label="What to check">
+                C++17 DSP kernels (FIR, Goertzel, GCC-PHAT, rational resampling) with deterministic tests, benchmark tooling and CMake packaging.
+                <span class="limit">Limit: intentionally compact — sized for study and review, not a complete DSP framework.</span>
+              </td>
+              <td data-label="Evidence to open">
+                <span class="evidence-links">
+                  <a class="text-link" href="https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/reviewer-quick-check.md" target="_blank" rel="noopener noreferrer">Reviewer quick check</a>
+                  <a class="text-link" href="https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/algorithm-evidence-matrix.md" target="_blank" rel="noopener noreferrer">Algorithm evidence matrix</a>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Step">4 <span class="step-time">1 min</span></td>
+              <td class="step-repo" data-label="Repository"><a href="https://github.com/Lay007/network-quality-assessment" target="_blank" rel="noopener noreferrer">network-quality-assessment</a></td>
+              <td data-label="What to check">
+                Timestamp credibility, SLA trace schema and synthetic report generation for latency/jitter analysis.
+                <span class="limit">Limit: the CI demo is synthetic; the reviewer checklist separates it from hardware SLA measurements.</span>
+              </td>
+              <td data-label="Evidence to open">
+                <span class="evidence-links">
+                  <a class="text-link" href="https://github.com/Lay007/network-quality-assessment/blob/master/docs/synthetic-sla-demo.md" target="_blank" rel="noopener noreferrer">Synthetic SLA demo</a>
+                  <a class="text-link" href="https://github.com/Lay007/network-quality-assessment/blob/master/docs/reviewer-acceptance-checklist.md" target="_blank" rel="noopener noreferrer">Reviewer checklist</a>
+                  <a class="text-link" href="https://github.com/Lay007/network-quality-assessment/blob/master/results/sample-test-1/summary.md" target="_blank" rel="noopener noreferrer">Sample result</a>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Step">5 <span class="step-time">1 min</span></td>
+              <td class="step-repo" data-label="Repository"><a href="https://github.com/Lay007/script-toolbox" target="_blank" rel="noopener noreferrer">script-toolbox</a></td>
+              <td data-label="What to check">
+                Repeatable Windows/SSH/Git setup automation with PowerShell quality gates and safety notes.
+                <span class="limit">Limit: Windows-focused; the scripts change system configuration and expect elevated sessions.</span>
+              </td>
+              <td data-label="Evidence to open">
+                <span class="evidence-links">
+                  <a class="text-link" href="https://github.com/Lay007/script-toolbox/blob/main/docs/ci-quality-gates.md" target="_blank" rel="noopener noreferrer">CI quality gates</a>
+                  <a class="text-link" href="https://github.com/Lay007/script-toolbox/blob/main/docs/engineering-safety-model.md" target="_blank" rel="noopener noreferrer">Safety model</a>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <section class="card" style="margin-top:18px;">
+    <section class="card review-card">
       <h2>What this portfolio is meant to prove</h2>
-      <span class="tag">DSP</span><span class="tag">FPGA</span><span class="tag">SDR</span><span class="tag">C++</span><span class="tag">Verilog</span><span class="tag">MATLAB/Simulink</span><span class="tag">Measurements</span><span class="tag">Technical documentation</span>
-      <p style="margin-top:12px;">The strongest evidence is not a single algorithm. It is the repeated engineering pattern across projects: define a signal problem, build a reference model, implement it, verify it, measure it and document the result.</p>
+      <div class="tags">
+        <span class="tag">DSP</span>
+        <span class="tag">FPGA</span>
+        <span class="tag">SDR</span>
+        <span class="tag">LoRa</span>
+        <span class="tag">C++</span>
+        <span class="tag">Verilog</span>
+        <span class="tag">MATLAB/Simulink</span>
+        <span class="tag">Measurements</span>
+        <span class="tag">Technical documentation</span>
+      </div>
+      <p>The strongest evidence is not a single algorithm. It is the repeated engineering pattern across projects: define a signal problem, build a reference model, implement it, verify it, measure it and document the result.</p>
+    </section>
+
+    <section class="card review-card" id="contact">
+      <h2>After the review</h2>
+      <p>Questions about a specific repository, measurement or implementation detail are welcome.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:laymob@gmail.com">Email</a>
+        <a class="btn btn-secondary" href="https://ru.linkedin.com/in/alexander-lyubko-dsp" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-secondary" href="https://t.me/laymob" target="_blank" rel="noopener noreferrer">Telegram <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-secondary" href="index.html">Full portfolio</a>
+      </div>
     </section>
   </main>
+
+  <footer class="footer container">
+    <p>
+      © <span id="year">2026</span> Alexander | lay007 ·
+      <a href="index.html">Portfolio</a> ·
+      <a href="https://github.com/Lay007/lay007.github.io" target="_blank" rel="noopener noreferrer">Site source</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

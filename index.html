@@ -13,12 +13,13 @@
   <meta name="theme-color" content="#08111f" />
   <link rel="canonical" href="https://lay007.github.io/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="alternate icon" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/css/site.css" />
   <meta property="og:site_name" content="lay007 engineering portfolio" />
   <meta property="og:title" content="Alexander | DSP / FPGA / Communications Engineer" />
   <meta
     property="og:description"
-    content="Signal processing, FPGA systems, communications, telemetry, circuit design, and engineering software."
+    content="Signal processing, FPGA systems, SDR, communications, telemetry, circuit design, and engineering software — with public evidence."
   />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
@@ -27,15 +28,15 @@
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Alexander lay007 engineering portfolio preview" />
+  <meta property="og:image:alt" content="Alexander lay007 engineering portfolio: DSP, FPGA and communications projects" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Alexander | DSP / FPGA / Communications Engineer" />
   <meta
     name="twitter:description"
-    content="Portfolio covering DSP, FPGA systems, telemetry, communications, circuit design, and engineering software."
+    content="Portfolio covering DSP, FPGA systems, SDR, telemetry, communications, circuit design, and engineering software."
   />
   <meta name="twitter:image" content="https://lay007.github.io/assets/social-preview.png" />
-  <meta name="twitter:image:alt" content="Alexander lay007 engineering portfolio preview" />
+  <meta name="twitter:image:alt" content="Alexander lay007 engineering portfolio: DSP, FPGA and communications projects" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -46,6 +47,17 @@
       "email": "mailto:laymob@gmail.com",
       "jobTitle": "DSP / FPGA / Communications Engineer",
       "description": "DSP/FPGA engineer focused on communications, telemetry, circuit design, secure systems, and engineering software.",
+      "knowsAbout": [
+        "Digital signal processing",
+        "FPGA design",
+        "Software-defined radio",
+        "LoRa",
+        "Communications systems",
+        "Telemetry",
+        "Verilog",
+        "MATLAB and Simulink",
+        "C++"
+      ],
       "sameAs": [
         "https://github.com/Lay007",
         "https://ru.linkedin.com/in/alexander-lyubko-dsp",
@@ -53,709 +65,18 @@
       ]
     }
   </script>
-  <style>
-    :root {
-      --bg: #08111f;
-      --bg-2: #0d1930;
-      --surface: rgba(11, 22, 41, 0.78);
-      --surface-strong: rgba(13, 25, 48, 0.92);
-      --text: #eef4ff;
-      --muted: #9eb0cb;
-      --line: rgba(255, 255, 255, 0.08);
-      --line-strong: rgba(255, 255, 255, 0.14);
-      --primary: #4fa1ff;
-      --primary-2: #79f0d5;
-      --primary-3: #7f8cff;
-      --shadow: 0 24px 64px rgba(0, 0, 0, 0.34);
-      --radius: 24px;
-      --radius-sm: 18px;
-      --maxw: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.6;
-      background:
-        radial-gradient(circle at 15% 12%, rgba(79, 161, 255, 0.18), transparent 0 28%),
-        radial-gradient(circle at 85% 10%, rgba(121, 240, 213, 0.12), transparent 0 20%),
-        radial-gradient(circle at 50% 100%, rgba(127, 140, 255, 0.10), transparent 0 28%),
-        linear-gradient(180deg, #060d19 0%, #08111f 42%, #09131f 100%);
-      min-height: 100vh;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 28px 28px;
-      mask-image: linear-gradient(180deg, rgba(255,255,255,0.28), transparent 72%);
-      z-index: -1;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(92%, var(--maxw));
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 34px 0 12px;
-    }
-
-    .pipeline-card {
-      display: block;
-      overflow: hidden;
-      border-color: rgba(79, 161, 255, 0.18);
-      background: #07111e;
-    }
-
-    .pipeline-card img {
-      width: 100%;
-      height: auto;
-      transition: transform 0.25s ease, filter 0.25s ease;
-    }
-
-    .pipeline-card:hover img {
-      transform: scale(1.004);
-      filter: brightness(1.03);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 14px;
-      border: 1px solid rgba(79, 161, 255, 0.18);
-      background: rgba(79, 161, 255, 0.10);
-      color: #bfd8ff;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      box-shadow: 0 0 18px rgba(79, 161, 255, 0.8);
-    }
-
-    .nav-wrap {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      backdrop-filter: blur(12px);
-      background: rgba(6, 13, 25, 0.68);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background:
-        linear-gradient(135deg, rgba(79,161,255,0.22), rgba(121,240,213,0.10)),
-        rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.10);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
-      font-size: 0.9rem;
-    }
-
-    .brand-text span {
-      display: block;
-      line-height: 1.05;
-    }
-
-    .brand-text .muted {
-      font-size: 0.82rem;
-      color: var(--muted);
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 0.95rem;
-      transition: color 0.2s ease, transform 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-      transform: translateY(-1px);
-    }
-
-    .hero {
-      padding: 54px 0 20px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
-      gap: 26px;
-      align-items: stretch;
-    }
-
-    .card {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(13, 25, 48, 0.92), rgba(10, 19, 36, 0.90));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), transparent 24%);
-    }
-
-    .hero-main {
-      padding: 40px 40px 34px;
-    }
-
-    h1 {
-      margin: 16px 0 16px;
-      max-width: 900px;
-      font-size: clamp(2.5rem, 4vw, 4.8rem);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
-    }
-
-    .hero-lead {
-      margin: 0 0 16px;
-      max-width: 840px;
-      font-size: 1.16rem;
-      color: #d8e6ff;
-    }
-
-    .hero-summary {
-      margin: 0 0 24px;
-      max-width: 820px;
-      color: var(--muted);
-      font-size: 1.03rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 50px;
-      padding: 0 18px;
-      border-radius: 15px;
-      font-weight: 700;
-      border: 1px solid var(--line);
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      color: white;
-      border: none;
-      background: linear-gradient(135deg, var(--primary), #276dff);
-      box-shadow: 0 14px 32px rgba(54, 112, 255, 0.28);
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.03);
-      color: var(--text);
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      min-height: 38px;
-      padding: 0 12px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      color: #cddcff;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .hero-side {
-      padding: 24px;
-      display: grid;
-      gap: 16px;
-      align-content: start;
-    }
-
-    .signal-panel {
-      min-height: 210px;
-      padding: 20px;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 20% 20%, rgba(79, 161, 255, 0.12), transparent 0 28%),
-        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-    }
-
-    .signal-caption {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 14px;
-      color: var(--muted);
-      font-size: 0.86rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .signal-svg {
-      width: 100%;
-      height: 130px;
-      opacity: 0.92;
-    }
-
-    .signal-legend {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .legend-item {
-      color: #d7e6ff;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--line);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.82rem;
-    }
-
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .metric {
-      padding: 18px 16px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .metric-value {
-      font-size: 1.6rem;
-      font-weight: 800;
-      line-height: 1;
-      margin-bottom: 6px;
-      letter-spacing: -0.04em;
-    }
-
-    .metric-label {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: end;
-      margin-bottom: 22px;
-    }
-
-    .section-head h2 {
-      margin: 0 0 8px;
-      font-size: clamp(1.6rem, 2.5vw, 2.3rem);
-      letter-spacing: -0.03em;
-    }
-
-    .section-head p {
-      margin: 0;
-      max-width: 760px;
-      color: var(--muted);
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .info-card,
-    .project-card,
-    .timeline-card,
-    .contact-card {
-      padding: 24px;
-    }
-
-    .info-card h3,
-    .project-card h3,
-    .timeline-card h3,
-    .contact-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .info-card p,
-    .project-card p,
-    .timeline-card p,
-    .contact-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .icon-box {
-      width: 44px;
-      height: 44px;
-      margin-bottom: 16px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: linear-gradient(135deg, rgba(79,161,255,0.16), rgba(121,240,213,0.08));
-      color: #d7e7ff;
-      font-weight: 800;
-    }
-
-    .list {
-      margin: 14px 0 0;
-      padding-left: 18px;
-      color: #d7e6ff;
-    }
-
-    .list li + li {
-      margin-top: 8px;
-    }
-
-    .project-card {
-      --project-pad: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .project-cover {
-      display: block;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      margin: calc(var(--project-pad) * -1) calc(var(--project-pad) * -1) 4px;
-      border-bottom: 1px solid var(--line);
-      background: #07101d;
-    }
-
-    .project-cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .project-cover:hover img {
-      transform: scale(1.02);
-      filter: brightness(1.05);
-    }
-
-    .project-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: start;
-    }
-
-    .project-link {
-      color: #dff0ff;
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
-    .project-link:hover {
-      color: white;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 0 10px;
-      border-radius: 999px;
-      background: rgba(79, 161, 255, 0.10);
-      color: #cbe1ff;
-      border: 1px solid rgba(79, 161, 255, 0.16);
-      font-size: 0.81rem;
-      font-weight: 700;
-    }
-
-    .project-card.featured {
-      border-color: rgba(79, 161, 255, 0.22);
-      background:
-        radial-gradient(circle at top right, rgba(79, 161, 255, 0.10), transparent 0 26%),
-        linear-gradient(180deg, rgba(13, 25, 48, 0.96), rgba(10, 19, 36, 0.92));
-    }
-
-    .timeline {
-      display: grid;
-      gap: 18px;
-    }
-
-    .timeline-card {
-      display: grid;
-      grid-template-columns: 148px minmax(0, 1fr);
-      gap: 18px;
-      align-items: start;
-    }
-
-    .timeline-label {
-      font-size: 0.88rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #b8d3ff;
-      padding-top: 2px;
-    }
-
-    .stack-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .stack-item {
-      display: inline-flex;
-      align-items: center;
-      min-height: 40px;
-      padding: 0 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      color: #e0edff;
-      font-weight: 600;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
-      gap: 18px;
-    }
-
-    .contact-card strong {
-      color: var(--text);
-    }
-
-    .contact-links {
-      display: grid;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .contact-link {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: center;
-      min-height: 58px;
-      padding: 0 16px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .contact-link:hover {
-      transform: translateY(-1px);
-      border-color: rgba(79, 161, 255, 0.24);
-    }
-
-    .contact-link small {
-      color: var(--muted);
-      display: block;
-      margin-top: 2px;
-    }
-
-    .footer {
-      padding: 42px 0 54px;
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 1080px) {
-      .grid-4 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 980px) {
-      .nav {
-        padding: 14px 0;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .hero-grid,
-      .contact-grid,
-      .grid-3,
-      .grid-2 {
-        grid-template-columns: 1fr;
-      }
-
-      .timeline-card {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .hero-main {
-        padding: 30px 28px;
-      }
-
-      .hero-side,
-      .info-card,
-      .project-card,
-      .timeline-card,
-      .contact-card {
-        padding: 22px;
-      }
-
-      .project-card {
-        --project-pad: 22px;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .hero {
-        padding-top: 32px;
-      }
-
-      .hero-actions,
-      .section-head {
-        flex-direction: column;
-        align-items: start;
-      }
-
-      .grid-4,
-      .metrics-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      h1 {
-        font-size: 2.25rem;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .hero-main,
-      .hero-side {
-        padding: 22px 18px;
-      }
-
-      .brand {
-        gap: 10px;
-      }
-
-      .brand-mark {
-        width: 38px;
-        height: 38px;
-      }
-    }
-  </style>
 </head>
 <body>
-  <div class="nav-wrap">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Go to top">
-        <div class="brand-mark">AL</div>
-        <div class="brand-text">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav-wrap">
+    <nav class="container nav" aria-label="Primary">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">AL</span>
+        <span class="brand-text">
           <span>Alexander | lay007</span>
           <span class="muted">DSP • FPGA • Communications</span>
-        </div>
+        </span>
       </a>
 
       <div class="nav-links">
@@ -765,406 +86,465 @@
         <a href="#background">Background</a>
         <a href="#toolchain">Toolchain</a>
         <a href="#contact">Contact</a>
+        <a class="nav-cta" href="portfolio-review.html">10-min review</a>
       </div>
-    </div>
-  </div>
-
-  <header class="hero container" id="top">
-    <div class="hero-grid">
-      <section class="card hero-main">
-        <div class="eyebrow">Candidate of Technical Sciences • Applied R&amp;D Engineer</div>
-        <h1>DSP, FPGA and communications engineering — from theory to working systems.</h1>
-
-        <p class="hero-lead">
-          I build signal processing pipelines, FPGA-oriented systems, engineering software,
-          communication and telemetry solutions, with practical depth in circuit design and secure engineering.
-        </p>
-
-        <p class="hero-summary">
-          My work combines algorithms, hardware understanding and implementation discipline:
-          from MATLAB/Simulink and Verilog to C++ tooling, validation workflows and real-world deployment logic.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://github.com/Lay007" target="_blank" rel="noopener noreferrer">View GitHub</a>
-          <a class="btn btn-secondary" href="#projects">Selected Projects</a>
-          <a class="btn btn-secondary" href="https://t.me/laymob" target="_blank" rel="noopener noreferrer">Telegram</a>
-        </div>
-
-        <div class="hero-meta">
-          <span class="chip">C++</span>
-          <span class="chip">Verilog</span>
-          <span class="chip">MATLAB</span>
-          <span class="chip">Simulink</span>
-          <span class="chip">Xilinx</span>
-          <span class="chip">Intel FPGA</span>
-          <span class="chip">Microchip</span>
-          <span class="chip">DSP</span>
-          <span class="chip">Telemetry</span>
-          <span class="chip">InfoSec</span>
-        </div>
-      </section>
-
-      <aside class="card hero-side" aria-label="Highlights">
-        <div class="signal-panel">
-          <div class="signal-caption">
-            <span>Engineering signal path</span>
-            <span>Design / Validate / Ship</span>
-          </div>
-
-          <svg class="signal-svg" viewBox="0 0 640 180" role="img" aria-label="Abstract signal waveform">
-            <defs>
-              <linearGradient id="lineA" x1="0" x2="1">
-                <stop offset="0%" stop-color="#4fa1ff"/>
-                <stop offset="100%" stop-color="#79f0d5"/>
-              </linearGradient>
-              <linearGradient id="lineB" x1="0" x2="1">
-                <stop offset="0%" stop-color="#7f8cff"/>
-                <stop offset="100%" stop-color="#4fa1ff"/>
-              </linearGradient>
-            </defs>
-            <path d="M0 120 C40 120, 40 50, 80 50 S120 150, 160 150 S200 60, 240 60 S280 130, 320 130 S360 35, 400 35 S440 145, 480 145 S520 82, 560 82 S600 110, 640 110"
-                  fill="none" stroke="url(#lineA)" stroke-width="6" stroke-linecap="round"/>
-            <path d="M0 78 C40 78, 40 128, 80 128 S120 36, 160 36 S200 118, 240 118 S280 90, 320 90 S360 144, 400 144 S440 48, 480 48 S520 118, 560 118 S600 78, 640 78"
-                  fill="none" stroke="url(#lineB)" stroke-width="3.5" stroke-linecap="round" opacity="0.95"/>
-            <g fill="#dff0ff" opacity="0.8">
-              <circle cx="80" cy="50" r="4"/>
-              <circle cx="240" cy="60" r="4"/>
-              <circle cx="400" cy="35" r="4"/>
-              <circle cx="560" cy="82" r="4"/>
-            </g>
-          </svg>
-
-          <div class="signal-legend">
-            <span class="legend-item">DSP pipelines</span>
-            <span class="legend-item">FPGA implementation</span>
-            <span class="legend-item">Communications</span>
-          </div>
-        </div>
-
-        <div class="metrics-grid">
-          <div class="metric">
-            <div class="metric-value">10+</div>
-            <div class="metric-label">years in higher education teaching</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">3</div>
-            <div class="metric-label">textbooks authored</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">R&amp;D</div>
-            <div class="metric-label">publications, inventions and patents</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">Full stack</div>
-            <div class="metric-label">from models and HDL to tools and systems</div>
-          </div>
-        </div>
-      </aside>
-    </div>
+    </nav>
   </header>
 
-  <main class="container">
-    <section class="section" id="pipeline">
-      <div class="section-head">
-        <div>
-          <h2>Engineering pipeline</h2>
-          <p>
-            A measurement-driven workflow: metrics close the loop back to MATLAB, C++ DSP,
-            fixed-point decisions and RTL rather than treating hardware validation as the final step.
+  <main id="main">
+    <section class="hero container" id="top">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <div class="eyebrow">Candidate of Technical Sciences • Applied R&amp;D Engineer</div>
+          <h1>DSP, FPGA and communications engineering — from theory to working systems.</h1>
+
+          <p class="hero-lead">
+            I build signal processing pipelines, FPGA-oriented systems, engineering software,
+            communication and telemetry solutions, with practical depth in circuit design and secure engineering.
           </p>
-        </div>
-      </div>
-      <a class="card pipeline-card" href="assets/engineering_pipeline.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the Engineering Pipeline diagram at full size">
-        <img src="assets/engineering_pipeline.svg" alt="Engineering pipeline from Signal and RF through MATLAB, C++ DSP, fixed-point and FPGA verification to BER, EVM, SNR and latency metrics, with feedback to the implementation stages" width="1600" height="800" />
-      </a>
-    </section>
 
-    <section class="section" id="expertise">
-      <div class="section-head">
-        <div>
-          <h2>Core expertise</h2>
-          <p>
-            The strongest part of my profile is the ability to connect mathematical models,
-            hardware constraints and implementation details into one coherent engineering workflow.
+          <p class="hero-summary">
+            My work combines algorithms, hardware understanding and implementation discipline:
+            from MATLAB/Simulink and Verilog to C++ tooling, validation workflows and real-world deployment logic.
           </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="portfolio-review.html">10-minute portfolio review</a>
+            <a class="btn btn-secondary" href="https://github.com/Lay007" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-secondary" href="#contact">Contact</a>
+          </div>
+
+          <div class="hero-meta">
+            <span class="chip">C++</span>
+            <span class="chip">Verilog</span>
+            <span class="chip">MATLAB</span>
+            <span class="chip">Simulink</span>
+            <span class="chip">Xilinx</span>
+            <span class="chip">Intel FPGA</span>
+            <span class="chip">Microchip</span>
+            <span class="chip">DSP</span>
+            <span class="chip">Telemetry</span>
+            <span class="chip">InfoSec</span>
+          </div>
         </div>
-      </div>
 
-      <div class="grid-4">
-        <article class="card info-card">
-          <div class="icon-box">01</div>
-          <h3>Digital signal processing</h3>
-          <p>Signal analysis, filtering, transforms, modulation/demodulation, data paths, and processing pipelines for practical systems.</p>
-        </article>
+        <aside class="card hero-side" aria-label="Highlights">
+          <div class="signal-panel">
+            <div class="signal-caption">
+              <span>Engineering signal path</span>
+              <span>Design / Validate / Ship</span>
+            </div>
 
-        <article class="card info-card">
-          <div class="icon-box">02</div>
-          <h3>FPGA &amp; hardware/software co-design</h3>
-          <p>Architecture thinking for FPGA-based solutions, prototyping flows, HDL implementation, and integration with higher-level tools.</p>
-        </article>
+            <svg class="signal-svg" viewBox="0 0 640 180" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="lineA" x1="0" x2="1">
+                  <stop offset="0%" stop-color="#4fa1ff"/>
+                  <stop offset="100%" stop-color="#79f0d5"/>
+                </linearGradient>
+                <linearGradient id="lineB" x1="0" x2="1">
+                  <stop offset="0%" stop-color="#7f8cff"/>
+                  <stop offset="100%" stop-color="#4fa1ff"/>
+                </linearGradient>
+              </defs>
+              <path d="M0 120 C40 120, 40 50, 80 50 S120 150, 160 150 S200 60, 240 60 S280 130, 320 130 S360 35, 400 35 S440 145, 480 145 S520 82, 560 82 S600 110, 640 110"
+                    fill="none" stroke="url(#lineA)" stroke-width="6" stroke-linecap="round"/>
+              <path d="M0 78 C40 78, 40 128, 80 128 S120 36, 160 36 S200 118, 240 118 S280 90, 320 90 S360 144, 400 144 S440 48, 480 48 S520 118, 560 118 S600 78, 640 78"
+                    fill="none" stroke="url(#lineB)" stroke-width="3.5" stroke-linecap="round" opacity="0.95"/>
+              <g fill="#dff0ff" opacity="0.8">
+                <circle cx="80" cy="50" r="4"/>
+                <circle cx="240" cy="60" r="4"/>
+                <circle cx="400" cy="35" r="4"/>
+                <circle cx="560" cy="82" r="4"/>
+              </g>
+            </svg>
 
-        <article class="card info-card">
-          <div class="icon-box">03</div>
-          <h3>Communications &amp; telemetry</h3>
-          <p>Engineering work around communication chains, protocol handling, telemetry logic, validation methodology, and system-level robustness.</p>
-        </article>
+            <div class="signal-legend">
+              <span class="legend-item">DSP pipelines</span>
+              <span class="legend-item">FPGA implementation</span>
+              <span class="legend-item">Communications</span>
+            </div>
+          </div>
 
-        <article class="card info-card">
-          <div class="icon-box">04</div>
-          <h3>Circuit design &amp; secure engineering</h3>
-          <p>Applied electronics background combined with information security awareness for real devices, infrastructure and specialized development.</p>
-        </article>
-      </div>
-    </section>
+          <div class="metrics-grid">
+            <div class="metric">
+              <div class="metric-value">10+</div>
+              <div class="metric-label">years in higher education teaching</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">3</div>
+              <div class="metric-label">textbooks authored</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">≈4×10<sup>−4</sup></div>
+              <div class="metric-label">payload BER on a two-board 915&nbsp;MHz QPSK link</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">R&amp;D</div>
+              <div class="metric-label">publications, inventions and patents</div>
+            </div>
+          </div>
 
-    <section class="section" id="projects">
-      <div class="section-head">
-        <div>
-          <h2>Selected projects</h2>
-          <p>
-            Repositories that best reflect practical engineering depth: educational infrastructure,
-            FPGA/network measurement ideas, tooling and reusable development assets.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <article class="card project-card featured">
-          <a class="project-cover" href="https://github.com/Lay007/zynq-sdr-course" target="_blank" rel="noopener noreferrer" aria-label="Open zynq-sdr-course on GitHub">
-            <img src="assets/projects/zynq-sdr-course.webp" alt="zynq-sdr-course engineering pipeline from model and RTL to Zynq SDR hardware and RF measurement" loading="lazy" width="480" height="270" />
+          <a class="start-here" href="portfolio-review.html">
+            <span class="start-here-label">Reviewing the portfolio?</span>
+            <strong>Open the 10-minute evidence&nbsp;path&nbsp;→</strong>
+            <small>Five repositories, what to open first and current limits.</small>
           </a>
-          <div class="project-top">
-            <div>
-              <h3>zynq-sdr-course</h3>
-              <p>A bilingual SDR course structured from intro topics through DSP, Simulink, HDL flow, RF front-end work and final projects.</p>
-            </div>
-            <a class="project-link" href="https://github.com/Lay007/zynq-sdr-course" target="_blank" rel="noopener noreferrer">Open ↗</a>
-          </div>
-          <div class="tags">
-            <span class="tag">SDR</span>
-            <span class="tag">DSP</span>
-            <span class="tag">FPGA</span>
-            <span class="tag">Education</span>
-            <span class="tag">Zynq</span>
-          </div>
-        </article>
-
-        <article class="card project-card featured">
-          <a class="project-cover" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer" aria-label="Open zynq-lora-phy-positioning on GitHub">
-            <img src="assets/projects/zynq-lora-phy-positioning.webp" alt="zynq-lora-phy-positioning LoRa PHY pipeline from MATLAB and Simulink to Verilog, ZynqSDR and TDoA positioning" loading="lazy" width="480" height="270" />
-          </a>
-          <div class="project-top">
-            <div>
-              <h3>zynq-lora-phy-positioning</h3>
-              <p>LoRa PHY and ToA/TDoA positioning with real SX1262 IQ, a MATLAB reference, streaming fixed-point Simulink, generated Verilog and synthesis evidence.</p>
-            </div>
-            <a class="project-link" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">Open ↗</a>
-          </div>
-          <div class="tags">
-            <span class="tag">LoRa</span>
-            <span class="tag">MATLAB</span>
-            <span class="tag">Simulink</span>
-            <span class="tag">FPGA</span>
-            <span class="tag">TDoA</span>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-top">
-            <div>
-              <h3>network-quality-assessment</h3>
-              <p>Hardware-assisted network performance testing with FPGA timestamping and methodology aligned with RFC 2544 and ITU-T Y.1564.</p>
-            </div>
-            <a class="project-link" href="https://github.com/Lay007/network-quality-assessment" target="_blank" rel="noopener noreferrer">Open ↗</a>
-          </div>
-          <div class="tags">
-            <span class="tag">Go</span>
-            <span class="tag">FPGA</span>
-            <span class="tag">Networking</span>
-            <span class="tag">Validation</span>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-top">
-            <div>
-              <h3>script-toolbox</h3>
-              <p>Reusable PowerShell automation for Windows setup, SSH access, Git onboarding and developer workstation preparation.</p>
-            </div>
-            <a class="project-link" href="https://github.com/Lay007/script-toolbox" target="_blank" rel="noopener noreferrer">Open ↗</a>
-          </div>
-          <div class="tags">
-            <span class="tag">PowerShell</span>
-            <span class="tag">Windows</span>
-            <span class="tag">DevOps</span>
-            <span class="tag">Automation</span>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <div class="project-top">
-            <div>
-              <h3>cpp-dsp-showcase</h3>
-              <p>C++-focused DSP showcase repository presenting signal-processing ideas, implementations and engineering-oriented examples in a compact form.</p>
-            </div>
-            <a class="project-link" href="https://github.com/Lay007/cpp-dsp-showcase" target="_blank" rel="noopener noreferrer">Open ↗</a>
-          </div>
-          <div class="tags">
-            <span class="tag">C++</span>
-            <span class="tag">DSP</span>
-            <span class="tag">Showcase</span>
-            <span class="tag">Examples</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="background">
-      <div class="section-head">
-        <div>
-          <h2>Background</h2>
-          <p>
-            A profile shaped not only by software delivery, but also by academic work,
-            teaching practice, technical writing and invention activity.
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline">
-        <article class="card timeline-card">
-          <div class="timeline-label">Academic base</div>
-          <div>
-            <h3>Candidate of Technical Sciences</h3>
-            <p>
-              Strong analytical and research foundation supporting applied work in signal processing,
-              communications, FPGA-oriented development and engineering methodology.
-            </p>
-          </div>
-        </article>
-
-        <article class="card timeline-card">
-          <div class="timeline-label">Teaching</div>
-          <div>
-            <h3>10 years in higher education</h3>
-            <p>
-              Long-term teaching practice helps translate difficult technical material into structured,
-              understandable engineering knowledge and practical workflows.
-            </p>
-          </div>
-        </article>
-
-        <article class="card timeline-card">
-          <div class="timeline-label">Publications</div>
-          <div>
-            <h3>Textbooks, papers, inventions and patents</h3>
-            <p>
-              Experience in technical writing and invention activity complements implementation work
-              with discipline, clarity and a stronger systems perspective.
-            </p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="toolchain">
-      <div class="section-head">
-        <div>
-          <h2>Toolchain &amp; platforms</h2>
-          <p>
-            Typical working stack across modeling, implementation and supporting engineering software.
-          </p>
-        </div>
-      </div>
-
-      <div class="card info-card">
-        <div class="stack-wrap">
-          <span class="stack-item">C++</span>
-          <span class="stack-item">Verilog</span>
-          <span class="stack-item">MATLAB</span>
-          <span class="stack-item">Simulink</span>
-          <span class="stack-item">CMake</span>
-          <span class="stack-item">Qt</span>
-          <span class="stack-item">Xilinx</span>
-          <span class="stack-item">Intel FPGA</span>
-          <span class="stack-item">Microchip</span>
-          <span class="stack-item">DSP</span>
-          <span class="stack-item">Telemetry</span>
-          <span class="stack-item">Communications</span>
-          <span class="stack-item">Circuit Design</span>
-          <span class="stack-item">InfoSec</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="section-head">
-        <div>
-          <h2>Contact</h2>
-          <p>
-            Open to discussions related to DSP, FPGA systems, communications, telemetry,
-            engineering software and technically demanding R&amp;D work.
-          </p>
-        </div>
-      </div>
-
-      <div class="contact-grid">
-        <article class="card contact-card">
-          <h3>How I can be useful</h3>
-          <p>
-            <strong>System design, technical consulting, architecture thinking, educational materials,
-            engineering tooling and specialized implementation work.</strong>
-          </p>
-          <ul class="list">
-            <li>DSP and communication chain design</li>
-            <li>FPGA-oriented development and modeling workflows</li>
-            <li>Signal acquisition, processing and validation tooling</li>
-            <li>Applied engineering software in C++ and related stacks</li>
-          </ul>
-        </article>
-
-        <aside class="card contact-card">
-          <h3>Links</h3>
-          <div class="contact-links">
-            <a class="contact-link" href="mailto:laymob@gmail.com">
-              <div>
-                <strong>Email</strong>
-                <small>laymob@gmail.com</small>
-              </div>
-              <span>↗</span>
-            </a>
-
-            <a class="contact-link" href="https://github.com/Lay007" target="_blank" rel="noopener noreferrer">
-              <div>
-                <strong>GitHub</strong>
-                <small>github.com/Lay007</small>
-              </div>
-              <span>↗</span>
-            </a>
-
-            <a class="contact-link" href="https://lay007.github.io/" target="_blank" rel="noopener noreferrer">
-              <div>
-                <strong>Website</strong>
-                <small>lay007.github.io</small>
-              </div>
-              <span>↗</span>
-            </a>
-
-            <a class="contact-link" href="https://t.me/laymob" target="_blank" rel="noopener noreferrer">
-              <div>
-                <strong>Telegram</strong>
-                <small>@laymob</small>
-              </div>
-              <span>↗</span>
-            </a>
-          </div>
         </aside>
       </div>
     </section>
+
+    <div class="container">
+      <section class="section" id="pipeline">
+        <div class="section-head">
+          <div>
+            <h2>Engineering pipeline</h2>
+            <p>
+              A measurement-driven workflow: metrics close the loop back to MATLAB, C++ DSP,
+              fixed-point decisions and RTL rather than treating hardware validation as the final step.
+            </p>
+          </div>
+        </div>
+        <a class="card pipeline-card" href="assets/engineering_pipeline.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the engineering pipeline diagram at full size">
+          <picture>
+            <source media="(max-width: 720px)" srcset="assets/engineering_pipeline_mobile.svg" width="480" height="1202" />
+            <img src="assets/engineering_pipeline.svg" alt="Engineering pipeline from Signal and RF through MATLAB, C++ DSP, fixed-point and FPGA verification to BER, EVM, SNR and latency metrics, with feedback to the implementation stages" width="1600" height="800" />
+          </picture>
+        </a>
+      </section>
+
+      <section class="section" id="expertise">
+        <div class="section-head">
+          <div>
+            <h2>Core expertise</h2>
+            <p>
+              The strongest part of my profile is the ability to connect mathematical models,
+              hardware constraints and implementation details into one coherent engineering workflow.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <article class="card info-card">
+            <div class="icon-box" aria-hidden="true">01</div>
+            <h3>Digital signal processing</h3>
+            <p>Signal analysis, filtering, transforms, modulation/demodulation, data paths, and processing pipelines for practical systems.</p>
+          </article>
+
+          <article class="card info-card">
+            <div class="icon-box" aria-hidden="true">02</div>
+            <h3>FPGA &amp; hardware/software co-design</h3>
+            <p>Architecture thinking for FPGA-based solutions, prototyping flows, HDL implementation, and integration with higher-level tools.</p>
+          </article>
+
+          <article class="card info-card">
+            <div class="icon-box" aria-hidden="true">03</div>
+            <h3>Communications &amp; telemetry</h3>
+            <p>Engineering work around communication chains, protocol handling, telemetry logic, validation methodology, and system-level robustness.</p>
+          </article>
+
+          <article class="card info-card">
+            <div class="icon-box" aria-hidden="true">04</div>
+            <h3>Circuit design &amp; secure engineering</h3>
+            <p>Applied electronics background combined with information security awareness for real devices, infrastructure and specialized development.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-head">
+          <div>
+            <h2>Selected projects</h2>
+            <p>
+              Public repositories that best reflect practical engineering depth: SDR education, LoRa PHY and positioning research,
+              C++ DSP, network measurement and workstation automation. Each card names the evidence to open first.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="card project-card featured">
+            <a class="project-cover" href="https://github.com/Lay007/zynq-sdr-course" target="_blank" rel="noopener noreferrer" aria-label="Open zynq-sdr-course on GitHub">
+              <img src="assets/projects/zynq-sdr-course.webp" alt="zynq-sdr-course engineering pipeline from model and RTL to Zynq SDR hardware and RF measurement" loading="lazy" width="480" height="270" />
+            </a>
+            <div class="project-top">
+              <div>
+                <h3>zynq-sdr-course</h3>
+                <p>A bilingual SDR course from DSP models and fixed-point design through HDL flow, Zynq/AD9363 RF work and IQ analysis to final projects.</p>
+              </div>
+              <a class="project-link" href="https://github.com/Lay007/zynq-sdr-course" target="_blank" rel="noopener noreferrer">Open<span class="sr-only"> zynq-sdr-course on GitHub</span> <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="project-evidence">
+              <strong>Evidence:</strong> in-fabric QPSK modem on Zynq-7020 + AD9361 closed on a two-board 915&nbsp;MHz RF link
+              (payload BER ≈4×10<sup>−4</sup>); CI-checked HDL, synchronization and IQ-recording labs.
+            </p>
+            <p class="project-open">
+              <span>Open first:</span>
+              <a href="https://github.com/Lay007/zynq-sdr-course/blob/main/docs/reviewer-path.md" target="_blank" rel="noopener noreferrer">Reviewer path</a>
+              <a href="https://github.com/Lay007/zynq-sdr-course/blob/main/reports/course-evidence-map.md" target="_blank" rel="noopener noreferrer">Evidence map</a>
+            </p>
+            <div class="tags">
+              <span class="tag">SDR</span>
+              <span class="tag">DSP</span>
+              <span class="tag">FPGA</span>
+              <span class="tag">Zynq</span>
+              <span class="tag">Education</span>
+            </div>
+          </article>
+
+          <article class="card project-card featured">
+            <a class="project-cover" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer" aria-label="Open zynq-lora-phy-positioning on GitHub">
+              <img src="assets/projects/zynq-lora-phy-positioning.webp" alt="zynq-lora-phy-positioning LoRa PHY pipeline from MATLAB and Simulink to Verilog, ZynqSDR and TDoA positioning" loading="lazy" width="480" height="270" />
+            </a>
+            <div class="project-top">
+              <div>
+                <h3>zynq-lora-phy-positioning</h3>
+                <p>LoRa PHY and ToA/TDoA positioning with real SX1262 IQ, a MATLAB reference, streaming fixed-point Simulink, generated Verilog and synthesis evidence.</p>
+              </div>
+              <a class="project-link" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">Open<span class="sr-only"> zynq-lora-phy-positioning on GitHub</span> <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="project-evidence">
+              <strong>Evidence:</strong> all 32 SF×CR modes in the MATLAB acceptance campaign, exact 8/8 HDL cosimulation for ToA,
+              and an IQ-to-AXI timestamp receiver synthesized for xc7z020. Hardware LoRa reception is not claimed yet.
+            </p>
+            <p class="project-open">
+              <span>Open first:</span>
+              <a href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/matlab-m1-acceptance.md" target="_blank" rel="noopener noreferrer">M1 acceptance</a>
+              <a href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer">Roadmap</a>
+            </p>
+            <div class="tags">
+              <span class="tag">LoRa</span>
+              <span class="tag">MATLAB</span>
+              <span class="tag">Simulink</span>
+              <span class="tag">FPGA</span>
+              <span class="tag">TDoA</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-top">
+              <div>
+                <h3>cpp-dsp-showcase</h3>
+                <p>C++17 DSP library with FIR design and filtering, Goertzel tone detection, GCC-PHAT delay estimation and rational resampling, packaged for downstream CMake projects.</p>
+              </div>
+              <a class="project-link" href="https://github.com/Lay007/cpp-dsp-showcase" target="_blank" rel="noopener noreferrer">Open<span class="sr-only"> cpp-dsp-showcase on GitHub</span> <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="project-evidence">
+              <strong>Evidence:</strong> deterministic unit tests, optional AVX2 hot paths, generated benchmark reports and multi-platform CI.
+            </p>
+            <p class="project-open">
+              <span>Open first:</span>
+              <a href="https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/reviewer-quick-check.md" target="_blank" rel="noopener noreferrer">Reviewer quick check</a>
+              <a href="https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/algorithm-evidence-matrix.md" target="_blank" rel="noopener noreferrer">Algorithm evidence matrix</a>
+            </p>
+            <div class="tags">
+              <span class="tag">C++17</span>
+              <span class="tag">DSP</span>
+              <span class="tag">CMake</span>
+              <span class="tag">Benchmarks</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-top">
+              <div>
+                <h3>network-quality-assessment</h3>
+                <p>Hardware-assisted network performance testing with FPGA timestamping and methodology aligned with RFC 2544 and ITU-T Y.1564.</p>
+              </div>
+              <a class="project-link" href="https://github.com/Lay007/network-quality-assessment" target="_blank" rel="noopener noreferrer">Open<span class="sr-only"> network-quality-assessment on GitHub</span> <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="project-evidence">
+              <strong>Evidence:</strong> hardware-free synthetic SLA pipeline checked in CI and a committed sample result package;
+              the reviewer checklist keeps synthetic demos separate from hardware measurements.
+            </p>
+            <p class="project-open">
+              <span>Open first:</span>
+              <a href="https://github.com/Lay007/network-quality-assessment/blob/master/docs/synthetic-sla-demo.md" target="_blank" rel="noopener noreferrer">Synthetic SLA demo</a>
+              <a href="https://github.com/Lay007/network-quality-assessment/blob/master/docs/reviewer-acceptance-checklist.md" target="_blank" rel="noopener noreferrer">Reviewer checklist</a>
+            </p>
+            <div class="tags">
+              <span class="tag">Go</span>
+              <span class="tag">FPGA</span>
+              <span class="tag">Networking</span>
+              <span class="tag">Validation</span>
+            </div>
+          </article>
+
+          <article class="card project-card wide">
+            <div class="project-top">
+              <div>
+                <h3>script-toolbox</h3>
+                <p>Reusable PowerShell automation for Windows OpenSSH key-only access, Git onboarding, CMake and Visual Studio Build Tools setup.</p>
+              </div>
+              <a class="project-link" href="https://github.com/Lay007/script-toolbox" target="_blank" rel="noopener noreferrer">Open<span class="sr-only"> script-toolbox on GitHub</span> <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="project-evidence">
+              <strong>Evidence:</strong> CI parses every script through the PowerShell AST, checks Markdown links and runs PSScriptAnalyzer.
+            </p>
+            <p class="project-open">
+              <span>Open first:</span>
+              <a href="https://github.com/Lay007/script-toolbox/blob/main/docs/ci-quality-gates.md" target="_blank" rel="noopener noreferrer">CI quality gates</a>
+              <a href="https://github.com/Lay007/script-toolbox/blob/main/docs/engineering-safety-model.md" target="_blank" rel="noopener noreferrer">Safety model</a>
+            </p>
+            <div class="tags">
+              <span class="tag">PowerShell</span>
+              <span class="tag">Windows</span>
+              <span class="tag">DevOps</span>
+              <span class="tag">Automation</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="background">
+        <div class="section-head">
+          <div>
+            <h2>Background</h2>
+            <p>
+              A profile shaped not only by software delivery, but also by academic work,
+              teaching practice, technical writing and invention activity.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="card timeline-card">
+            <div class="timeline-label">Academic base</div>
+            <div>
+              <h3>Candidate of Technical Sciences</h3>
+              <p>
+                Strong analytical and research foundation supporting applied work in signal processing,
+                communications, FPGA-oriented development and engineering methodology.
+              </p>
+            </div>
+          </article>
+
+          <article class="card timeline-card">
+            <div class="timeline-label">Teaching</div>
+            <div>
+              <h3>10+ years in higher education</h3>
+              <p>
+                Long-term teaching practice helps translate difficult technical material into structured,
+                understandable engineering knowledge and practical workflows.
+              </p>
+            </div>
+          </article>
+
+          <article class="card timeline-card">
+            <div class="timeline-label">Publications</div>
+            <div>
+              <h3>Textbooks, papers, inventions and patents</h3>
+              <p>
+                Experience in technical writing and invention activity complements implementation work
+                with discipline, clarity and a stronger systems perspective.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="toolchain">
+        <div class="section-head">
+          <div>
+            <h2>Toolchain &amp; platforms</h2>
+            <p>
+              Typical working stack across modeling, implementation and supporting engineering software.
+            </p>
+          </div>
+        </div>
+
+        <div class="card info-card">
+          <div class="stack-wrap">
+            <span class="stack-item">C++</span>
+            <span class="stack-item">Verilog</span>
+            <span class="stack-item">MATLAB</span>
+            <span class="stack-item">Simulink</span>
+            <span class="stack-item">CMake</span>
+            <span class="stack-item">Qt</span>
+            <span class="stack-item">Xilinx</span>
+            <span class="stack-item">Intel FPGA</span>
+            <span class="stack-item">Microchip</span>
+            <span class="stack-item">DSP</span>
+            <span class="stack-item">Telemetry</span>
+            <span class="stack-item">Communications</span>
+            <span class="stack-item">Circuit Design</span>
+            <span class="stack-item">InfoSec</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="section-head">
+          <div>
+            <h2>Contact</h2>
+            <p>
+              Open to discussions related to DSP, FPGA systems, communications, telemetry,
+              engineering software and technically demanding R&amp;D work.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <article class="card contact-card">
+            <h3>How I can be useful</h3>
+            <p>
+              <strong>System design, technical consulting, architecture thinking, educational materials,
+              engineering tooling and specialized implementation work.</strong>
+            </p>
+            <ul class="list">
+              <li>DSP and communication chain design</li>
+              <li>FPGA-oriented development and modeling workflows</li>
+              <li>Signal acquisition, processing and validation tooling</li>
+              <li>Applied engineering software in C++ and related stacks</li>
+            </ul>
+          </article>
+
+          <aside class="card contact-card" aria-label="Contact links">
+            <h3>Links</h3>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:laymob@gmail.com">
+                <span>
+                  <strong>Email</strong>
+                  <small>laymob@gmail.com</small>
+                </span>
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <a class="contact-link" href="https://ru.linkedin.com/in/alexander-lyubko-dsp" target="_blank" rel="noopener noreferrer">
+                <span>
+                  <strong>LinkedIn</strong>
+                  <small>Professional profile</small>
+                </span>
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <a class="contact-link" href="https://github.com/Lay007" target="_blank" rel="noopener noreferrer">
+                <span>
+                  <strong>GitHub</strong>
+                  <small>github.com/Lay007</small>
+                </span>
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <a class="contact-link" href="https://t.me/laymob" target="_blank" rel="noopener noreferrer">
+                <span>
+                  <strong>Telegram</strong>
+                  <small>@laymob</small>
+                </span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="footer container">
-    <p>© <span id="year">2026</span> Alexander | lay007</p>
+    <p>
+      © <span id="year">2026</span> Alexander | lay007 ·
+      <a href="portfolio-review.html">10-minute review</a> ·
+      <a href="https://github.com/Lay007/lay007.github.io" target="_blank" rel="noopener noreferrer">Site source</a>
+    </p>
   </footer>
 
   <script>

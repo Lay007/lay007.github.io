@@ -8,10 +8,12 @@ Explain how this improves professional positioning, readability, SEO, accessibil
 
 ## Validation
 
-- [ ] `index.html` opens locally
-- [ ] Links were checked
-- [ ] Mobile layout was reviewed
-- [ ] Metadata was reviewed, if changed
+- [ ] `python tools/check_site.py` and the validator tests pass
+- [ ] Pages were previewed locally (`python -m http.server 8000`)
+- [ ] Mobile layout was reviewed at about 390 px width
+- [ ] Linked repositories are public
+- [ ] Metadata and `sitemap.xml` `lastmod` were updated, if changed
+- [ ] `assets/social-preview.png` was regenerated, if positioning changed
 - [ ] No private personal data was added
 
 ## Screenshots
