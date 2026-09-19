@@ -68,7 +68,7 @@ Key proof assets:
 - Simulink M2 acceptance with MATLAB-aligned regressions;
 - exact 8/8 HDL cosimulation for ToA and a synthesized SF7 IQ-to-AXI timestamp receiver.
 
-Current limit: hardware reception and synchronized positioning have not started.
+Current limit: CLG400 hardware reception is recorded (81 CRC / 84 captures / 90 attempts at gain 25 dB), but calibrated ToA and synchronized positioning remain unqualified. M6 continuous-epoch preparation is RTL-tested and still needs its own board campaign.
 
 ## Measurement systems direction
 
