@@ -53,7 +53,7 @@ LoRa model -> fixed-point -> HDL -> ZynqSDR -> IQ/metadata -> ToA -> TDoA
 [Simulink M2 acceptance](https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/simulink-m2-acceptance.md),
 [roadmap](https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/roadmap.md).
 
-**Current limit:** hardware LoRa reception and synchronized multi-receiver positioning (M4–M6) have not started.
+**Current evidence:** the September 19 CLG400 log reports 90 attempts, 84 captures and 81 CRC passes at gain 25 dB, including 79/79 at zero grid error. This is capture/CRC evidence, not calibrated ToA accuracy or qualification PER. M6 re-arm continuity passes RTL simulation; its new board campaign, calibration and synchronized multi-receiver positioning remain open.
 
 Repository: https://github.com/Lay007/zynq-lora-phy-positioning
 
