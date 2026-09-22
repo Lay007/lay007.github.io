@@ -6,7 +6,7 @@
   <title>Alexander | DSP / FPGA / Communications Engineer</title>
   <meta
     name="description"
-    content="Alexander (lay007) — DSP/FPGA engineer focused on communications, telemetry, circuit design, secure systems, and engineering software."
+    content="Alexander (lay007) — DSP/FPGA R&D engineer helping teams move signal-processing algorithms from MATLAB/Simulink to verified C++/Verilog/FPGA implementations."
   />
   <meta name="author" content="Alexander | lay007" />
   <meta name="robots" content="index, follow" />
@@ -19,7 +19,7 @@
   <meta property="og:title" content="Alexander | DSP / FPGA / Communications Engineer" />
   <meta
     property="og:description"
-    content="Signal processing, FPGA systems, SDR, communications, telemetry, circuit design, and engineering software — with public evidence."
+    content="DSP, SDR and FPGA engineering from MATLAB/Simulink models to verified C++/Verilog implementations, hardware measurements and reproducible evidence."
   />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
@@ -33,7 +33,7 @@
   <meta name="twitter:title" content="Alexander | DSP / FPGA / Communications Engineer" />
   <meta
     name="twitter:description"
-    content="Portfolio covering DSP, FPGA systems, SDR, telemetry, communications, circuit design, and engineering software."
+    content="DSP/FPGA R&D portfolio: model-to-implementation work, SDR hardware validation, C++ DSP, Verilog and measurement-driven engineering."
   />
   <meta name="twitter:image" content="https://lay007.github.io/assets/social-preview.png" />
   <meta name="twitter:image:alt" content="Alexander lay007 engineering portfolio: DSP, FPGA and communications projects" />
@@ -46,7 +46,7 @@
       "url": "https://lay007.github.io/",
       "email": "mailto:laymob@gmail.com",
       "jobTitle": "DSP / FPGA / Communications Engineer",
-      "description": "DSP/FPGA engineer focused on communications, telemetry, circuit design, secure systems, and engineering software.",
+      "description": "DSP/FPGA R&D engineer helping teams move signal-processing algorithms from MATLAB/Simulink to verified C++/Verilog/FPGA implementations.",
       "knowsAbout": [
         "Digital signal processing",
         "FPGA design",
@@ -83,6 +83,7 @@
         <a href="#pipeline">Pipeline</a>
         <a href="#expertise">Expertise</a>
         <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
         <a href="#background">Background</a>
         <a href="#toolchain">Toolchain</a>
         <a href="#contact">Contact</a>
@@ -99,19 +100,18 @@
           <h1>DSP, FPGA and communications engineering — from theory to working systems.</h1>
 
           <p class="hero-lead">
-            I build signal processing pipelines, FPGA-oriented systems, engineering software,
-            communication and telemetry solutions, with practical depth in circuit design and secure engineering.
+            I help R&amp;D teams turn DSP and communication algorithms into verified C++/RTL/FPGA implementations.
           </p>
 
           <p class="hero-summary">
-            My work combines algorithms, hardware understanding and implementation discipline:
-            from MATLAB/Simulink and Verilog to C++ tooling, validation workflows and real-world deployment logic.
+            My work connects MATLAB/Simulink reference models, fixed-point design, C++ and Verilog implementation,
+            FPGA/SDR integration, deterministic tests, hardware measurements and engineering reports.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="portfolio-review.html">10-minute portfolio review</a>
+            <a class="btn btn-primary" href="mailto:laymob@gmail.com?subject=DSP%20%2F%20FPGA%20engineering%20discussion">Discuss an engineering problem</a>
+            <a class="btn btn-secondary" href="portfolio-review.html">10-minute portfolio review</a>
             <a class="btn btn-secondary" href="https://github.com/Lay007" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-            <a class="btn btn-secondary" href="#contact">Contact</a>
           </div>
 
           <div class="hero-meta">
@@ -250,6 +250,44 @@
         </div>
       </section>
 
+      <section class="section" id="services">
+        <div class="section-head">
+          <div>
+            <h2>Focused engineering support</h2>
+            <p>
+              Practical consulting and part-time R&amp;D support for teams that need signal-processing depth
+              without adding a full-time specialist.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <article class="card info-card">
+            <div class="icon-box" aria-hidden="true">A</div>
+            <h3>DSP / FPGA technical diagnostic</h3>
+            <p>Review a difficult signal-processing problem, architecture, model or implementation and define measurable next steps.</p>
+          </article>
+
+          <article class="card info-card">
+            <div class="icon-box" aria-hidden="true">B</div>
+            <h3>MATLAB / Simulink model audit</h3>
+            <p>Check algorithm behavior, numerical assumptions, reference vectors, test coverage and implementation risks.</p>
+          </article>
+
+          <article class="card info-card">
+            <div class="icon-box" aria-hidden="true">C</div>
+            <h3>Model to C++ / RTL / FPGA</h3>
+            <p>Move a verified DSP algorithm toward implementation with shared test vectors, fixed-point decisions and acceptance criteria.</p>
+          </article>
+
+          <article class="card info-card">
+            <div class="icon-box" aria-hidden="true">D</div>
+            <h3>Focused R&amp;D support</h3>
+            <p>Part-time technical support and mentoring for DSP, SDR, communications, fixed-point and FPGA-oriented projects.</p>
+          </article>
+        </div>
+      </section>
+
       <section class="section" id="projects">
         <div class="section-head">
           <div>
@@ -303,8 +341,10 @@
               <a class="project-link" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">Open<span class="sr-only"> zynq-lora-phy-positioning on GitHub</span> <span aria-hidden="true">↗</span></a>
             </div>
             <p class="project-evidence">
-              <strong>Evidence:</strong> all 32 SF×CR modes in the MATLAB acceptance campaign, exact 8/8 HDL cosimulation for ToA,
-              and an IQ-to-AXI timestamp receiver synthesized for xc7z020. Hardware LoRa reception is not claimed yet.
+              <strong>Evidence:</strong> real over-the-air SX1262 packets decode on ZynqSDR with valid payload CRC.
+              In the latest 500-attempt guard-image campaign, all 492 captured packets passed CRC with zero PL grid errors;
+              a continuous PL sample-time counter was also verified across 47 captures spanning 803.7&nbsp;s.
+              Controlled delay calibration and synchronized multi-receiver TDoA remain open.
             </p>
             <p class="project-open">
               <span>Open first:</span>
@@ -477,8 +517,8 @@
           <div>
             <h2>Contact</h2>
             <p>
-              Open to discussions related to DSP, FPGA systems, communications, telemetry,
-              engineering software and technically demanding R&amp;D work.
+              Open to focused consulting, part-time R&amp;D support and project work in DSP, FPGA systems,
+              SDR, communications and engineering software.
             </p>
           </div>
         </div>
@@ -487,8 +527,8 @@
           <article class="card contact-card">
             <h3>How I can be useful</h3>
             <p>
-              <strong>System design, technical consulting, architecture thinking, educational materials,
-              engineering tooling and specialized implementation work.</strong>
+              <strong>Technical diagnostics, model audits, algorithm-to-implementation work,
+              architecture reviews, engineering tooling and specialized R&amp;D support.</strong>
             </p>
             <ul class="list">
               <li>DSP and communication chain design</li>
