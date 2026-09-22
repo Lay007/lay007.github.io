@@ -6,6 +6,7 @@ Personal engineering website and portfolio for **Alexander / Lay007**.
 
 - Live site: [lay007.github.io](https://lay007.github.io/)
 - Fast reviewer path: [10-minute engineering portfolio review](https://lay007.github.io/portfolio-review.html)
+- Commercial proof path: [engineering case studies](https://lay007.github.io/case-studies.html)
 
 ---
 
@@ -27,6 +28,7 @@ The site is evidence-oriented: every project card names the repository documents
 |---|---|
 | `index.html` | Main portfolio: positioning, engineering pipeline, expertise, selected projects, background, toolchain and contacts |
 | `portfolio-review.html` | 10-minute reviewer path: what to open first in each repository, evidence links and current limits |
+| `case-studies.html` | Three concise commercial case studies: QPSK/Zynq, LoRa/ToA and C++ DSP |
 | `404.html` | GitHub Pages not-found page (not indexed) |
 
 ---
