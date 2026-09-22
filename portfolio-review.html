@@ -104,8 +104,9 @@
               <td class="step-num" data-label="Step">2 <span class="step-time">3 min</span></td>
               <td class="step-repo" data-label="Repository"><a href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">zynq-lora-phy-positioning</a></td>
               <td data-label="What to check">
-                LoRa PHY from MATLAB and recorded SX1262 IQ through fixed-point Simulink and generated HDL to fractional ToA and calibrated 2D TDoA.
-                <span class="limit">Limit: hardware LoRa reception and synchronized multi-receiver positioning have not started; TDoA results are MATLAB Monte Carlo.</span>
+                LoRa PHY from MATLAB and recorded SX1262 IQ through fixed-point Simulink and generated HDL to real ZynqSDR reception, PL timestamps and fractional ToA.
+                Latest hardware evidence includes valid-CRC over-the-air packet decoding, a 500-attempt guard-image campaign with 492/492 captured packets passing CRC and zero PL grid errors, and a continuous sample-time counter across 47 captures spanning 803.7&nbsp;s.
+                <span class="limit">Limit: controlled cable-delay calibration, the 1,000-packet qualification target and synchronized multi-receiver TDoA positioning remain open; calibrated 2D TDoA results are still model-level evidence.</span>
               </td>
               <td data-label="Evidence to open">
                 <span class="evidence-links">
