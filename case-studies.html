@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering case studies | Alexander lay007</title>
+  <meta name="description" content="Three concise engineering case studies: Zynq QPSK SDR, LoRa PHY and timing on ZynqSDR, and modern C++ DSP with deterministic verification." />
+  <meta name="author" content="Alexander | lay007" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#08111f" />
+  <link rel="canonical" href="https://lay007.github.io/case-studies.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <meta property="og:site_name" content="lay007 engineering portfolio" />
+  <meta property="og:title" content="Engineering case studies | Alexander lay007" />
+  <meta property="og:description" content="QPSK on ZynqSDR, LoRa PHY and packet timing, and C++ DSP — each presented as problem, implementation, measurement, result and engineering value." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://lay007.github.io/case-studies.html" />
+  <meta property="og:image" content="https://lay007.github.io/assets/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Alexander lay007 engineering portfolio: DSP, FPGA and communications projects" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Engineering case studies | Alexander lay007" />
+  <meta name="twitter:description" content="Three evidence-backed DSP/FPGA/C++ engineering case studies." />
+  <meta name="twitter:image" content="https://lay007.github.io/assets/social-preview.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav-wrap">
+    <nav class="container nav" aria-label="Primary">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">AL</span>
+        <span class="brand-text">
+          <span>Alexander | lay007</span>
+          <span class="muted">DSP • FPGA • Communications</span>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="portfolio-review.html">10-min review</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="index.html">Full portfolio</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <section class="page-hero">
+      <a class="text-link" href="index.html">← Back to portfolio</a>
+      <h1>Engineering case studies</h1>
+      <p class="lead">
+        Three short examples of how I approach signal-processing work: define the problem,
+        build a reference, implement it, measure the real system, and keep the limitations visible.
+      </p>
+    </section>
+
+    <section class="card review-card" id="qpsk-zynq">
+      <div class="eyebrow">Case 1 • DSP → FPGA → RF measurement</div>
+      <h2>Zynq QPSK modem: closing the loop from model to a two-board RF link</h2>
+      <div class="tags">
+        <span class="tag">QPSK</span>
+        <span class="tag">Zynq-7020</span>
+        <span class="tag">AD936x</span>
+        <span class="tag">Fixed-point DSP</span>
+        <span class="tag">Verilog</span>
+        <span class="tag">BER / EVM / CFO</span>
+      </div>
+
+      <div class="grid-2">
+        <article class="card info-card">
+          <h3>Problem</h3>
+          <p>
+            A communication-chain model is useful only if the same behavior can survive fixed-point choices,
+            HDL integration, real clocks, RF impairments and measurement. The goal was to make that complete
+            path observable rather than treating the FPGA as a black box.
+          </p>
+        </article>
+        <article class="card info-card">
+          <h3>Approach</h3>
+          <p>
+            Build the chain incrementally: reference DSP and fixed-point reasoning, deterministic RTL checks,
+            Zynq/AD936x integration, controlled two-board RF tests, IQ capture, and quantitative BER/EVM/CFO evidence.
+          </p>
+        </article>
+      </div>
+
+      <div class="table-wrap">
+        <table class="steps">
+          <tbody>
+            <tr>
+              <td class="step-num" data-label="Stage">Implementation</td>
+              <td data-label="Evidence">In-fabric BPSK/QPSK modem, synchronization and measurement workflow on independent Zynq-7020 + AD936x boards.</td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Stage">Verification</td>
+              <td data-label="Evidence">5.6 million fabric-loopback bits with zero errors; HDL checks, machine-readable results, timing/resource reports and IQ metadata.</td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Stage">RF result</td>
+              <td data-label="Evidence">Two-board 915 MHz cabled QPSK link with the promoted differential receiver reporting payload BER around 4×10<sup>−4</sup>; additional retained external-QPSK sessions include 0/25,200 recovered-bit errors.</td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Stage">Limit</td>
+              <td data-label="Evidence">The public evidence is strong for reproducible engineering closure, but long-duration BER-floor characterization and broader attenuation sweeps remain separate measurement work.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <article class="card info-card">
+        <h3>What this demonstrates for a client</h3>
+        <p>
+          I can connect algorithm design, fixed-point implementation, HDL/FPGA integration and real RF measurements
+          under common acceptance criteria. The deliverable is not only RTL or a MATLAB model; it is a traceable
+          engineering result with evidence and known limits.
+        </p>
+      </article>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/Lay007/zynq-sdr-course/blob/main/reports/flagship_reviewer_report.md" target="_blank" rel="noopener noreferrer">Open evidence report ↗</a>
+        <a class="btn btn-secondary" href="https://github.com/Lay007/zynq-sdr-course" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+      </div>
+    </section>
+
+    <section class="card review-card" id="lora-toa">
+      <div class="eyebrow">Case 2 • LoRa PHY → hardware timing</div>
+      <h2>LoRa on ZynqSDR: from recorded SX1262 IQ to live packet decoding and a continuous PL timebase</h2>
+      <div class="tags">
+        <span class="tag">LoRa PHY</span>
+        <span class="tag">SX1262</span>
+        <span class="tag">ZynqSDR</span>
+        <span class="tag">MATLAB / Simulink</span>
+        <span class="tag">Generated Verilog</span>
+        <span class="tag">ToA / TDoA</span>
+      </div>
+
+      <div class="grid-2">
+        <article class="card info-card">
+          <h3>Problem</h3>
+          <p>
+            A positioning-capable LoRa receiver needs more than payload decoding. Packet detection, sample-grid
+            alignment, timestamp definition and receiver state must be observable enough to explain timing errors
+            before those errors are propagated into TDoA.
+          </p>
+        </article>
+        <article class="card info-card">
+          <h3>Approach</h3>
+          <p>
+            Maintain one traceable path from MATLAB floating-point reference through fixed-point Simulink,
+            generated HDL and a routed ZynqSDR image. Capture raw IQ and PL trace data together so hardware misses
+            and timing defects can be reproduced instead of guessed.
+          </p>
+        </article>
+      </div>
+
+      <div class="table-wrap">
+        <table class="steps">
+          <tbody>
+            <tr>
+              <td class="step-num" data-label="Stage">Hardware RX</td>
+              <td data-label="Evidence">Real over-the-air Heltec V4.3/SX1262 packets decode on ZynqSDR with valid explicit header and payload CRC.</td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Stage">Long run</td>
+              <td data-label="Evidence">Latest 500-attempt guard-image campaign: 492 packets captured, 492/492 CRC pass, zero PL grid errors; five transmitter-side failures and three PL detector misses were recorded separately.</td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Stage">Timing</td>
+              <td data-label="Evidence">Continuous PL sample-time counter verified across 47 captures spanning 803.7 seconds; all 47 decoded with CRC and zero grid error in that M6 series.</td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Stage">Limit</td>
+              <td data-label="Evidence">Controlled cable-delay calibration, the 1,000-packet qualification target, common-time synchronization across receivers and hardware multi-receiver TDoA are still open.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <article class="card info-card">
+        <h3>What this demonstrates for a client</h3>
+        <p>
+          I can investigate a hardware DSP failure across the complete stack: model, RTL, timing, board image,
+          acquisition tooling and measurement data. The workflow preserves failure evidence and distinguishes a
+          hypothesis from a measured result — important for SDR, timing and localization R&amp;D.
+        </p>
+      </article>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/clg400-joint-grid-experiment.md" target="_blank" rel="noopener noreferrer">Open hardware investigation ↗</a>
+        <a class="btn btn-secondary" href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer">Roadmap ↗</a>
+        <a class="btn btn-secondary" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+      </div>
+    </section>
+
+    <section class="card review-card" id="cpp-dsp">
+      <div class="eyebrow">Case 3 • DSP → production-style C++</div>
+      <h2>C++ DSP showcase: turning algorithms into testable, benchmarked and reusable software</h2>
+      <div class="tags">
+        <span class="tag">C++17</span>
+        <span class="tag">FIR</span>
+        <span class="tag">Goertzel</span>
+        <span class="tag">GCC-PHAT</span>
+        <span class="tag">Resampling</span>
+        <span class="tag">CMake / CI</span>
+      </div>
+
+      <div class="grid-2">
+        <article class="card info-card">
+          <h3>Problem</h3>
+          <p>
+            DSP code often begins as an isolated numerical prototype. For engineering use it needs deterministic
+            behavior, edge-case tests, performance evidence, packaging and a clear path for later fixed-point or
+            hardware mapping.
+          </p>
+        </article>
+        <article class="card info-card">
+          <h3>Approach</h3>
+          <p>
+            Implement compact C++17 DSP kernels behind a reusable API, protect behavior with deterministic unit
+            tests, benchmark performance-sensitive paths, keep optional AVX2 acceleration explicit, and export an
+            installable CMake package for downstream projects.
+          </p>
+        </article>
+      </div>
+
+      <div class="table-wrap">
+        <table class="steps">
+          <tbody>
+            <tr>
+              <td class="step-num" data-label="Stage">Algorithms</td>
+              <td data-label="Evidence">FIR design/filtering, direct and FFT overlap-save convolution, Goertzel, GCC-PHAT delay estimation and rational L/M resampling.</td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Stage">Verification</td>
+              <td data-label="Evidence">Deterministic unit tests, generated benchmark reports, multi-platform CI, sanitizer checks and CodeQL.</td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Stage">Reuse</td>
+              <td data-label="Evidence">Installable CMake package export and documented downstream use through the public dsp_core::dsp target.</td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Stage">Limit</td>
+              <td data-label="Evidence">The repository is deliberately compact: it demonstrates engineering discipline around selected kernels rather than claiming to be a complete DSP framework.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <article class="card info-card">
+        <h3>What this demonstrates for a client</h3>
+        <p>
+          I can move signal-processing logic into maintainable C++ without losing numerical traceability:
+          implementation, tests, performance measurement, packaging and possible FPGA direction are treated as one
+          engineering problem rather than separate tasks.
+        </p>
+      </article>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/reviewer-quick-check.md" target="_blank" rel="noopener noreferrer">Open reviewer check ↗</a>
+        <a class="btn btn-secondary" href="https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/algorithm-evidence-matrix.md" target="_blank" rel="noopener noreferrer">Evidence matrix ↗</a>
+        <a class="btn btn-secondary" href="https://github.com/Lay007/cpp-dsp-showcase" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+      </div>
+    </section>
+
+    <section class="card review-card" id="contact">
+      <h2>Have a similar engineering problem?</h2>
+      <p>
+        I am open to focused diagnostics, model/implementation audits, model-to-C++/RTL work and part-time R&amp;D support
+        in DSP, SDR, communications and FPGA-oriented projects.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:laymob@gmail.com?subject=DSP%20%2F%20FPGA%20engineering%20discussion">Discuss an engineering problem</a>
+        <a class="btn btn-secondary" href="https://ru.linkedin.com/in/alexander-lyubko-dsp" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>
+      © <span id="year">2026</span> Alexander | lay007 ·
+      <a href="index.html">Portfolio</a> ·
+      <a href="portfolio-review.html">10-minute review</a> ·
+      <a href="https://github.com/Lay007" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
