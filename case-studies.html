@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Engineering case studies | Alexander lay007</title>
+  <title>Engineering case studies | Alexander Lyubko</title>
   <meta name="description" content="Three concise engineering case studies: Zynq QPSK SDR, LoRa PHY and timing on ZynqSDR, and modern C++ DSP with deterministic verification." />
-  <meta name="author" content="Alexander | lay007" />
+  <meta name="author" content="Alexander Lyubko | lay007" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#08111f" />
   <link rel="canonical" href="https://lay007.github.io/case-studies.html" />
@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="stylesheet" href="assets/css/site.css" />
   <meta property="og:site_name" content="lay007 engineering portfolio" />
-  <meta property="og:title" content="Engineering case studies | Alexander lay007" />
+  <meta property="og:title" content="Engineering case studies | Alexander Lyubko" />
   <meta property="og:description" content="QPSK on ZynqSDR, LoRa PHY and packet timing, and C++ DSP — each presented as problem, implementation, measurement, result and engineering value." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
@@ -22,9 +22,9 @@
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Alexander lay007 engineering portfolio: DSP, FPGA and communications projects" />
+  <meta property="og:image:alt" content="Alexander Lyubko engineering portfolio: DSP, FPGA and communications projects" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Engineering case studies | Alexander lay007" />
+  <meta name="twitter:title" content="Engineering case studies | Alexander Lyubko" />
   <meta name="twitter:description" content="Three evidence-backed DSP/FPGA/C++ engineering case studies." />
   <meta name="twitter:image" content="https://lay007.github.io/assets/social-preview.png" />
 </head>
@@ -36,14 +36,13 @@
       <a class="brand" href="index.html">
         <span class="brand-mark" aria-hidden="true">AL</span>
         <span class="brand-text">
-          <span>Alexander | lay007</span>
+          <span>Alexander Lyubko</span>
           <span class="muted">DSP • FPGA • Communications</span>
         </span>
       </a>
 
       <div class="nav-links">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#projects">Projects</a>
+        <a href="index.html#projects">Work</a>
         <a href="portfolio-review.html">10-min review</a>
         <a href="#contact">Contact</a>
         <a class="nav-cta" href="index.html">Full portfolio</a>
@@ -72,6 +71,12 @@
         <span class="tag">Verilog</span>
         <span class="tag">BER / EVM / CFO</span>
       </div>
+      <figure class="case-figure">
+        <img src="assets/evidence/qpsk-hardware-constellation.png"
+             alt="Measured QPSK constellation from the public Zynq SDR hardware evidence"
+             loading="lazy" width="960" height="720" />
+        <figcaption>Measured QPSK hardware evidence from the public Zynq/AD936x validation flow. Repository links below lead to the retained reports and limits.</figcaption>
+      </figure>
 
       <div class="grid-2">
         <article class="card info-card">
@@ -140,6 +145,12 @@
         <span class="tag">Generated Verilog</span>
         <span class="tag">ToA / TDoA</span>
       </div>
+      <figure class="case-figure">
+        <img src="assets/evidence/lora-sx1262-demodulation.png"
+             alt="Real SX1262 LoRa packet demodulation evidence"
+             loading="lazy" width="1200" height="800" />
+        <figcaption>Real SX1262 packet demodulation used in the public LoRa PHY work. Hardware TDoA remains explicitly separated from the demonstrated packet-RX and timebase evidence.</figcaption>
+      </figure>
 
       <div class="grid-2">
         <article class="card info-card">
@@ -209,6 +220,11 @@
         <span class="tag">GCC-PHAT</span>
         <span class="tag">Resampling</span>
         <span class="tag">CMake / CI</span>
+      </div>
+      <div class="code-visual case-code-visual" role="img" aria-label="C++ DSP evidence covers FIR, Goertzel, GCC-PHAT and rational resampling with tests, CMake packaging and benchmark tooling">
+        <span>FIR</span><span>Goertzel</span><span>GCC-PHAT</span><span>Resampler</span>
+        <strong>Algorithm → test → benchmark → package</strong>
+        <small>No synthetic performance number is claimed here; benchmark tooling and validation evidence are linked below.</small>
       </div>
 
       <div class="grid-2">
@@ -284,7 +300,7 @@
 
   <footer class="footer container">
     <p>
-      © <span id="year">2026</span> Alexander | lay007 ·
+      © <span id="year">2026</span> Alexander Lyubko ·
       <a href="index.html">Portfolio</a> ·
       <a href="portfolio-review.html">10-minute review</a> ·
       <a href="https://github.com/Lay007" target="_blank" rel="noopener noreferrer">GitHub</a>

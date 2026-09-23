@@ -2,7 +2,7 @@
 
 [![Site check](https://github.com/Lay007/lay007.github.io/actions/workflows/site-check.yml/badge.svg)](https://github.com/Lay007/lay007.github.io/actions/workflows/site-check.yml)
 
-Personal engineering website and portfolio for **Alexander / Lay007**.
+Personal engineering website and evidence-driven portfolio for **Alexander Lyubko / Lay007**.
 
 - Live site: [lay007.github.io](https://lay007.github.io/)
 - Fast reviewer path: [10-minute engineering portfolio review](https://lay007.github.io/portfolio-review.html)
@@ -26,7 +26,7 @@ The site is evidence-oriented: every project card names the repository documents
 
 | Page | Purpose |
 |---|---|
-| `index.html` | Main portfolio: positioning, engineering pipeline, expertise, selected projects, background, toolchain and contacts |
+| `index.html` | Main portfolio: DSP/FPGA/SDR positioning, measured proof strip, flagship projects, engineering support, pipeline, background and contacts |
 | `portfolio-review.html` | 10-minute reviewer path: what to open first in each repository, evidence links and current limits |
 | `case-studies.html` | Three concise commercial case studies: QPSK/Zynq, LoRa/ToA and C++ DSP |
 | `404.html` | GitHub Pages not-found page (not indexed) |
@@ -72,6 +72,7 @@ lay007.github.io/
 |  |- engineering_pipeline.svg         pipeline diagram (desktop)
 |  |- engineering_pipeline_mobile.svg  pipeline diagram (phones)
 |  |- projects/                        project cover images
+|  |- evidence/                        selected measured plots used by the portfolio and case studies
 |  |- social-preview.png               Open Graph image (rendered)
 |  `- apple-touch-icon.png             touch icon (rendered)
 |- docs/

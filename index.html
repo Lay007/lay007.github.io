@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alexander | DSP / FPGA / Communications Engineer</title>
+  <title>Alexander Lyubko | DSP / FPGA / SDR Engineer</title>
   <meta
     name="description"
-    content="Alexander (lay007) — DSP/FPGA R&D engineer helping teams move signal-processing algorithms from MATLAB/Simulink to verified C++/Verilog/FPGA implementations."
+    content="Alexander Lyubko (lay007) — DSP/FPGA/SDR R&D engineer building and validating signal-processing systems from MATLAB/Simulink models to C++/RTL, Zynq/AD936x hardware and measured RF results."
   />
-  <meta name="author" content="Alexander | lay007" />
+  <meta name="author" content="Alexander Lyubko | lay007" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#08111f" />
   <link rel="canonical" href="https://lay007.github.io/" />
@@ -16,10 +16,10 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="stylesheet" href="assets/css/site.css" />
   <meta property="og:site_name" content="lay007 engineering portfolio" />
-  <meta property="og:title" content="Alexander | DSP / FPGA / Communications Engineer" />
+  <meta property="og:title" content="Alexander Lyubko | DSP / FPGA / SDR Engineer" />
   <meta
     property="og:description"
-    content="DSP, SDR and FPGA engineering from MATLAB/Simulink models to verified C++/Verilog implementations, hardware measurements and reproducible evidence."
+    content="DSP, FPGA and SDR engineering from MATLAB/Simulink and fixed-point models to C++/RTL, Zynq/AD936x hardware, RF measurements and reproducible evidence."
   />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
@@ -30,10 +30,10 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Alexander lay007 engineering portfolio: DSP, FPGA and communications projects" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Alexander | DSP / FPGA / Communications Engineer" />
+  <meta name="twitter:title" content="Alexander Lyubko | DSP / FPGA / SDR Engineer" />
   <meta
     name="twitter:description"
-    content="DSP/FPGA R&D portfolio: model-to-implementation work, SDR hardware validation, C++ DSP, Verilog and measurement-driven engineering."
+    content="DSP/FPGA/SDR portfolio: model-to-hardware engineering, C++/RTL implementation, Zynq/AD936x validation and measurement-driven R&D."
   />
   <meta name="twitter:image" content="https://lay007.github.io/assets/social-preview.png" />
   <meta name="twitter:image:alt" content="Alexander lay007 engineering portfolio: DSP, FPGA and communications projects" />
@@ -41,12 +41,12 @@
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Alexander",
+      "name": "Alexander Lyubko",
       "alternateName": "lay007",
       "url": "https://lay007.github.io/",
       "email": "mailto:laymob@gmail.com",
-      "jobTitle": "DSP / FPGA / Communications Engineer",
-      "description": "DSP/FPGA R&D engineer helping teams move signal-processing algorithms from MATLAB/Simulink to verified C++/Verilog/FPGA implementations.",
+      "jobTitle": "DSP / FPGA / SDR R&D Engineer",
+      "description": "DSP/FPGA/SDR R&D engineer building and validating signal-processing systems from MATLAB/Simulink and fixed-point models to C++/RTL, Zynq/AD936x hardware and measured RF results.",
       "knowsAbout": [
         "Digital signal processing",
         "FPGA design",
@@ -74,19 +74,15 @@
       <a class="brand" href="#top">
         <span class="brand-mark" aria-hidden="true">AL</span>
         <span class="brand-text">
-          <span>Alexander | lay007</span>
+          <span>Alexander Lyubko</span>
           <span class="muted">DSP • FPGA • Communications</span>
         </span>
       </a>
 
       <div class="nav-links">
-        <a href="#pipeline">Pipeline</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects">Work</a>
         <a href="case-studies.html">Case studies</a>
-        <a href="#services">Services</a>
-        <a href="#background">Background</a>
-        <a href="#toolchain">Toolchain</a>
+        <a href="#background">About</a>
         <a href="#contact">Contact</a>
         <a class="nav-cta" href="portfolio-review.html">10-min review</a>
       </div>
@@ -97,104 +93,243 @@
     <section class="hero container" id="top">
       <div class="hero-grid">
         <div class="card hero-main">
-          <div class="eyebrow">Candidate of Technical Sciences • Applied R&amp;D Engineer</div>
-          <h1>DSP, FPGA and communications engineering — from theory to working systems.</h1>
+          <div class="eyebrow">DSP / FPGA / SDR R&amp;D Engineer</div>
+          <p class="hero-name">Alexander Lyubko <span>• lay007</span></p>
+          <h1>From signal models to measured hardware.</h1>
 
           <p class="hero-lead">
-            I help R&amp;D teams turn DSP and communication algorithms into verified C++/RTL/FPGA implementations.
+            I build and validate communication and signal-processing systems across
+            MATLAB/Simulink, fixed-point DSP, C++/RTL, FPGA and SDR hardware.
           </p>
 
           <p class="hero-summary">
-            My work connects MATLAB/Simulink reference models, fixed-point design, C++ and Verilog implementation,
-            FPGA/SDR integration, deterministic tests, hardware measurements and engineering reports.
+            The work is evidence-driven: deterministic tests, bit-exact checks, Zynq/AD936x integration,
+            real IQ captures and measured BER, EVM, timing and packet results.
           </p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:laymob@gmail.com?subject=DSP%20%2F%20FPGA%20engineering%20discussion">Discuss an engineering problem</a>
-            <a class="btn btn-secondary" href="portfolio-review.html">10-minute portfolio review</a>
-            <a class="btn btn-secondary" href="https://github.com/Lay007" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <div class="signal-chain" aria-label="Engineering workflow">
+            <span>MATLAB / Simulink</span><i>→</i>
+            <span>Fixed-point</span><i>→</i>
+            <span>C++ / RTL</span><i>→</i>
+            <span>Zynq / AD936x</span><i>→</i>
+            <span>RF measurements</span>
           </div>
 
-          <div class="hero-meta">
-            <span class="chip">C++</span>
-            <span class="chip">Verilog</span>
-            <span class="chip">MATLAB</span>
-            <span class="chip">Simulink</span>
-            <span class="chip">Xilinx</span>
-            <span class="chip">Intel FPGA</span>
-            <span class="chip">Microchip</span>
-            <span class="chip">DSP</span>
-            <span class="chip">Telemetry</span>
-            <span class="chip">InfoSec</span>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="case-studies.html">View engineering case studies</a>
+            <a class="btn btn-secondary" href="https://github.com/Lay007" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-secondary" href="mailto:laymob@gmail.com?subject=DSP%20%2F%20FPGA%20engineering%20discussion">Discuss a problem</a>
           </div>
         </div>
 
-        <aside class="card hero-side" aria-label="Highlights">
-          <div class="signal-panel">
-            <div class="signal-caption">
-              <span>Engineering signal path</span>
-              <span>Design / Validate / Ship</span>
-            </div>
-
-            <svg class="signal-svg" viewBox="0 0 640 180" aria-hidden="true" focusable="false">
-              <defs>
-                <linearGradient id="lineA" x1="0" x2="1">
-                  <stop offset="0%" stop-color="#4fa1ff"/>
-                  <stop offset="100%" stop-color="#79f0d5"/>
-                </linearGradient>
-                <linearGradient id="lineB" x1="0" x2="1">
-                  <stop offset="0%" stop-color="#7f8cff"/>
-                  <stop offset="100%" stop-color="#4fa1ff"/>
-                </linearGradient>
-              </defs>
-              <path d="M0 120 C40 120, 40 50, 80 50 S120 150, 160 150 S200 60, 240 60 S280 130, 320 130 S360 35, 400 35 S440 145, 480 145 S520 82, 560 82 S600 110, 640 110"
-                    fill="none" stroke="url(#lineA)" stroke-width="6" stroke-linecap="round"/>
-              <path d="M0 78 C40 78, 40 128, 80 128 S120 36, 160 36 S200 118, 240 118 S280 90, 320 90 S360 144, 400 144 S440 48, 480 48 S520 118, 560 118 S600 78, 640 78"
-                    fill="none" stroke="url(#lineB)" stroke-width="3.5" stroke-linecap="round" opacity="0.95"/>
-              <g fill="#dff0ff" opacity="0.8">
-                <circle cx="80" cy="50" r="4"/>
-                <circle cx="240" cy="60" r="4"/>
-                <circle cx="400" cy="35" r="4"/>
-                <circle cx="560" cy="82" r="4"/>
-              </g>
-            </svg>
-
-            <div class="signal-legend">
-              <span class="legend-item">DSP pipelines</span>
-              <span class="legend-item">FPGA implementation</span>
-              <span class="legend-item">Communications</span>
-            </div>
+        <aside class="card hero-side evidence-side" aria-label="Measured engineering evidence">
+          <div class="evidence-side-head">
+            <span class="kicker">Measured evidence</span>
+            <strong>Real hardware, not only simulation</strong>
           </div>
 
-          <div class="metrics-grid">
-            <div class="metric">
-              <div class="metric-value">10+</div>
-              <div class="metric-label">years in higher education teaching</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">3</div>
-              <div class="metric-label">textbooks authored</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">≈4×10<sup>−4</sup></div>
-              <div class="metric-label">payload BER on a two-board 915&nbsp;MHz QPSK link</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">R&amp;D</div>
-              <div class="metric-label">publications, inventions and patents</div>
-            </div>
-          </div>
+          <figure class="hero-evidence-figure">
+            <img src="assets/evidence/qpsk-hardware-constellation.png"
+                 alt="Measured QPSK constellation from Zynq SDR hardware validation"
+                 width="960" height="720" />
+            <figcaption>Zynq / AD936x QPSK hardware capture</figcaption>
+          </figure>
 
-          <a class="start-here" href="portfolio-review.html">
-            <span class="start-here-label">Reviewing the portfolio?</span>
-            <strong>Open the 10-minute evidence&nbsp;path&nbsp;→</strong>
-            <small>Five repositories, what to open first and current limits.</small>
-          </a>
+          <figure class="hero-evidence-figure hero-evidence-secondary">
+            <img src="assets/evidence/lora-sx1262-demodulation.png"
+                 alt="LoRa SX1262 packet demodulation evidence from the positioning project"
+                 width="1200" height="800" />
+            <figcaption>Real SX1262 LoRa packet demodulation</figcaption>
+          </figure>
         </aside>
       </div>
     </section>
 
+    <section class="proof-strip container" aria-label="Selected measured results">
+      <a class="proof-card" href="https://github.com/Lay007/zynq-sdr-course" target="_blank" rel="noopener noreferrer">
+        <span class="proof-label">Two-board RF link</span>
+        <strong class="proof-value">≈4×10<sup>−4</sup></strong>
+        <span class="proof-detail">payload BER · QPSK · 915 MHz</span>
+      </a>
+      <a class="proof-card" href="https://github.com/Lay007/zynq-sdr-course/blob/main/docs/maturity_matrix.md" target="_blank" rel="noopener noreferrer">
+        <span class="proof-label">Fabric loopback</span>
+        <strong class="proof-value">&lt;5.34×10<sup>−7</sup></strong>
+        <span class="proof-detail">BER over 5.6 Mbit</span>
+      </a>
+      <a class="proof-card" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">
+        <span class="proof-label">LoRa hardware RX</span>
+        <strong class="proof-value">492 / 492</strong>
+        <span class="proof-detail">captured packets passed CRC</span>
+      </a>
+      <a class="proof-card" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">
+        <span class="proof-label">Continuous PL timebase</span>
+        <strong class="proof-value">803.7 s</strong>
+        <span class="proof-detail">verified across 47 captures</span>
+      </a>
+    </section>
+
     <div class="container">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    
+      <section class="section section-first" id="projects">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Selected work</div>
+            <h2>Engineering evidence first</h2>
+            <p>
+              Three flagship public projects show the same workflow from different angles:
+              reference models, implementation, deterministic verification, hardware integration and measured results.
+            </p>
+          </div>
+          <a class="text-link section-link" href="portfolio-review.html">Open the 10-minute reviewer path →</a>
+        </div>
+
+        <div class="grid-3 flagship-grid">
+          <article class="card project-card featured">
+            <a class="project-cover" href="https://github.com/Lay007/zynq-sdr-course" target="_blank" rel="noopener noreferrer" aria-label="Open zynq-sdr-course on GitHub">
+              <img src="assets/projects/zynq-sdr-course.webp" alt="zynq-sdr-course model-to-hardware engineering pipeline" loading="lazy" width="480" height="270" />
+            </a>
+            <div class="project-top">
+              <div>
+                <span class="project-status">Measured hardware</span>
+                <h3>zynq-sdr-course</h3>
+                <p>DSP/SDR engineering course and reference implementation from models and fixed-point design to RTL, Zynq/AD936x and RF measurements.</p>
+              </div>
+              <a class="project-link" href="https://github.com/Lay007/zynq-sdr-course" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+            <p class="project-evidence">
+              <strong>Evidence:</strong> two-board 915 MHz QPSK link at payload BER ≈4×10<sup>−4</sup>;
+              fabric loopback BER &lt;5.34×10<sup>−7</sup> over 5.6 Mbit.
+            </p>
+            <p class="project-open">
+              <span>Open first:</span>
+              <a href="https://github.com/Lay007/zynq-sdr-course/blob/main/docs/reviewer-path.md" target="_blank" rel="noopener noreferrer">Reviewer path</a>
+              <a href="case-studies.html#qpsk-zynq">Case study</a>
+            </p>
+            <div class="tags">
+              <span class="tag">Zynq-7020</span><span class="tag">AD936x</span><span class="tag">QPSK</span><span class="tag">RTL</span>
+            </div>
+          </article>
+
+          <article class="card project-card featured">
+            <a class="project-cover" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer" aria-label="Open zynq-lora-phy-positioning on GitHub">
+              <img src="assets/projects/zynq-lora-phy-positioning.webp" alt="LoRa PHY and positioning implementation pipeline" loading="lazy" width="480" height="270" />
+            </a>
+            <div class="project-top">
+              <div>
+                <span class="project-status">Active R&amp;D</span>
+                <h3>zynq-lora-phy-positioning</h3>
+                <p>LoRa PHY and precise packet timing from real SX1262 IQ through MATLAB, fixed-point Simulink and generated HDL to ZynqSDR.</p>
+              </div>
+              <a class="project-link" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+            <p class="project-evidence">
+              <strong>Evidence:</strong> 492/492 captured packets passed CRC with zero PL grid errors;
+              continuous PL sample-time counter verified across 47 captures spanning 803.7 s.
+            </p>
+            <p class="project-open">
+              <span>Open first:</span>
+              <a href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer">Roadmap</a>
+              <a href="case-studies.html#lora-toa">Case study</a>
+            </p>
+            <div class="tags">
+              <span class="tag">LoRa</span><span class="tag">SX1262</span><span class="tag">FPGA</span><span class="tag">ToA / TDoA</span>
+            </div>
+          </article>
+
+          <article class="card project-card featured">
+            <div class="code-visual" aria-hidden="true">
+              <span>FIR</span><span>Goertzel</span><span>GCC-PHAT</span><span>Resampler</span>
+              <strong>C++17 DSP</strong>
+              <small>tests · CMake · AVX2 · benchmarks</small>
+            </div>
+            <div class="project-top">
+              <div>
+                <span class="project-status">Software evidence</span>
+                <h3>cpp-dsp-showcase</h3>
+                <p>Reusable DSP kernels with deterministic validation, packaging and optional optimized hot paths rather than isolated algorithm demos.</p>
+              </div>
+              <a class="project-link" href="https://github.com/Lay007/cpp-dsp-showcase" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+            <p class="project-evidence">
+              <strong>Evidence:</strong> deterministic tests, algorithm evidence matrix, multi-platform CI,
+              optional AVX2 paths and reproducible benchmark tooling.
+            </p>
+            <p class="project-open">
+              <span>Open first:</span>
+              <a href="https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/reviewer-quick-check.md" target="_blank" rel="noopener noreferrer">Reviewer quick check</a>
+              <a href="case-studies.html#cpp-dsp">Case study</a>
+            </p>
+            <div class="tags">
+              <span class="tag">C++17</span><span class="tag">DSP</span><span class="tag">CMake</span><span class="tag">CI</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="more-work">
+          <div class="more-work-head">
+            <h3>More engineering work</h3>
+            <p>Useful supporting projects, intentionally secondary to the DSP/FPGA/SDR portfolio.</p>
+          </div>
+          <div class="more-work-grid">
+            <a class="card compact-project" href="https://github.com/Lay007/network-quality-assessment" target="_blank" rel="noopener noreferrer">
+              <div><strong>network-quality-assessment</strong><span>FPGA timestamping concepts, latency/jitter analysis and synthetic SLA reporting.</span></div><b aria-hidden="true">↗</b>
+            </a>
+            <a class="card compact-project" href="https://github.com/Lay007/script-toolbox" target="_blank" rel="noopener noreferrer">
+              <div><strong>script-toolbox</strong><span>Repeatable Windows, OpenSSH, Git and CMake automation with PowerShell quality gates.</span></div><b aria-hidden="true">↗</b>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">How I can help</div>
+            <h2>Focused R&amp;D support</h2>
+            <p>
+              Useful when a DSP, FPGA or SDR problem needs an engineer who can move between the mathematical model,
+              implementation details and the measurement bench.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <article class="card info-card">
+            <div class="icon-box" aria-hidden="true">01</div>
+            <h3>Architecture &amp; technical diagnostic</h3>
+            <p>Trace a difficult DSP/communications problem through assumptions, interfaces, timing, numerical behavior and measurable acceptance criteria.</p>
+          </article>
+          <article class="card info-card">
+            <div class="icon-box" aria-hidden="true">02</div>
+            <h3>MATLAB / Simulink → implementation</h3>
+            <p>Turn a reference algorithm into fixed-point decisions, shared test vectors and an implementation path for C++ or RTL.</p>
+          </article>
+          <article class="card info-card">
+            <div class="icon-box" aria-hidden="true">03</div>
+            <h3>FPGA / SDR bring-up &amp; validation</h3>
+            <p>Instrument real hardware, capture evidence and separate RF, clocking, synchronization, numerical and RTL failure modes.</p>
+          </article>
+          <article class="card info-card">
+            <div class="icon-box" aria-hidden="true">04</div>
+            <h3>Part-time engineering R&amp;D</h3>
+            <p>Focused support for DSP, SDR, communications, fixed-point and FPGA work without adding a full-time specialist.</p>
+          </article>
+        </div>
+      </section>
+
       <section class="section" id="pipeline">
         <div class="section-head">
           <div>
@@ -251,201 +386,13 @@
         </div>
       </section>
 
-      <section class="section" id="services">
-        <div class="section-head">
-          <div>
-            <h2>Focused engineering support</h2>
-            <p>
-              Practical consulting and part-time R&amp;D support for teams that need signal-processing depth
-              without adding a full-time specialist.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid-4">
-          <article class="card info-card">
-            <div class="icon-box" aria-hidden="true">A</div>
-            <h3>DSP / FPGA technical diagnostic</h3>
-            <p>Review a difficult signal-processing problem, architecture, model or implementation and define measurable next steps.</p>
-          </article>
-
-          <article class="card info-card">
-            <div class="icon-box" aria-hidden="true">B</div>
-            <h3>MATLAB / Simulink model audit</h3>
-            <p>Check algorithm behavior, numerical assumptions, reference vectors, test coverage and implementation risks.</p>
-          </article>
-
-          <article class="card info-card">
-            <div class="icon-box" aria-hidden="true">C</div>
-            <h3>Model to C++ / RTL / FPGA</h3>
-            <p>Move a verified DSP algorithm toward implementation with shared test vectors, fixed-point decisions and acceptance criteria.</p>
-          </article>
-
-          <article class="card info-card">
-            <div class="icon-box" aria-hidden="true">D</div>
-            <h3>Focused R&amp;D support</h3>
-            <p>Part-time technical support and mentoring for DSP, SDR, communications, fixed-point and FPGA-oriented projects.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="projects">
-        <div class="section-head">
-          <div>
-            <h2>Selected projects</h2>
-            <p>
-              Public repositories that best reflect practical engineering depth: SDR education, LoRa PHY and positioning research,
-              C++ DSP, network measurement and workstation automation. Each card names the evidence to open first.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <article class="card project-card featured">
-            <a class="project-cover" href="https://github.com/Lay007/zynq-sdr-course" target="_blank" rel="noopener noreferrer" aria-label="Open zynq-sdr-course on GitHub">
-              <img src="assets/projects/zynq-sdr-course.webp" alt="zynq-sdr-course engineering pipeline from model and RTL to Zynq SDR hardware and RF measurement" loading="lazy" width="480" height="270" />
-            </a>
-            <div class="project-top">
-              <div>
-                <h3>zynq-sdr-course</h3>
-                <p>A bilingual SDR course from DSP models and fixed-point design through HDL flow, Zynq/AD9363 RF work and IQ analysis to final projects.</p>
-              </div>
-              <a class="project-link" href="https://github.com/Lay007/zynq-sdr-course" target="_blank" rel="noopener noreferrer">Open<span class="sr-only"> zynq-sdr-course on GitHub</span> <span aria-hidden="true">↗</span></a>
-            </div>
-            <p class="project-evidence">
-              <strong>Evidence:</strong> in-fabric QPSK modem on Zynq-7020 + AD9361 closed on a two-board 915&nbsp;MHz RF link
-              (payload BER ≈4×10<sup>−4</sup>); CI-checked HDL, synchronization and IQ-recording labs.
-            </p>
-            <p class="project-open">
-              <span>Open first:</span>
-              <a href="https://github.com/Lay007/zynq-sdr-course/blob/main/docs/reviewer-path.md" target="_blank" rel="noopener noreferrer">Reviewer path</a>
-              <a href="https://github.com/Lay007/zynq-sdr-course/blob/main/reports/course-evidence-map.md" target="_blank" rel="noopener noreferrer">Evidence map</a>
-              <a href="case-studies.html#qpsk-zynq">Case study</a>
-            </p>
-            <div class="tags">
-              <span class="tag">SDR</span>
-              <span class="tag">DSP</span>
-              <span class="tag">FPGA</span>
-              <span class="tag">Zynq</span>
-              <span class="tag">Education</span>
-            </div>
-          </article>
-
-          <article class="card project-card featured">
-            <a class="project-cover" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer" aria-label="Open zynq-lora-phy-positioning on GitHub">
-              <img src="assets/projects/zynq-lora-phy-positioning.webp" alt="zynq-lora-phy-positioning LoRa PHY pipeline from MATLAB and Simulink to Verilog, ZynqSDR and TDoA positioning" loading="lazy" width="480" height="270" />
-            </a>
-            <div class="project-top">
-              <div>
-                <h3>zynq-lora-phy-positioning</h3>
-                <p>LoRa PHY and ToA/TDoA positioning with real SX1262 IQ, a MATLAB reference, streaming fixed-point Simulink, generated Verilog and synthesis evidence.</p>
-              </div>
-              <a class="project-link" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">Open<span class="sr-only"> zynq-lora-phy-positioning on GitHub</span> <span aria-hidden="true">↗</span></a>
-            </div>
-            <p class="project-evidence">
-              <strong>Evidence:</strong> real over-the-air SX1262 packets decode on ZynqSDR with valid payload CRC.
-              In the latest 500-attempt guard-image campaign, all 492 captured packets passed CRC with zero PL grid errors;
-              a continuous PL sample-time counter was also verified across 47 captures spanning 803.7&nbsp;s.
-              Controlled delay calibration and synchronized multi-receiver TDoA remain open.
-            </p>
-            <p class="project-open">
-              <span>Open first:</span>
-              <a href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/matlab-m1-acceptance.md" target="_blank" rel="noopener noreferrer">M1 acceptance</a>
-              <a href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer">Roadmap</a>
-              <a href="case-studies.html#lora-toa">Case study</a>
-            </p>
-            <div class="tags">
-              <span class="tag">LoRa</span>
-              <span class="tag">MATLAB</span>
-              <span class="tag">Simulink</span>
-              <span class="tag">FPGA</span>
-              <span class="tag">TDoA</span>
-            </div>
-          </article>
-
-          <article class="card project-card">
-            <div class="project-top">
-              <div>
-                <h3>cpp-dsp-showcase</h3>
-                <p>C++17 DSP library with FIR design and filtering, Goertzel tone detection, GCC-PHAT delay estimation and rational resampling, packaged for downstream CMake projects.</p>
-              </div>
-              <a class="project-link" href="https://github.com/Lay007/cpp-dsp-showcase" target="_blank" rel="noopener noreferrer">Open<span class="sr-only"> cpp-dsp-showcase on GitHub</span> <span aria-hidden="true">↗</span></a>
-            </div>
-            <p class="project-evidence">
-              <strong>Evidence:</strong> deterministic unit tests, optional AVX2 hot paths, generated benchmark reports and multi-platform CI.
-            </p>
-            <p class="project-open">
-              <span>Open first:</span>
-              <a href="https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/reviewer-quick-check.md" target="_blank" rel="noopener noreferrer">Reviewer quick check</a>
-              <a href="https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/algorithm-evidence-matrix.md" target="_blank" rel="noopener noreferrer">Algorithm evidence matrix</a>
-              <a href="case-studies.html#cpp-dsp">Case study</a>
-            </p>
-            <div class="tags">
-              <span class="tag">C++17</span>
-              <span class="tag">DSP</span>
-              <span class="tag">CMake</span>
-              <span class="tag">Benchmarks</span>
-            </div>
-          </article>
-
-          <article class="card project-card">
-            <div class="project-top">
-              <div>
-                <h3>network-quality-assessment</h3>
-                <p>Hardware-assisted network performance testing with FPGA timestamping and methodology aligned with RFC 2544 and ITU-T Y.1564.</p>
-              </div>
-              <a class="project-link" href="https://github.com/Lay007/network-quality-assessment" target="_blank" rel="noopener noreferrer">Open<span class="sr-only"> network-quality-assessment on GitHub</span> <span aria-hidden="true">↗</span></a>
-            </div>
-            <p class="project-evidence">
-              <strong>Evidence:</strong> hardware-free synthetic SLA pipeline checked in CI and a committed sample result package;
-              the reviewer checklist keeps synthetic demos separate from hardware measurements.
-            </p>
-            <p class="project-open">
-              <span>Open first:</span>
-              <a href="https://github.com/Lay007/network-quality-assessment/blob/master/docs/synthetic-sla-demo.md" target="_blank" rel="noopener noreferrer">Synthetic SLA demo</a>
-              <a href="https://github.com/Lay007/network-quality-assessment/blob/master/docs/reviewer-acceptance-checklist.md" target="_blank" rel="noopener noreferrer">Reviewer checklist</a>
-            </p>
-            <div class="tags">
-              <span class="tag">Go</span>
-              <span class="tag">FPGA</span>
-              <span class="tag">Networking</span>
-              <span class="tag">Validation</span>
-            </div>
-          </article>
-
-          <article class="card project-card wide">
-            <div class="project-top">
-              <div>
-                <h3>script-toolbox</h3>
-                <p>Reusable PowerShell automation for Windows OpenSSH key-only access, Git onboarding, CMake and Visual Studio Build Tools setup.</p>
-              </div>
-              <a class="project-link" href="https://github.com/Lay007/script-toolbox" target="_blank" rel="noopener noreferrer">Open<span class="sr-only"> script-toolbox on GitHub</span> <span aria-hidden="true">↗</span></a>
-            </div>
-            <p class="project-evidence">
-              <strong>Evidence:</strong> CI parses every script through the PowerShell AST, checks Markdown links and runs PSScriptAnalyzer.
-            </p>
-            <p class="project-open">
-              <span>Open first:</span>
-              <a href="https://github.com/Lay007/script-toolbox/blob/main/docs/ci-quality-gates.md" target="_blank" rel="noopener noreferrer">CI quality gates</a>
-              <a href="https://github.com/Lay007/script-toolbox/blob/main/docs/engineering-safety-model.md" target="_blank" rel="noopener noreferrer">Safety model</a>
-            </p>
-            <div class="tags">
-              <span class="tag">PowerShell</span>
-              <span class="tag">Windows</span>
-              <span class="tag">DevOps</span>
-              <span class="tag">Automation</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
       <section class="section" id="background">
         <div class="section-head">
           <div>
-            <h2>Background</h2>
+            <div class="section-kicker">About</div>
+            <h2>Engineering background</h2>
             <p>
-              A profile shaped not only by software delivery, but also by academic work,
-              teaching practice, technical writing and invention activity.
+              Applied engineering work backed by research, teaching, technical writing and invention activity — useful context, but secondary to measured implementation evidence.
             </p>
           </div>
         </div>
@@ -454,10 +401,9 @@
           <article class="card timeline-card">
             <div class="timeline-label">Academic base</div>
             <div>
-              <h3>Candidate of Technical Sciences</h3>
+              <h3>Research degree in engineering</h3>
               <p>
-                Strong analytical and research foundation supporting applied work in signal processing,
-                communications, FPGA-oriented development and engineering methodology.
+                Candidate of Technical Sciences, with an analytical research foundation supporting applied work in signal processing, communications and FPGA-oriented development.
               </p>
             </div>
           </article>
@@ -580,12 +526,12 @@
           </aside>
         </div>
       </section>
-    </div>
+</div>
   </main>
 
   <footer class="footer container">
     <p>
-      © <span id="year">2026</span> Alexander | lay007 ·
+      © <span id="year">2026</span> Alexander Lyubko ·
       <a href="portfolio-review.html">10-minute review</a> ·
       <a href="https://github.com/Lay007/lay007.github.io" target="_blank" rel="noopener noreferrer">Site source</a>
     </p>
