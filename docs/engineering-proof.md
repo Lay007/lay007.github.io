@@ -12,6 +12,7 @@ This page collects concrete proof assets across the portfolio.
 | Markdown asset CI | `zynq-sdr-course` | documentation quality and broken-link prevention |
 | MATLAB M1 acceptance report | `zynq-lora-phy-positioning` | 32 SF×CR modes, BER/PER, calibrated 2D TDoA Monte Carlo |
 | HDL cosimulation and synthesis evidence | `zynq-lora-phy-positioning` | exact 8/8 ToA cosimulation, receiver synthesized for `xc7z020clg400-2` |
+| M9 LoRa hardware campaign | `zynq-lora-phy-positioning` | fractional-CFO derotation and split-preamble recovery; 732/732 CRC-valid packets with zero detection misses across the combined M9 runs |
 | DSP test-vector strategy | `cpp-dsp-showcase` | deterministic validation direction |
 | Benchmark baseline schema | `cpp-dsp-showcase` | reproducible performance reporting |
 | Direct FIR vs overlap-save notes | `cpp-dsp-showcase` | algorithmic tradeoff explanation |
