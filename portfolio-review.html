@@ -105,13 +105,14 @@
               <td class="step-repo" data-label="Repository"><a href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">zynq-lora-phy-positioning</a></td>
               <td data-label="What to check">
                 LoRa PHY from MATLAB and recorded SX1262 IQ through fixed-point Simulink and generated HDL to real ZynqSDR reception, PL timestamps and fractional ToA.
-                Latest hardware evidence includes valid-CRC over-the-air packet decoding, a 500-attempt guard-image campaign with 492/492 captured packets passing CRC and zero PL grid errors, and a continuous sample-time counter across 47 captures spanning 803.7&nbsp;s.
-                <span class="limit">Limit: controlled cable-delay calibration, the 1,000-packet qualification target and synchronized multi-receiver TDoA positioning remain open; calibrated 2D TDoA results are still model-level evidence.</span>
+                Latest M9 hardware evidence includes fractional-CFO derotation and split-preamble recovery, 492/492 CRC-valid captures with zero detection misses in the 500-attempt series, and 732/732 CRC-valid packets with zero misses across the combined M9 runs. The published joint timestamp residual stayed within ±0.5 sample.
+                <span class="limit">Limit: controlled cable-delay calibration and synchronized multi-receiver TDoA positioning remain open; calibrated 2D TDoA results are still model-level evidence.</span>
               </td>
               <td data-label="Evidence to open">
                 <span class="evidence-links">
                   <a class="text-link" href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/matlab-m1-acceptance.md" target="_blank" rel="noopener noreferrer">MATLAB M1 acceptance</a>
                   <a class="text-link" href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/simulink-m2-acceptance.md" target="_blank" rel="noopener noreferrer">Simulink M2 acceptance</a>
+                  <a class="text-link" href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/clg400-joint-grid-experiment.md" target="_blank" rel="noopener noreferrer">M9 hardware evidence</a>
                   <a class="text-link" href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer">Roadmap</a>
                 </span>
               </td>
