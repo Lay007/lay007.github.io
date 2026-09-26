@@ -66,9 +66,10 @@ Key proof assets:
 
 - MATLAB M1 acceptance across all 32 SF×CR modes, with BER/PER and calibrated 2D TDoA Monte Carlo results;
 - Simulink M2 acceptance with MATLAB-aligned regressions;
-- exact 8/8 HDL cosimulation for ToA and a synthesized SF7 IQ-to-AXI timestamp receiver.
+- exact 8/8 HDL cosimulation for ToA and a synthesized SF7 IQ-to-AXI timestamp receiver;
+- M9 board evidence with fractional-CFO derotation and split-preamble recovery: 492/492 CRC-valid captures with zero detection misses in the 500-attempt series, and 732/732 CRC-valid packets with zero misses across the combined M9 runs.
 
-Current limit: hardware reception and synchronized positioning have not started.
+Current limit: hardware reception and joint timestamping are demonstrated through M9. Controlled delay calibration, common-time synchronization across receivers and calibrated hardware TDoA remain open.
 
 ## Measurement systems direction
 
