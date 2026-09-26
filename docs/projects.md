@@ -41,7 +41,8 @@ Repository: https://github.com/Lay007/zynq-sdr-course
 - streaming fixed-point Simulink model with MATLAB-aligned regressions (M2);
 - generated Verilog with exact 8/8 HDL cosimulation for ToA and a synthesized SF7 IQ-to-AXI timestamp receiver (M3);
 - LoRa PHY Inspector for synthetic, HDL-generated, and recorded SX1262 IQ evidence;
-- fractional ToA and calibrated 2D TDoA Monte Carlo results.
+- fractional ToA and calibrated 2D TDoA Monte Carlo results;
+- M9 hardware receiver with fractional-CFO derotation and split-preamble recovery: 492/492 CRC-valid captures and zero detection misses in the 500-attempt series; 732/732 CRC-valid packets with zero misses across series500 plus the overnight run.
 
 **Engineering chain:**
 
@@ -51,9 +52,10 @@ LoRa model -> fixed-point -> HDL -> ZynqSDR -> IQ/metadata -> ToA -> TDoA
 
 **Open first:** [MATLAB M1 acceptance](https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/matlab-m1-acceptance.md),
 [Simulink M2 acceptance](https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/simulink-m2-acceptance.md),
+[M9 hardware evidence](https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/clg400-joint-grid-experiment.md),
 [roadmap](https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/roadmap.md).
 
-**Current limit:** hardware LoRa reception and synchronized multi-receiver positioning (M4–M6) have not started.
+**Current limit:** hardware LoRa reception is demonstrated through M9, including joint timestamping and the M9 loss fixes. Controlled delay calibration, receiver-to-receiver synchronization and calibrated multi-receiver TDoA remain open.
 
 Repository: https://github.com/Lay007/zynq-lora-phy-positioning
 
