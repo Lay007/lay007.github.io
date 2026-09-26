@@ -157,9 +157,9 @@
         <span class="proof-detail">BER over 5.6 Mbit</span>
       </a>
       <a class="proof-card" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">
-        <span class="proof-label">LoRa hardware RX</span>
-        <strong class="proof-value">492 / 492</strong>
-        <span class="proof-detail">captured packets passed CRC</span>
+        <span class="proof-label">LoRa hardware RX · M9</span>
+        <strong class="proof-value">732 / 732</strong>
+        <span class="proof-detail">CRC valid · zero detection misses</span>
       </a>
       <a class="proof-card" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">
         <span class="proof-label">Continuous PL timebase</span>
@@ -222,11 +222,12 @@
               <a class="project-link" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             </div>
             <p class="project-evidence">
-              <strong>Evidence:</strong> 492/492 captured packets passed CRC with zero PL grid errors;
-              continuous PL sample-time counter verified across 47 captures spanning 803.7 s.
+              <strong>Evidence:</strong> M9 reached 492/492 CRC-valid captures with zero detection misses in the 500-attempt series,
+              and 732/732 CRC-valid packets with zero misses when combined with the overnight run; the joint timestamp residual stayed within ±0.5 sample.
             </p>
             <p class="project-open">
               <span>Open first:</span>
+              <a href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/clg400-joint-grid-experiment.md" target="_blank" rel="noopener noreferrer">M9 hardware evidence</a>
               <a href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer">Roadmap</a>
               <a href="case-studies.html#lora-toa">Case study</a>
             </p>
