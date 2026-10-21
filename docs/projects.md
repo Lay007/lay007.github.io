@@ -3,6 +3,31 @@
 This page summarizes the main engineering repositories, their proof assets and current limits.
 Only public repositories are linked from the website.
 
+## cpp-dsp-showcase
+
+**Role:** compact production-style C++ DSP showcase.
+
+**Engineering proof:**
+
+- C++17 kernels: windowed-sinc FIR, Goertzel tone detection, GCC-PHAT delay estimation, rational L/M resampling;
+- deterministic unit tests and multi-platform CI;
+- optional AVX2 hot paths and generated benchmark reports;
+- FIR implementation tradeoff notes;
+- installable CMake package for downstream projects.
+
+**Engineering chain:**
+
+```text
+reference vector -> C++ kernel -> numerical comparison -> benchmark -> report
+```
+
+**Open first:** [reviewer quick check](https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/reviewer-quick-check.md),
+[algorithm evidence matrix](https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/algorithm-evidence-matrix.md).
+
+Repository: https://github.com/Lay007/cpp-dsp-showcase
+
+---
+
 ## zynq-sdr-course
 
 **Role:** SDR education and hardware experimentation platform.
@@ -31,7 +56,7 @@ Repository: https://github.com/Lay007/zynq-sdr-course
 
 ---
 
-## zynq-lora-phy-positioning
+## zynq-lora-phy
 
 **Role:** LoRa PHY, FPGA timestamping, and positioning research platform on ZynqSDR.
 
@@ -43,6 +68,7 @@ Repository: https://github.com/Lay007/zynq-sdr-course
 - LoRa PHY Inspector for synthetic, HDL-generated, and recorded SX1262 IQ evidence;
 - fractional ToA and calibrated 2D TDoA Monte Carlo results;
 - M9 hardware receiver with fractional-CFO derotation and split-preamble recovery: 492/492 CRC-valid captures and zero detection misses in the 500-attempt series; 732/732 CRC-valid packets with zero misses across series500 plus the overnight run.
+- M11 hardware SF7/BW125 FPGA PER curves for CR 4/5 through 4/8; CR 4/5 measured 10% PER threshold approximately −7.8 dB SNR versus approximately −8.2 dB for the known-timing model (not absolute sensitivity in dBm).
 
 **Engineering chain:**
 
@@ -50,39 +76,15 @@ Repository: https://github.com/Lay007/zynq-sdr-course
 LoRa model -> fixed-point -> HDL -> ZynqSDR -> IQ/metadata -> ToA -> TDoA
 ```
 
-**Open first:** [MATLAB M1 acceptance](https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/matlab-m1-acceptance.md),
-[Simulink M2 acceptance](https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/simulink-m2-acceptance.md),
-[M9 hardware evidence](https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/clg400-joint-grid-experiment.md),
-[roadmap](https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/roadmap.md).
+**Open first:** [MATLAB M1 acceptance](https://github.com/Lay007/zynq-lora-phy/blob/main/docs/matlab-m1-acceptance.md),
+[Simulink M2 acceptance](https://github.com/Lay007/zynq-lora-phy/blob/main/docs/simulink-m2-acceptance.md),
+[M9 hardware evidence](https://github.com/Lay007/zynq-lora-phy/blob/main/docs/clg400-joint-grid-experiment.md),
+[M11 PER experiment](https://github.com/Lay007/zynq-lora-phy/blob/main/docs/per-curves-experiment.md),
+[roadmap](https://github.com/Lay007/zynq-lora-phy/blob/main/docs/roadmap.md).
 
-**Current limit:** hardware LoRa reception is demonstrated through M9, including joint timestamping and the M9 loss fixes. Controlled delay calibration, receiver-to-receiver synchronization and calibrated multi-receiver TDoA remain open.
+**Current limit:** hardware LoRa reception and the M11 SF7/BW125 PER curves are demonstrated; wider SF/BW FPGA configurations require separate qualification. Controlled delay calibration, receiver-to-receiver synchronization and calibrated multi-receiver TDoA remain open.
 
-Repository: https://github.com/Lay007/zynq-lora-phy-positioning
-
----
-
-## cpp-dsp-showcase
-
-**Role:** compact production-style C++ DSP showcase.
-
-**Engineering proof:**
-
-- C++17 kernels: windowed-sinc FIR, Goertzel tone detection, GCC-PHAT delay estimation, rational L/M resampling;
-- deterministic unit tests and multi-platform CI;
-- optional AVX2 hot paths and generated benchmark reports;
-- FIR implementation tradeoff notes;
-- installable CMake package for downstream projects.
-
-**Engineering chain:**
-
-```text
-reference vector -> C++ kernel -> numerical comparison -> benchmark -> report
-```
-
-**Open first:** [reviewer quick check](https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/reviewer-quick-check.md),
-[algorithm evidence matrix](https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/algorithm-evidence-matrix.md).
-
-Repository: https://github.com/Lay007/cpp-dsp-showcase
+Repository: https://github.com/Lay007/zynq-lora-phy
 
 ---
 
