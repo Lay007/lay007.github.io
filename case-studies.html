@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Engineering case studies | Alexander Lyubko</title>
-  <meta name="description" content="Three concise engineering case studies: Zynq QPSK SDR, LoRa PHY and timing on ZynqSDR, and modern C++ DSP with deterministic verification." />
+  <meta name="description" content="Three engineering case studies: C++ DSP with deterministic verification, Zynq QPSK SDR, and LoRa PHY/timing on ZynqSDR." />
   <meta name="author" content="Alexander Lyubko | lay007" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#08111f" />
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="assets/css/site.css" />
   <meta property="og:site_name" content="Alexander Lyubko engineering portfolio" />
   <meta property="og:title" content="Engineering case studies | Alexander Lyubko" />
-  <meta property="og:description" content="QPSK on ZynqSDR, LoRa PHY and packet timing, and C++ DSP — each presented as problem, implementation, measurement, result and engineering value." />
+  <meta property="og:description" content="C++ DSP, QPSK on ZynqSDR, and LoRa PHY with packet timing — each presented as problem, implementation, measurement, result and engineering value." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://lay007.github.io/case-studies.html" />
@@ -22,7 +22,7 @@
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Alexander Lyubko engineering portfolio: DSP, FPGA and SDR projects" />
+  <meta property="og:image:alt" content="Alexander Lyubko engineering portfolio: DSP, C++, FPGA and SDR projects" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Engineering case studies | Alexander Lyubko" />
   <meta name="twitter:description" content="Three evidence-backed DSP/FPGA/C++ engineering case studies." />
@@ -37,7 +37,7 @@
         <span class="brand-mark" aria-hidden="true">AL</span>
         <span class="brand-text">
           <span>Alexander Lyubko</span>
-          <span class="muted">DSP • FPGA • SDR</span>
+          <span class="muted">DSP • C++ • FPGA • SDR</span>
         </span>
       </a>
 
@@ -60,8 +60,83 @@
       </p>
     </section>
 
+    <section class="card review-card" id="cpp-dsp">
+      <div class="eyebrow">Case 1 • DSP → production-style C++</div>
+      <h2>C++ DSP showcase: turning algorithms into testable, benchmarked and reusable software</h2>
+      <div class="tags">
+        <span class="tag">C++17</span>
+        <span class="tag">FIR</span>
+        <span class="tag">Goertzel</span>
+        <span class="tag">GCC-PHAT</span>
+        <span class="tag">Resampling</span>
+        <span class="tag">CMake / CI</span>
+      </div>
+      <div class="code-visual case-code-visual" role="img" aria-label="C++ DSP evidence covers FIR, Goertzel, GCC-PHAT and rational resampling with tests, CMake packaging and benchmark tooling">
+        <span>FIR</span><span>Goertzel</span><span>GCC-PHAT</span><span>Resampler</span>
+        <strong>Algorithm → test → benchmark → package</strong>
+        <small>No synthetic performance number is claimed here; benchmark tooling and validation evidence are linked below.</small>
+      </div>
+
+      <div class="grid-2">
+        <article class="card info-card">
+          <h3>Problem</h3>
+          <p>
+            DSP code often begins as an isolated numerical prototype. For engineering use it needs deterministic
+            behavior, edge-case tests, performance evidence, packaging and a clear path for later fixed-point or
+            hardware mapping.
+          </p>
+        </article>
+        <article class="card info-card">
+          <h3>Approach</h3>
+          <p>
+            Implement compact C++17 DSP kernels behind a reusable API, protect behavior with deterministic unit
+            tests, benchmark performance-sensitive paths, keep optional AVX2 acceleration explicit, and export an
+            installable CMake package for downstream projects.
+          </p>
+        </article>
+      </div>
+
+      <div class="table-wrap">
+        <table class="steps">
+          <tbody>
+            <tr>
+              <td class="step-num" data-label="Stage">Algorithms</td>
+              <td data-label="Evidence">FIR design/filtering, direct and FFT overlap-save convolution, Goertzel, GCC-PHAT delay estimation and rational L/M resampling.</td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Stage">Verification</td>
+              <td data-label="Evidence">Deterministic unit tests, generated benchmark reports, multi-platform CI, sanitizer checks and CodeQL.</td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Stage">Reuse</td>
+              <td data-label="Evidence">Installable CMake package export and documented downstream use through the public dsp_core::dsp target.</td>
+            </tr>
+            <tr>
+              <td class="step-num" data-label="Stage">Limit</td>
+              <td data-label="Evidence">The repository is deliberately compact: it demonstrates engineering discipline around selected kernels rather than claiming to be a complete DSP framework.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <article class="card info-card">
+        <h3>What this demonstrates for a client</h3>
+        <p>
+          I can move signal-processing logic into maintainable C++ without losing numerical traceability:
+          implementation, tests, performance measurement, packaging and possible FPGA direction are treated as one
+          engineering problem rather than separate tasks.
+        </p>
+      </article>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/reviewer-quick-check.md" target="_blank" rel="noopener noreferrer">Open reviewer check ↗</a>
+        <a class="btn btn-secondary" href="https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/algorithm-evidence-matrix.md" target="_blank" rel="noopener noreferrer">Evidence matrix ↗</a>
+        <a class="btn btn-secondary" href="https://github.com/Lay007/cpp-dsp-showcase" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+      </div>
+    </section>
+
     <section class="card review-card" id="qpsk-zynq">
-      <div class="eyebrow">Case 1 • DSP → FPGA → RF measurement</div>
+      <div class="eyebrow">Case 2 • DSP → FPGA → RF measurement</div>
       <h2>Zynq QPSK modem: closing the loop from model to a two-board RF link</h2>
       <div class="tags">
         <span class="tag">QPSK</span>
@@ -135,7 +210,7 @@
     </section>
 
     <section class="card review-card" id="lora-toa">
-      <div class="eyebrow">Case 2 • LoRa PHY → hardware timing</div>
+      <div class="eyebrow">Case 3 • LoRa PHY → hardware timing</div>
       <h2>LoRa on ZynqSDR: from recorded SX1262 IQ to live packet decoding and a continuous PL timebase</h2>
       <div class="tags">
         <span class="tag">LoRa PHY</span>
@@ -183,6 +258,10 @@
               <td data-label="Evidence">M9 hardware campaign: 492/492 captured packets passed CRC with zero detection misses in the 500-attempt series; combined with the overnight run, the evidence reaches 732/732 CRC-valid packets with zero misses. Failures outside the receiver are tracked separately.</td>
             </tr>
             <tr>
+              <td class="step-num" data-label="Stage">M11 PER</td>
+              <td data-label="Evidence">FPGA SF7/BW125 packet-error-rate curves were measured across CR 4/5–4/8. For CR 4/5, the 10% PER SNR threshold was ≈−7.8 dB, compared with ≈−8.2 dB for the known-timing reference model. This is a conducted SNR sweep, not an absolute sensitivity measurement; <a href="https://github.com/Lay007/zynq-lora-phy/blob/main/docs/per-curves-experiment.md" target="_blank" rel="noopener noreferrer">see the experiment</a>.</td>
+            </tr>
+            <tr>
               <td class="step-num" data-label="Stage">Timing</td>
               <td data-label="Evidence">M9 publishes the joint CFO-free timestamp: series500 residual mean +0.001 sample, every residual within ±0.5 sample (sd 0.285). The continuous PL sample-time counter was also verified across 47 captures spanning 803.7 seconds.</td>
             </tr>
@@ -204,84 +283,9 @@
       </article>
 
       <div class="hero-actions">
-        <a class="btn btn-primary" href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/clg400-joint-grid-experiment.md" target="_blank" rel="noopener noreferrer">Open hardware investigation ↗</a>
-        <a class="btn btn-secondary" href="https://github.com/Lay007/zynq-lora-phy-positioning/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer">Roadmap ↗</a>
-        <a class="btn btn-secondary" href="https://github.com/Lay007/zynq-lora-phy-positioning" target="_blank" rel="noopener noreferrer">Repository ↗</a>
-      </div>
-    </section>
-
-    <section class="card review-card" id="cpp-dsp">
-      <div class="eyebrow">Case 3 • DSP → production-style C++</div>
-      <h2>C++ DSP showcase: turning algorithms into testable, benchmarked and reusable software</h2>
-      <div class="tags">
-        <span class="tag">C++17</span>
-        <span class="tag">FIR</span>
-        <span class="tag">Goertzel</span>
-        <span class="tag">GCC-PHAT</span>
-        <span class="tag">Resampling</span>
-        <span class="tag">CMake / CI</span>
-      </div>
-      <div class="code-visual case-code-visual" role="img" aria-label="C++ DSP evidence covers FIR, Goertzel, GCC-PHAT and rational resampling with tests, CMake packaging and benchmark tooling">
-        <span>FIR</span><span>Goertzel</span><span>GCC-PHAT</span><span>Resampler</span>
-        <strong>Algorithm → test → benchmark → package</strong>
-        <small>No synthetic performance number is claimed here; benchmark tooling and validation evidence are linked below.</small>
-      </div>
-
-      <div class="grid-2">
-        <article class="card info-card">
-          <h3>Problem</h3>
-          <p>
-            DSP code often begins as an isolated numerical prototype. For engineering use it needs deterministic
-            behavior, edge-case tests, performance evidence, packaging and a clear path for later fixed-point or
-            hardware mapping.
-          </p>
-        </article>
-        <article class="card info-card">
-          <h3>Approach</h3>
-          <p>
-            Implement compact C++17 DSP kernels behind a reusable API, protect behavior with deterministic unit
-            tests, benchmark performance-sensitive paths, keep optional AVX2 acceleration explicit, and export an
-            installable CMake package for downstream projects.
-          </p>
-        </article>
-      </div>
-
-      <div class="table-wrap">
-        <table class="steps">
-          <tbody>
-            <tr>
-              <td class="step-num" data-label="Stage">Algorithms</td>
-              <td data-label="Evidence">FIR design/filtering, direct and FFT overlap-save convolution, Goertzel, GCC-PHAT delay estimation and rational L/M resampling.</td>
-            </tr>
-            <tr>
-              <td class="step-num" data-label="Stage">Verification</td>
-              <td data-label="Evidence">Deterministic unit tests, generated benchmark reports, multi-platform CI, sanitizer checks and CodeQL.</td>
-            </tr>
-            <tr>
-              <td class="step-num" data-label="Stage">Reuse</td>
-              <td data-label="Evidence">Installable CMake package export and documented downstream use through the public dsp_core::dsp target.</td>
-            </tr>
-            <tr>
-              <td class="step-num" data-label="Stage">Limit</td>
-              <td data-label="Evidence">The repository is deliberately compact: it demonstrates engineering discipline around selected kernels rather than claiming to be a complete DSP framework.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <article class="card info-card">
-        <h3>What this demonstrates for a client</h3>
-        <p>
-          I can move signal-processing logic into maintainable C++ without losing numerical traceability:
-          implementation, tests, performance measurement, packaging and possible FPGA direction are treated as one
-          engineering problem rather than separate tasks.
-        </p>
-      </article>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/reviewer-quick-check.md" target="_blank" rel="noopener noreferrer">Open reviewer check ↗</a>
-        <a class="btn btn-secondary" href="https://github.com/Lay007/cpp-dsp-showcase/blob/main/docs/algorithm-evidence-matrix.md" target="_blank" rel="noopener noreferrer">Evidence matrix ↗</a>
-        <a class="btn btn-secondary" href="https://github.com/Lay007/cpp-dsp-showcase" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+        <a class="btn btn-primary" href="https://github.com/Lay007/zynq-lora-phy/blob/main/docs/clg400-joint-grid-experiment.md" target="_blank" rel="noopener noreferrer">Open hardware investigation ↗</a>
+        <a class="btn btn-secondary" href="https://github.com/Lay007/zynq-lora-phy/blob/main/docs/roadmap.md" target="_blank" rel="noopener noreferrer">Roadmap ↗</a>
+        <a class="btn btn-secondary" href="https://github.com/Lay007/zynq-lora-phy" target="_blank" rel="noopener noreferrer">Repository ↗</a>
       </div>
     </section>
 
