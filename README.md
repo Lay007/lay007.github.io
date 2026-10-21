@@ -35,9 +35,9 @@ The site is evidence-oriented: every project card names the repository documents
 
 ## Selected projects featured on the site
 
-- [`zynq-sdr-course`](https://github.com/Lay007/zynq-sdr-course) — bilingual SDR course from DSP models to Zynq RF measurements;
-- [`zynq-lora-phy-positioning`](https://github.com/Lay007/zynq-lora-phy-positioning) — LoRa PHY, generated HDL, and ToA/TDoA positioning;
 - [`cpp-dsp-showcase`](https://github.com/Lay007/cpp-dsp-showcase) — C++17 DSP kernels with deterministic tests and benchmarks;
+- [`zynq-sdr-course`](https://github.com/Lay007/zynq-sdr-course) — bilingual SDR course from DSP models to Zynq RF measurements;
+- [`zynq-lora-phy`](https://github.com/Lay007/zynq-lora-phy) — LoRa PHY, generated HDL, measured FPGA PER and ToA/TDoA research;
 - [`network-quality-assessment`](https://github.com/Lay007/network-quality-assessment) — network SLA measurement with FPGA timestamping concepts;
 - [`script-toolbox`](https://github.com/Lay007/script-toolbox) — Windows/SSH/Git automation with PowerShell quality gates.
 
