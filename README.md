@@ -10,6 +10,10 @@ Personal engineering website and evidence-driven portfolio for **Alexander Lyubk
 
 ---
 
+## Engineering publications
+
+The planned route is research → verified evidence → author-reviewed publication on this site → LinkedIn/Habr announcement. See [engineering blog implementation plan](docs/engineering-blog-plan.md). No draft articles are copied or published automatically.
+
 ## What the site covers
 
 - **digital signal processing (DSP)**
