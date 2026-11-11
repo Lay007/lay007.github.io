@@ -6,6 +6,15 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - "*.html"
+      - "*.md"
+      - "docs/**"
+      - ".github/workflows/link-check.yml"
+  pull_request:
+    paths:
+      - "*.html"
+      - "*.md"
+      - "docs/**"
       - ".github/workflows/link-check.yml"
 
 permissions:
