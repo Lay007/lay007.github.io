@@ -58,8 +58,8 @@ NOT_FOUND = """<!doctype html>
 
 SITEMAP = """<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://lay007.github.io/</loc></url>
-  <url><loc>https://lay007.github.io/portfolio-review.html</loc></url>
+  <url><loc>https://lay007.github.io/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://lay007.github.io/portfolio-review.html</loc><lastmod>2026-10-21</lastmod></url>
 </urlset>
 """
 
@@ -107,13 +107,21 @@ class SiteValidatorTests(unittest.TestCase):
 
     def test_rejects_page_missing_from_sitemap(self) -> None:
         sitemap = SITEMAP.replace(
-            "<url><loc>https://lay007.github.io/portfolio-review.html</loc></url>", ""
+            "<url><loc>https://lay007.github.io/portfolio-review.html</loc><lastmod>2026-10-21</lastmod></url>", ""
         )
 
         self.assertError(
             self.errors_for({"sitemap.xml": sitemap}),
             "missing URL https://lay007.github.io/portfolio-review.html",
         )
+
+    def test_rejects_sitemap_missing_lastmod(self) -> None:
+        sitemap = SITEMAP.replace("<lastmod>2026-10-21</lastmod>", "", 1)
+        self.assertError(self.errors_for({"sitemap.xml": sitemap}), "missing lastmod")
+
+    def test_rejects_sitemap_invalid_lastmod(self) -> None:
+        sitemap = SITEMAP.replace("2026-10-21", "2026-02-30", 1)
+        self.assertError(self.errors_for({"sitemap.xml": sitemap}), "invalid lastmod")
 
     def test_rejects_sitemap_url_without_page(self) -> None:
         sitemap = SITEMAP.replace(

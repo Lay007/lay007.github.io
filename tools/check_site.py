@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import sys
+from datetime import date
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from html.parser import HTMLParser
@@ -23,6 +24,8 @@ REMOTE_SCHEMES = {"http", "https", "mailto", "tel", "data", "javascript"}
 SOCIAL_META_PROPERTIES = ("og:title", "og:description", "og:image", "og:url")
 URL_META_KEYS = ("og:image", "og:url", "twitter:image")
 SITEMAP_LOC = "{http://www.sitemaps.org/schemas/sitemap/0.9}loc"
+SITEMAP_URL = "{http://www.sitemaps.org/schemas/sitemap/0.9}url"
+SITEMAP_LASTMOD = "{http://www.sitemaps.org/schemas/sitemap/0.9}lastmod"
 
 
 @dataclass(frozen=True)
@@ -196,6 +199,17 @@ def _sitemap_problems(root: Path, parsed: dict[Path, PageParser]) -> list[str]:
 
     locs = [(element.text or "").strip() for element in tree.iter(SITEMAP_LOC)]
     problems: list[str] = []
+    for entry in tree.iter(SITEMAP_URL):
+        loc = (entry.findtext(SITEMAP_LOC) or "").strip()
+        lastmod = (entry.findtext(SITEMAP_LASTMOD) or "").strip()
+        if not lastmod:
+            problems.append(f"sitemap.xml: missing lastmod for {loc}")
+        else:
+            try:
+                if date.fromisoformat(lastmod).isoformat() != lastmod:
+                    raise ValueError("noncanonical date")
+            except ValueError:
+                problems.append(f"sitemap.xml: invalid lastmod for {loc}: {lastmod}")
     for loc in locs:
         target, _ = _resolve(root, Path("index.html"), loc)
         if not loc.startswith(SITE_URL) or target is None:
