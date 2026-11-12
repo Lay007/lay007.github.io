@@ -100,6 +100,22 @@ class SiteValidatorTests(unittest.TestCase):
 
         self.assertError(self.errors_for({"portfolio-review.html": review}), "missing local target")
 
+    def test_accepts_data_url_srcset_with_local_fallback(self) -> None:
+        source = (
+            '<source srcset="data:image/png;base64,AA== 1x, '
+            'assets/social-preview.png 2x">'
+        )
+        index = INDEX.replace("</body>", source + "</body>")
+        self.assertEqual(self.errors_for({"index.html": index}), ())
+
+    def test_rejects_missing_srcset_candidate_after_data_url(self) -> None:
+        source = (
+            '<source srcset="data:image/png;base64,AA== 1x, '
+            'assets/missing.png 2x">'
+        )
+        index = INDEX.replace("</body>", source + "</body>")
+        self.assertError(self.errors_for({"index.html": index}), "missing local target")
+
     def test_rejects_missing_social_metadata(self) -> None:
         index = INDEX.replace('<meta property="og:title" content="Portfolio">', "")
 

@@ -103,7 +103,40 @@ class PageParser(HTMLParser):
 
 
 def _srcset_urls(srcset: str) -> list[str]:
-    return [candidate.split()[0] for candidate in srcset.split(",") if candidate.strip()]
+    """Extract image URLs without splitting commas inside data: URLs.
+
+    Image candidate URLs are read up to whitespace, not the first comma.
+    A trailing comma ends a candidate without a descriptor.
+    """
+    urls: list[str] = []
+    index = 0
+    length = len(srcset)
+    while index < length:
+        while index < length and (srcset[index].isspace() or srcset[index] == ","):
+            index += 1
+        start = index
+        while index < length and not srcset[index].isspace():
+            index += 1
+        token = srcset[start:index]
+        if not token:
+            break
+        urls.append(token.rstrip(","))
+        if token.endswith(","):
+            continue
+
+        # Skip width/density descriptors, respecting parentheses in descriptors.
+        depth = 0
+        while index < length:
+            char = srcset[index]
+            if char == "(":
+                depth += 1
+            elif char == ")" and depth:
+                depth -= 1
+            elif char == "," and depth == 0:
+                index += 1
+                break
+            index += 1
+    return urls
 
 
 def _page_url(page: Path) -> str:
